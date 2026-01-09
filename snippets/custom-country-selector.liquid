@@ -22,6 +22,14 @@
                 {% assign sorted_keys = sorted_keys | split: ',' | sort %}
 
                 <div class="country_list_ul">
+                  <div data-value="AE" data-co="AE">                           
+                      <a data="161627340823" data-link="https://www.londonbikes.ae/collections/car-racks" data-catalog-store="true" href="https://allen.bike?cc=AE" class="js-country-popup-inner se-co_under" data-store="United Arab Emirates">
+                        <span class="currency-flag currency-flag--small currency-flag--ae" data-flag="" aria-hidden="true"></span>
+                        <span class="selected-country default_select hide">AE</span>
+                        <span class="selected-country js_select"> United Arab Emirates</span>
+                        <span class="right icon-down-arrow"></span>
+                      </a>
+                  </div>
                   {% for key in sorted_keys %}
                     {% for store in sorted_stores %}
                       {% if store.store_name.value == key %}
