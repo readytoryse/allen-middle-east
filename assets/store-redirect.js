@@ -21,13 +21,13 @@ async function get_country_code() {
            
       Cookies.set("prod_country", 'US', {
           expires: 30,
-          domain: ".allen.bike",
+          path: "/",
       });
           } 
         // console.log('usert',user_country_region)
         Cookies.set("user_country_region", user_country_region, {
           expires: 30,
-          domain: ".allen.bike",
+          path: "/",
         });
         $('.region-wrapper .region').text(user_country_region);
         
