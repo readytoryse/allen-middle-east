@@ -17,9 +17,9 @@ async function get_country_code() {
         var user_country_region = data.detected_values.country.handle;
         // console.log('user_country_region',user_country_region.toLowerCase())
          if ($.inArray(user_country_region.toLowerCase(), countries) === -1) {
-             user_country_region = 'AE';
+             user_country_region = 'US';
            
-      Cookies.set("prod_country", 'AE', {
+      Cookies.set("prod_country", 'US', {
           expires: 30,
           domain: ".allen.bike",
       });
@@ -201,7 +201,6 @@ if(cc != null){
 
 async function CountrySelector(data) {
     var Country = await get_country_code();
-    console.log('country',Country)
     var CountryEle = $(`.country_list_ul div[data-co='${Country}']`).eq(0).clone();
     $(`.country_list_ul div[data-co='${Country}'] a`).addClass('se-co_under');
     CountryEle.find('.selected-country.default_select').removeClass('hide');
