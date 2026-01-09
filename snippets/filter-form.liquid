@@ -1,0 +1,130 @@
+<div class="innner-form-design">
+  <form id="fitmentSearch" class="{{ css_class }}" method="post" action="/">
+    <div class="rack_orders">
+      <div class="rack_order_1">
+        <h2 class="heading">{{ section.settings.title }}</h2>
+      </div>
+      <div class="group1 rack_order_2">
+        <div class="select_tag">
+          <div class="finder-search-row year-div">
+            <select id="year_select" name="year_select" class="Ajax dropdown_value year-select">
+              <option value="">{{ section.settings.year_selector }}</option>
+            </select>
+          </div>
+          <div class="finder-search-row model-div">
+            <select id="model_select" name="model_select" class="Ajax dropdown_value model-select disabled">
+              <option value="">{{ section.settings.model_selector }}</option>
+            </select>
+          </div>
+          <div class="finder-search-row car-name-div">
+            <select id="make_select" name="make_select" class="Ajax dropdown_value car-name-select disabled">
+              <option value="">{{ section.settings.make_selector }}</option>
+            </select>
+          </div>
+          <div class="finder-search-row model-div bodytype_selector">
+            <select id="bodytype_select" name="bodytype_select" class="Ajax dropdown_value bodytype-select disabled">
+              <option value="">{{ section.settings.type_selector }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="rack_order_3">
+        <div class="group2">
+          <div class="finder-search-row list-items hitch_size">
+            <div class="inner-title">
+              <h3>
+                {{ section.settings.option_1 }} :
+                {% render 'tooltip-icon',
+                  tooltip_text: '',
+                  custom_cls: 'hitch-size-tooltip',
+                  tooltip_img: 'https://cdn.shopify.com/s/files/1/0101/8078/8283/files/tooltip-hitch-sizes-min.jpg?v=1671710916'
+                %}
+                <br>
+                <br>
+              </h3>
+            </div>
+            <div class="filter-inner-content hitch_size_wrapper">
+              <div class="flex-column">
+                <div class="features-wrapper">
+                  <div class="grid__item form_chkbx checkbox">
+                    <input type="checkbox" id="mobile_hitch_yes" name="mobile_hitch" value="yes">
+                    <label for="mobile_hitch_yes">Yes</label>
+                  </div>
+                  <!-- <div class="grid__item form_chkbx checkbox">
+                    <input type="radio" id="mobile_hitch_no" name="mobile_hitch" value="no">
+                    <label for="mobile_hitch_no">No</label>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="finder-search-row list-items hitch_size">
+            <div class="inner-title">
+              <h3>
+                {{ section.settings.option_2 }} :
+                {% assign tooltip_text = 'Rear spare tire is located on the back of the vehicle and not inside trunk or other locations.' %}
+                {% render 'tooltip-icon',
+                  tooltip_text: tooltip_text,
+                  tooltip_img: 'https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Rear-Spare-tire-thumb.jpg?v=1670997930'
+                %}
+              </h3>
+            </div>
+            <div class="filter-inner-content hitch_size_wrapper">
+              <div class="flex-column">
+                <div class="features-wrapper">
+                  <div class="grid__item form_chkbx checkbox">
+                    <input type="radio" id="mobile_spare_tire_yes" name="mobile_spare_tire" value="yes">
+                    <label for="mobile_spare_tire_yes">Yes</label>
+                  </div>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input type="radio" id="mobile_spare_tire_no" name="mobile_spare_tire" value="no">
+                    <label for="mobile_spare_tire_no">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rack_order_4">
+        <div class="finder-search-row finder-search-buttons">
+          <div class="finder-search-row finder-search-buttons reset-button-div">
+            <span>Save Your Car search : </span>
+            <a id="saveButton" class="button save_car" href="javascript:;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.55 2.55">
+                <rect x=".04" y=".04" width="2.48" height="2.48" fill="#231f20" stroke="#fff" stroke-width=".07px"/>
+                <path d="M1.64.61c-.14,0-.27.07-.36.19-.09-.12-.22-.19-.36-.19-.08,0-.16.02-.23.07-.22.14-.3.45-.17.69.1.2.55.54.71.65.02.01.04.02.06.02s.04,0,.06-.02c.16-.12.6-.46.71-.65.13-.24.05-.55-.17-.69-.07-.05-.15-.07-.23-.07h0Z" fill="#fff" stroke-width="0"/>
+              </svg>
+              <span class="default_text">{{ section.settings.save_text }}</span>
+              <span class="saving_text hidden">Saving..</span>
+            </a>
+            <div class="save_err_msg hidden">Please select the necessary data</div>
+            {% comment %} <div class="save_success_msg hidden">Your car has been saved</div> {% endcomment %}
+          </div>
+          <button
+            type="submit"
+            id="clearButton"
+            class="button less-pad see-result disabled btn_normal btn_hover_white"
+            disabled
+            value="Submit"
+          >
+            <span class="text">{{ section.settings.submit_text }}</span>
+            <div uk-spinner="" class="uk-icon uk-spinner">
+              <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                <circle fill="none" stroke="#000" cx="15" cy="15" r="14"></circle>
+              </svg>
+            </div>
+          </button>
+          <div class="form-error error hidden">{{ section.settings.info_text }}</div>
+        </div>
+      </div>
+    <div class="rack_order_5">
+      <a id="resetButton" class="button less-pad see-result" href="javascript:;" style="display: flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1.55 1.38" width="15">
+        <path d="M.69,1.38c-.18,0-.36-.07-.49-.2-.13-.13-.2-.3-.2-.49,0-.38.31-.69.69-.69s.69.31.69.69v.04l.07-.07s.07-.03.09,0c.01.01.02.03.02.05s0,.03-.02.05l-.18.18s0,0,0,0c-.01.01-.03.02-.04.02,0,0,0,0-.01,0-.01,0-.02,0-.03-.02,0,0,0,0,0,0l-.18-.18s-.03-.07,0-.09c.03-.03.07-.03.09,0l.07.07v-.04C1.25.38,1,.13.69.13S.13.38.13.69s.25.56.56.56c.04,0,.06.03.06.06s-.03.06-.06.06Z" fill="#231f20"></path></svg>
+        <span>RESET</span>
+      </a>
+    </div>
+    </div>
+  </form>
+</div>

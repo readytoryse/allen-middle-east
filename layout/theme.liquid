@@ -1,0 +1,339 @@
+<!doctype html>
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  dir="{{ settings.text_direction }}"
+>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_button }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <script>
+      {% if product.metafields.seo.hidden == 1 and template == 'product' %}
+       window.location.href = '/'
+      {% endif %}
+    </script>
+    <link
+      rel="preconnect"
+      href="https://fonts.shopifycdn.com"
+      crossorigin
+    >
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.gstatic.com">
+    <link rel="preload" href="{{ 'swirl.svg' | asset_url | split: '?' | first }}" as="image">
+    <!-- <link rel="preload" as="image" href="https://allen.bike/cdn/shop/files/Asset_1_4x-8.png?v=1722413697" /> -->
+    <!--
+      <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/banner-01.png?v=1737013019" />
+    -->
+    <link rel="preload" as="image" href="https://allen.bike/cdn/shop/t/65/assets/country-flags-40.png">
+
+    {%- if settings.favicon != blank -%}
+      <link
+        rel="shortcut icon"
+        href="{{ settings.favicon | img_url: '32x32' }}"
+        type="image/png"
+      >
+    {%- endif -%}
+
+    {%- render 'page-title' -%}
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {%- render 'social-meta-tags' -%}
+
+    {%- render 'font-face' -%}
+
+    {{ 'country-flags.css' | asset_url | stylesheet_tag }}
+    {{ 'components.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'store-redirect.css' | asset_url | stylesheet_tag: preload: true }}
+    {% if template contains 'page.rack-finder-tool-2' %}
+      {{ 'allen-rack-app.css' | asset_url | stylesheet_tag: preload: false }}
+    {% endif %}
+    {{ 'fancybox.css' | asset_url | stylesheet_tag: preload: false }}
+    {% unless template contains 'index' %}
+    {% endunless %}
+    {%- render 'css-variables' -%}
+    {% comment %}
+      {{ 'overrides.css' | asset_url | stylesheet_tag }}
+    {% endcomment %}
+
+    {% if template contains 'page.rack-finder-tool-2' %}
+      {{ 'jplist.core.min.css' | asset_url | stylesheet_tag }}
+    {% endif %}
+
+    {% comment %}
+      {{ template | handle }}
+    {% endcomment %}
+
+    {% if template == 'page.allen-warranties'
+      or template == 'page.return-form'
+      or template == 'page.register-product'
+      or template == 'page.faq'
+      or template == 'blog'
+      or template == 'article'
+      or template == 'page.thank-you'
+      or template == 'page.allen-comparison-locking-hitch-racks'
+      or template == 'page.allen-comparison-hitch-racks'
+      or template == 'page.allen-comparison-trunk-rack'
+      or template == 'page.allen-care-home'
+      or template == 'page.allen-comparison-compact-rack'
+      or template == 'page.allen-comparison-spare-tire-rack'
+      or template == 'page.ambassadors-program'
+    %}
+      {{ 'styles.css' | asset_url | stylesheet_tag: preload: true }}
+    {% endif %}
+    {%- style -%}
+      :root {
+        --productGridPadding: 12px;
+      }
+    {%- endstyle -%}
+
+    {%- liquid
+      assign enableSuperScript = false
+      unless shop.money_format contains 'money' or shop.money_format contains '.'
+        if settings.superscript_decimals
+          if shop.money_format contains '{{amount}}' or shop.money_format contains '{{ amount }}'
+            assign enableSuperScript = true
+          elsif shop.money_format contains '{{amount_with_comma_separator}}' or shop.money_format contains '{{ amount_with_comma_separator }}'
+            assign enableSuperScript = true
+          endif
+        endif
+      endunless
+    -%}
+
+    <script>
+          var is_home='{{ template }}';
+          window.offer_popup = {{ settings.offer_popup | default :false }};
+          window.offer_value = {{ settings.offer_value | json }};
+          window.main_product = {{ settings.main_product.id | json}};
+          window.offer_threasold = {{ settings.offer_threasold | times:100 }};
+          window.offer_type = {{ settings.offer_type | json }};
+          window.free_product = {{ settings.offer_product.selected_or_first_available_variant.id | json }};
+          window.theme = window.theme || {};
+          window.upsell_products = [];
+          window.upsell_products_final = [];
+          window.upsell_section_title = {{settings.upsell_section_title | json}};
+          window.product_list_limit = {{settings.product_list_limit | json}};
+          window.products_per_page = {{settings.products_per_page | json}};
+          {% if request.design_mode %}
+            window.redirection_popup = false;
+            window.disclaimer_popup = false;
+            {% else %}
+            window.disclaimer_popup = true;
+            window.redirection_popup = {{ settings.enable_redirection }};
+          {% endif %}
+          window.eu_theme_id = {% if settings.enable_theme_id %}{{settings.eu_theme_id | json}}{% else %}''{% endif %};
+          window.uk_theme_id = {% if settings.enable_theme_id %}{{settings.uk_theme_id | json}}{% else %}''{% endif %};
+          window.customer = {% if customer %}true{% else %}false{% endif %};
+          window.customerId = {% if customer %}{{ customer.id }}{% else %}false{% endif %};
+          document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      function getDistinct_variants(t){let e=[],n={};for(let i in t)objTitle=t[i].upsell_id,n[objTitle]=t[i];for(i in n)e.push(n[i]);return e}
+             window.product_variants = [];
+          theme.routes = {
+            home: "{{ routes.root_url }}",
+            collections: "{{ routes.collections_url }}",
+            cart: "{{ routes.cart_url | append: '.js' }}",
+            cartPage: "{{ routes.cart_url }}",
+            cartAdd: "{{ routes.cart_add_url | append: '.js' }}",
+            cartChange: "{{ routes.cart_change_url | append: '.js' }}",
+            search: "{{ routes.search_url }}",
+            predictiveSearch: "{{ routes.predictive_search_url }}"
+          };
+
+          theme.strings = {
+            soldOut: {{ 'info.sold_out' | t | json }},
+            unavailable: {{ 'info.unavailable' | t | json }},
+            inStockLabel: {{ 'info.in_stock' | t | json }},
+            oneStockLabel: {{ 'info.low_stock_count.one' | t: count: '[count]' | json }},
+            otherStockLabel: {{ 'info.low_stock_count.other' | t: count: '[count]' | json }},
+            willNotShipUntil: {{ 'info.ready_to_ship_on' | t: date: '[date]' | json }},
+            willBeInStockAfter: {{ 'info.back_in_stock_on' | t: date: '[date]' | json }},
+            waitingForStock: {{ 'info.backordered' | t | json }},
+            savePrice: {{ 'info.save_amount' | t: saved_amount: '[saved_amount]' | json }},
+            cartEmpty: {{ 'info.cart_empty' | t | json }},
+            cartTermsConfirmation: {{ 'info.you_must_agree' | t | json }},
+            searchCollections: {{ 'labels.collections' | t | json }},
+            searchPages: {{ 'labels.pages' | t | json }},
+            searchArticles: {{ 'labels.articles' | t | json }},
+            maxQuantity: {{ 'info.cart_max_quantity' | t: quantity: '[quantity]', title: '[title]' | json }}
+          };
+          theme.settings = {
+            show_save_amount:{{ settings.product_save_amount | json }},
+            show_tagbase_discount:{{ settings.show_discount_sale_price }},
+            cartType: {{ settings.cart_type | json }},
+            isCustomerTemplate: {% if request.page_type contains 'customers/' %}true{% else %}false{% endif %},
+            moneyFormat: {{ shop.money_format | json }},
+            saveType: {{ settings.product_save_type | json }},
+            productImageSize: {{ settings.product_grid_image_size | json }},
+            productImageCover: {{ settings.product_grid_image_fill }},
+            predictiveSearch: {{ settings.predictive_search_enabled }},
+            predictiveSearchType: {{ settings.search_type | json }},
+            superScriptSetting: {{ settings.superscript_decimals }},
+            superScriptPrice: {{ enableSuperScript }},
+            quickView: {{ settings.quick_shop_enable }},
+            quickAdd: {{ settings.quick_add_enable }},
+            themeName: 'Expanse',
+            themeVersion: "5.2.3" // x-release-please-version
+          };
+      window.custom_featured_reviews = {{shop.metafields.custom.stamped_custom_featured_reviews | default:'[]'}};
+    </script>
+    {% render 'upsell_product' %}
+
+    {%- render 'import-map' -%}
+    {%- render 'es-module-shims' -%}
+    {%- render 'is-land' -%}
+    {%- render 'preload-js' -%}
+
+    {{ content_for_header }}
+
+    <script>
+      window.product_variants = [];
+      {%- for product in collections.all.products -%}
+        {%- if product.type != 'Part' -%}
+          {%- for variant in product.variants -%}
+            {%- if variant.metafields.custom.filter_hitch_size_compatibility != blank -%}
+              window.product_variants.push({'id':{{ variant.id | json }},'no_of_bike':
+              {{- variant.metafields.custom.filter_number_of_bikes_compatibility.value | json -}}
+              ,'meta_val':{{ variant.metafields.custom.filter_hitch_size_compatibility.value | json }}});
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </script>
+    <script>
+      const API_URL = 'https://rack-finder.allen.bike/api/rack/';
+      // const API_URL = 'https://ad9f-103-250-165-85.ngrok-free.app/api/rack/';
+    </script>
+    <script>
+      var data = [];
+      var options = [];
+    </script>
+
+    <script src="{{ 'jquery.min.js' | asset_url }}" defer></script>
+    {% if template contains 'ambassadors' or template contains 'register' %}
+      <script>
+        /*******************************   Captch Code Implementatio JS ***************************/
+        if (
+          is_home == 'page.find-seller' ||
+          is_home == 'page.contact' ||
+          is_home == 'page.register-product' ||
+          is_home == 'page.ambassadors-program'
+        ) {
+          var actCallback = function (response) {
+            $('.contact-form input[type="submit"]').prop('disabled', false);
+            $('.Ambassador-form button[type="submit"]').removeAttr('disabled');
+            $('#re-captcha').remove();
+          };
+          var expCallback = function () {
+            $('.contact-form input[type="submit"]').prop('disabled', true);
+            $('.Ambassador-form button[type="submit"]').removeAttr('disabled');
+          };
+
+          var onloadCallback = function () {
+            var widget = grecaptcha.render(document.getElementById('re-captcha'), {
+              sitekey: '6LdetsgpAAAAAGhkg4J7OqyAESe2iU6swxuv728O', // Sitekey, Retrieving from reCaptcha
+              theme: 'light',
+              callback: actCallback,
+              'expired-callback': expCallback,
+            });
+          };
+        }
+
+        /*******************************   End Captch Code Implementatio JS ***************************/
+      </script>
+      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    {% endif %}
+    <script src="{{ 'fancybox.js' | asset_url }}" defer></script>
+    {% unless template contains 'index' %}
+      <script src="{{'datepicker.min.js' | asset_url}}" defer></script>
+    {% endunless %}
+    <script src="{{ 'vendor.js' | asset_url }}" defer></script>
+    {% if template contains 'product' %}
+      <script src="{{ 'reverse-finder.js' | asset_url }}" defer></script>
+    {% endif %}
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'custom.js' | asset_url }}" type="module" defer="defer"></script>
+    <script src="{{ 'store-redirect.js' | asset_url }}" ype="module" defer="defer"></script>
+    {% if template contains 'page.rack-finder-tool-2' %}
+      <script src="{{ 'jplist.core.min.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'jplist.filter-toggle-bundle.min.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'jplist.sort-bundle.min.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'jplist.sort-buttons.min.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'jplist.history-bundle.min.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+
+    {% if template contains 'rack' %}
+      <script defer src="{{ 'readmore.js' | asset_url }}"></script>
+    {% endif %}
+    <script defer src="{{ 'theia-sticky-sidebar.js' | asset_url }}"></script>
+    {% unless template contains 'about' %}
+      <script defer src="{{ 'rack-finder-tool-section.js' | asset_url  }}" type="module"></script>
+    {% endunless %}
+
+    {%- if request.page_type contains 'customers/' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {% if request.design_mode %}
+      <script src="https://api.archetypethemes.co/design-mode.js" defer="defer"></script>
+    {% endif %}
+  </head>
+
+  <body
+    class="{{ template | replace: '.', '-' | handle }} {% if template contains 'page.rack-finder-tool-2' %}rack-finder-page {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}"
+    data-button_style="{{ settings.button_style }}"
+    data-edges="{{ settings.roundness }}"
+    data-type_header_capitalize="{{ settings.type_header_capitalize }}"
+    data-swatch_style="{{ settings.swatch_style }}"
+    data-grid-style="{{ settings.product_grid_style }}"
+    data-filter-view="list"
+    lang="{{ request.locale.iso_code }}"
+  >
+    <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'actions.skip_to_content' | t }}</a>
+
+    <a href="javascript:" class="backTpTop">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        enable-background="new 0 0 24 24"
+        viewBox="0 0 24 24"
+      >
+        <path d="m12 5.1-.7.7-9 9 1.4 1.4 8.3-8.3 8.3 8.3 1.4-1.4-9-9z" />
+      </svg>
+    </a>
+
+    <div id="PageContainer" class="page-container">
+      <div class="transition-body">
+        {%- sections 'header-group' -%}
+        {%- sections 'popup-group' -%}
+
+        <main class="main-content" id="MainContent">
+          {{ content_for_layout }}
+        </main>
+
+        {%- sections 'footer-group' -%}
+      </div>
+    </div>
+
+    {% if template contains 'faq' %}
+      <script src="{{ 'faq-search.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+
+    {% render 'country-popup' %}
+    {% if settings.offer_popup %}
+      {% render 'offer-popup' %}
+    {% endif %}
+    {% render 'country_redirect_msg_popup' %}
+    {%- liquid
+      render 'video-modal'
+      render 'photoswipe-template'
+      render 'tool-tip'
+    -%}
+    {% render 'rack-disclaimer-popup' %}
+    {% render 'video-popup' %}
+  </body>
+</html>

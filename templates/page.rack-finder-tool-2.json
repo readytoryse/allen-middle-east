@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "allen-rack-finder-section",
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": "<p>Please complete year/make/model/body type before hitting \"SUBMIT\"</p>",
+        "plp_image": "shopify://shop_images/Allen-App-Ad.jpg",
+        "heading": "",
+        "subheading": "",
+        "btn_text": "",
+        "btn_url": "#"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

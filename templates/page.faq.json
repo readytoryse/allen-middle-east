@@ -1,0 +1,331 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+    "layout": "theme.allen-care",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "faq_page_GAhtaG": {
+      "type": "faq-page",
+      "blocks": {
+        "heading_nxfJmB": {
+          "type": "heading",
+          "settings": {
+            "heading": "GENERAL QUESTIONS"
+          }
+        },
+        "content_HJTt6D": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Will the new tie down cradles fit on my older carrier?",
+            "subtitle": "<p>A: If you have the removable end caps on the carry arm of your older model Allen Rack, then yes, the New Tie-Down Cradles will fit. Since the new tie-downs are about ½” longer than the deluxe version tie-downs, you will need to shorten the black tubular spacers that go between the tie-downs.</p>"
+          }
+        },
+        "content_xqrqPU": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Will this rack fit on my vehicle?",
+            "subtitle": "<p>A: To determine whether or not any of our racks will fit your specific vehicle, please refer to our online Rack Finder <a href=\"/pages/rack-finder\" title=\"Rack Finder\"><strong>HERE</strong></a>. For any additional questions, please email fit@allensportsusa.com.</p>"
+          }
+        },
+        "content_UWGyVF": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Will my E-bike fit on your carriers?",
+            "subtitle": "<p>A: Carrying E-Bikes would depend on the weight of each bicycle. If the overall weight of the bicycle exceeds the 35 LB per bicycle limit it might be advisable to remove the battery during transport to potentially meet the allowable weight limit.</p>"
+          }
+        },
+        "content_4D3tKz": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Where can I order replacement parts for my rack?",
+            "subtitle": "<p>A: Please visit the Parts section on our web site <a href=\"/collections/parts\" title=\"Parts\"><strong>HERE</strong></a> to order what you need for your rack.</p>"
+          }
+        },
+        "content_JhtFzq": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Will Allen spare parts work for other brand racks?",
+            "subtitle": "<p>A: As we have not tested our items to verify if they will safely work with other rear mounted carriers, we do not recommend this application.</p>"
+          }
+        },
+        "content_WdmDLP": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: What is the difference between the deluxe and premier carriers?",
+            "subtitle": "<p>A: To understand the difference between our Deluxe and Premier model carriers, please refer to these comparisons:</p><p>1. <a href=\"/pages/comparison-trunk-rack-deluxe-vs-premium\" title=\"Trunk Rack Comparison\"><strong>TRUNK MOUNTED COMPARISON </strong></a></p><p>2. <a href=\"/pages/hitch-racks-comparison\" title=\"Hitch Racks Comparison\"><strong>HITCH MOUNTED COMPARISON</strong></a></p>"
+          }
+        },
+        "content_cFdpxV": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: My rack covers my license plate, is that legal?",
+            "subtitle": "<p>A: Every state has different rules which apply to the display of license plates on a vehicle, and whether or not the license plate can be obscured. In most states where an obstructed license plate is prohibited, you can move the license plate to behind the rack and bicycles to be in compliance. Alternately, in some states you can display your license plate inside of the rear window of your vehicle to comply with local rules. It is important that to check your local motor vehicle statutes to ensure that you are in compliance when using your Allen rack. Also, you should always remove your rack from your vehicle when not in use.</p>"
+          }
+        },
+        "content_qGHdtz": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: How much weight can my carrier hold?",
+            "subtitle": "<p>A: Most of our carriers are rated to carry up to 35 LB per bicycle. The exception would be our model AR200 which will carry up to 40 LB per bicycle.</p>"
+          }
+        },
+        "heading_9JnpML": {
+          "type": "heading",
+          "settings": {
+            "heading": "BIKE INSTALLATION"
+          }
+        },
+        "content_7EHYKM": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: How do I load a women’s style or step-through frame onto an Allen Rack?",
+            "subtitle": "<p>A: Please review this <a href=\"https://www.youtube.com/watch?v=RCQ3tjK3z9s&t=2s\" title=\"https://www.youtube.com/watch?v=RCQ3tjK3z9s&t=2s\"><strong>VIDEO </strong></a>for complete instructions on this issue.</p>"
+          }
+        },
+        "content_b3YVQa": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Do I need an adaptor bar for my bike?",
+            "subtitle": "<p>A: For most step-through, full suspension, children’s and women’s style bicycles an adaptor bar will allow these bicycles to be installed onto a bicycle carrier. The adaptor bar fits bicycles with a distance of 18” and 27” between the headset and seat tube. Please refer to the video for this item <a href=\"https://www.youtube.com/watch?v=RCQ3tjK3z9s\" title=\"https://www.youtube.com/watch?v=RCQ3tjK3z9s\"><strong>HERE</strong></a></p>"
+          }
+        },
+        "heading_8rxnEX": {
+          "type": "heading",
+          "settings": {
+            "heading": "TRUNK RACKS"
+          }
+        },
+        "content_txCyQb": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: My vehicle has a spoiler, are the trunk mounted carriers compatible?",
+            "subtitle": "<p>A: Since the size of rear mounted spoilers vary greatly, the best way to confirm fit would be to email side and rear views of your vehicle to fit@allensportsusa.com.</p>"
+          }
+        },
+        "content_HMiHCK": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Do you have a 2-bike rack for my Prius?",
+            "subtitle": "<p>A: Our model 102DB will work with the 2017 and older Prius models. You can find this item <a href=\"/collections/trunk-racks/products/deluxe-trunk-rack?variant=19336515747899\" title=\"https://allen-sports-usa.myshopify.com/collections/trunk-racks/products/deluxe-trunk-rack?variant=19336515747899\">HERE</a>.</p>"
+          }
+        },
+        "content_Tj4f3x": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: My bumper is plastic, where should I install the bottom strap?",
+            "subtitle": "<p>A: For vehicles where you are unable to secure the lower strap(s) on your rack below the bumper, you should be able to secure the lower strap(s) using one of our alternate methods. Please refer to <a href=\"https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Screen_Shot_2019-01-18_at_2.11.07_PM.png?4960753072562344336\" title=\"https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Screen_Shot_2019-01-18_at_2.11.07_PM.png?4960753072562344336\">THESE INSTRUCTIONS</a> on how to mount your rack using an alternative method.</p>"
+          }
+        },
+        "heading_6wD49w": {
+          "type": "heading",
+          "settings": {
+            "heading": "HITCH RACKS"
+          }
+        },
+        "content_NqGaXV": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: The rack finder only shows hitch mounted units as a fit for my vehicle, will the trunk mounted carriers work as well?",
+            "subtitle": "<p>A: If the Rack Finder returns only hitch mounted models then it would mean that you can’t safely use a strap mounted carrier on your vehicle. Typically this is the case where there is not adequate structural support at the top of the rear door for the rack and bicycles.</p>"
+          }
+        },
+        "content_AyhwLK": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: My rack wobbles in the receiver, what can I do to fix this?",
+            "subtitle": "<p>A: If your Allen hitch mounted carrier is moving inside of your receiver hitch, please refer to these instructional videos.</p><p>1. For QR models please review this video <a href=\"https://www.youtube.com/watch?v=vl2nb97sajs&t=9s\" title=\"https://www.youtube.com/watch?v=vl2nb97sajs&t=9s\"><strong>HERE</strong></a></p><p>2. For non-QR models please refer to this link <a href=\"https://www.youtube.com/watch?v=AqTDQDnC0vs\" title=\"https://www.youtube.com/watch?v=AqTDQDnC0vs\"><strong>HERE</strong></a></p>"
+          }
+        },
+        "content_wqxGJJ": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: How do I unlock and re-move my QR rack from my vehicle?",
+            "subtitle": "<p>A: To quickly unlock remove your QR rack from your vehicle, please refer to the instructional video for this item <a href=\"https://www.youtube.com/watch?v=vl2nb97sajs&t=9s\" title=\"https://www.youtube.com/watch?v=vl2nb97sajs&t=9s\"><strong>HERE</strong></a></p>"
+          }
+        },
+        "content_cnWyDg": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Can I use the hitch mounted carriers on a trailer?",
+            "subtitle": "<p>A: Due to the different suspension systems on a trailer, Allen racks should never be used on anything that is towed behind another vehicle.</p>"
+          }
+        },
+        "content_nTGdGw": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Can I buy the hitch insert separately?",
+            "subtitle": "<p>A: We do not sell the hitch inserts on our carriers as a stand alone part.</p>"
+          }
+        },
+        "content_XiaDGN": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: How can I lock my rack to the receiver?",
+            "subtitle": "<p>A: Our QR models include an integrated lock on the hitch insert which allows you to lock your rack to your vehicle. For non-QR models, the best solution that we recommend for securing the rack and bicycles to the rack is to use an 8’ or 10’ straight locking cable to lock both the bicycles and rack to the metal safety loops that are built into your vehicle’s receiver hitch.</p>"
+          }
+        },
+        "content_pdQRxD": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: How do I load the bike closest to the vehicle on my 5-bike hitch rack?",
+            "subtitle": "<p>A: The fifth bicycle position on the Allen hitch mounted carriers is on a position inside of the vertical post. The hitch insert on the carriers are longer to accommodate this position. Having the racks in a 4 + 1 configuration makes it easier to load bicycles than having all 5 bicycles outside of the vertical post. The inside bicycle should be loaded with the chain and gears toward the vehicle. Use caution that no parts of the bicycle come into contact with the vehicle.</p>"
+          }
+        },
+        "content_9FX9Me": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: How do I remove a QR hitch rack that is stuck in my hitch?",
+            "subtitle": "<p>A: If the issue is that the knob spins freely, then you most likely do not have the knob engaged properly.  Here are the steps we recommend to loosen your rack inside of your hitch:  </p><p>1.  Insert key into lock</p><p>2.  Turn key counter-clockwise</p><p>3.  Remove key</p><p>4.  Grasp knob firmly to loosen the knob and rack.  The knob will feel difficult to turn at first, but that is normal. </p><p>5.  If after loosening the knob the rack is still firm inside of the hitch, then you should grasp the rack by the large white ALLEN label and give it a shake - this will release the rack inside of the hitch.</p><p></p><p><a href=\"https://youtu.be/mnhHPUuhbw4\" title=\"https://youtu.be/mnhHPUuhbw4\">CLICK HERE FOR A VIDEO DEMONSTRATION</a></p>"
+          }
+        },
+        "content_7hkVHk": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Can I use a hitch adaptor with my carrier?",
+            "subtitle": "<p>A: You should never use any type of a hitch adaptor with any of our hitch mounted carriers. This could create a potentially unsafe situation which could cause an accident.</p>"
+          }
+        },
+        "heading_4LrRbQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "TRAILERS"
+          }
+        },
+        "content_nakhq3": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: What is the difference between the AST2 and AST202?",
+            "subtitle": "<p>A: Both models are very similar. The AST202 has a slightly smaller rear storage area.</p>"
+          }
+        },
+        "content_NFWzgg": {
+          "type": "Content",
+          "settings": {
+            "title": "Q:  Can Allen trailers be used with bicycles with 12mm axles and thru axles?",
+            "subtitle": "<p>A:  There is a company that offers an adaptor to allow our trailer couplers to attach to bicycels with 12mm and thru axles.  This is available through <a href=\"https://robertaxleproject.com/cargo-child-trailers/\">https://robertaxleproject.com/cargo-child-trailers/</a>.  Please make sure to observe all cautions, warnings, and safety protocols specified in the Allen trailer user manual!  </p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nxfJmB",
+        "content_HJTt6D",
+        "content_xqrqPU",
+        "content_UWGyVF",
+        "content_4D3tKz",
+        "content_JhtFzq",
+        "content_WdmDLP",
+        "content_cFdpxV",
+        "content_qGHdtz",
+        "heading_9JnpML",
+        "content_7EHYKM",
+        "content_b3YVQa",
+        "heading_8rxnEX",
+        "content_txCyQb",
+        "content_HMiHCK",
+        "content_Tj4f3x",
+        "heading_6wD49w",
+        "content_NqGaXV",
+        "content_AyhwLK",
+        "content_wqxGJJ",
+        "content_cnWyDg",
+        "content_nTGdGw",
+        "content_XiaDGN",
+        "content_pdQRxD",
+        "content_9FX9Me",
+        "content_7hkVHk",
+        "heading_4LrRbQ",
+        "content_nakhq3",
+        "content_NFWzgg"
+      ],
+      "settings": {
+        "show_banner": true,
+        "show_search": false,
+        "bg_img": "shopify://shop_images/allen-grid_final.png",
+        "right_bg_img": "shopify://shop_images/trunkrack_f2d19f84-12d3-45e1-84e2-0ac2b0309252.png",
+        "left_bg_img": "shopify://shop_images/hitchrack_0db406bb-f2dc-403f-94f7-d47431761526.png",
+        "bg_color": "#ea1d2d",
+        "title": "FREQUENTLY ASKED QUESTIONS",
+        "subtitle": "<p>Have a question? All the answers can be found right here!</p>",
+        "text_position": "center",
+        "text_align": "center",
+        "faq_heading": "",
+        "view_faq_title": "",
+        "view_faq_link": "",
+        "contact_btn_title": "HAVEN’T FOUND WHAT YOU’RE LOOKING FOR?",
+        "contact_message": "<p>No problem! Just <a href=\"/pages/contact-us\" title=\"Contact Us\">Contact Us.</a> Our customer service representative will point you in the right direction.</p>"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq-0": {
+          "type": "rich-text",
+          "settings": {
+            "title": "Shipping",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "faq-1": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "rich-text",
+          "settings": {
+            "title": "Returns",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "faq-4": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-0",
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_page_GAhtaG",
+    "faq"
+  ]
+}

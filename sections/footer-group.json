@@ -1,0 +1,160 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:labels.footer_group",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "footer-promotions-0": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "1"
+          }
+        },
+        "footer-promotions-1": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "none"
+          }
+        },
+        "footer-promotions-2": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "2"
+          }
+        }
+      },
+      "block_order": [
+        "footer-promotions-0",
+        "footer-promotions-1",
+        "footer-promotions-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "hide_homepage": false
+      }
+    },
+    "instafeed_DitE4i": {
+      "type": "instafeed",
+      "settings": {
+        "enable_social_icon": true,
+        "subheading": "",
+        "subheading_text_color": "#231f20",
+        "subheading_font_size": 16,
+        "subheading_font_size_mobile": 16,
+        "heading": "Adventures, products, Stories & More!",
+        "heading_text_color": "#231f20",
+        "heading_font_size": 16,
+        "heading_font_size_mobile": 16,
+        "button_text": "follow us",
+        "button_link": "#",
+        "section_bg_color": "",
+        "section_padding_desktop": "70px 0px",
+        "section_padding_mobile": "50px 0px",
+        "section_margin_desktop": "",
+        "section_margin_mobile": ""
+      }
+    },
+    "app_promotion_pfGHCW": {
+      "type": "app_promotion",
+      "settings": {
+        "heading": "<p>Get the all <strong>NEW ALLEN APP</strong> TODAY!</p>",
+        "heading_font_size": 34,
+        "heading_font_size_mobile": 26,
+        "subheading": "<p>Connect to your products, information and make it easier to find the perfect rack for your ride!</p>",
+        "subheading_font_size": 17,
+        "subheading_font_size_mobile": 16,
+        "left_image": "shopify://shop_images/Untitled-2.png",
+        "right_image1": "shopify://shop_images/apple_store.svg",
+        "ios_link": "https://apps.apple.com/gb/app/allen/id1530680276?uo=2",
+        "right_image2": "shopify://shop_images/andriod.svg",
+        "android_link": "https://play.google.com/store/apps/details?id=bikeandroid.allen.sports&hl=en"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "image_pD7Ym3": {
+          "type": "image",
+          "settings": {
+            "enable_social_icon": true,
+            "image": "shopify://shop_images/Asset_10_440x_0ff40a01-a632-4061-8ac5-929e22750d1d.png",
+            "image_mask": "none",
+            "link": "/"
+          }
+        },
+        "footer-0": {
+          "type": "menu",
+          "settings": {
+            "title": "",
+            "menu": "footer",
+            "enable_account_link": false
+          }
+        },
+        "menu_cC7dRi": {
+          "type": "menu",
+          "settings": {
+            "title": "",
+            "menu": "footer-menu-second",
+            "enable_account_link": false
+          }
+        },
+        "menu_8zznTH": {
+          "type": "menu",
+          "settings": {
+            "title": "",
+            "menu": "footer-menu-third",
+            "enable_account_link": false
+          }
+        }
+      },
+      "block_order": [
+        "image_pD7Ym3",
+        "footer-0",
+        "menu_cC7dRi",
+        "menu_8zznTH"
+      ],
+      "settings": {
+        "show_newsletter": false,
+        "newsletter_richtext": "<p>Subscribe today and get 10% off your first purchase</p>",
+        "footer_main_menu": true,
+        "show_copyright": true,
+        "copyright_text": "",
+        "policies_menu": "copyright-menu"
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "instafeed_DitE4i",
+    "app_promotion_pfGHCW",
+    "footer"
+  ]
+}

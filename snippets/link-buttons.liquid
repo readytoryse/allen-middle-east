@@ -1,0 +1,50 @@
+<p id="theHead" class="link_head hide">{{ settings.text_head }}</p>
+{% assign current_variant = product.selected_or_first_available_variant.id %}
+<span class="hide current-variant" data-variant="{{ current_variant }}"></span>
+{% for variant in product.variants %}
+  {% if variant.metafields.custom.country_product_link.value != blank %}
+  {% for var_url in variant.metafields.custom.country_product_link.value %}
+          {% for prod_url in var_url.country_product_link.value %}
+             {% assign var_url_parts = prod_url | split: '.' %}
+             {% assign var_country_code = var_url.country_code | downcase %}
+             {% assign site_name = var_url_parts[1] %}
+               <div class="get_Co-but hide"  
+                    data-current="current-{{ variant.id }}-{{ var_country_code | upcase }}"    
+                    data-variant="{{ variant.id }}"
+                    data-value="{{ var_country_code | upcase}}"
+                    data-co="{{ var_country_code | upcase }}"
+                  >
+                    <a
+                       class="{% if site_name == "99bikes" %}{% assign pathn = "ninetyninebikes" %}cart_ninetyninebikes{% else %}{% if prod_url contains 'easybike' %}cart_amazon{% else %}cart_{{ site_name  }}{% endif %}{% endif %} text_co name_co"
+                        href="{{ prod_url }}" target="_blank"
+                      >
+                     {% render 'logo_image' , site_name : site_name , url:prod_url %}
+                  </a>
+               </div>
+          {% endfor %}
+    {% endfor %}
+    {% else %}  
+    {% endif %}
+{% endfor %}  
+{% for regional_store in shop.metaobjects.regional_stores.values %}
+    {% for url in regional_store.store_urls.value %}
+      {% assign url_parts = url | split: '.' %}
+      {% assign current_url = url %}
+      {% assign site_name = url_parts[1] %}
+      <div
+        class="get_Co-but hide custom"
+        data-variant="{{ variant.id }}"
+        data-value="{{ regional_store.store_code.value | upcase}}"
+        data-co="{{ regional_store.system.handle| upcase }}"
+        data-country-code="{{ regional_store.system.handle| upcase }}"
+      >
+        <a
+          data-site-name="{% if site_name == '99bikes' %}bikes{% else %}{{ site_name }}{% endif %}"  class="{% if regional_store.catalog_store.value == true %}{% if site_name == "99bikes" %}{% assign pathn = "ninetyninebikes" %}cart_ninetyninebikes{% else %}{% if url contains 'easybike' %}cart_amazon{% else %}cart_{{ site_name  }}{% endif %}{% endif %}{% endif %} text_co name_co"
+          href="{% if regional_store.catalog_store.value == true %}{{ current_url }}{% endif %}" data-fixed-url="{{ url }}" target="_blank"
+        >
+         {% render 'logo_image' , site_name : site_name , url:url %}
+        </a>
+      </div>
+      {% endfor %}
+  {% endfor %}
+<div class="link_buttons"></div>

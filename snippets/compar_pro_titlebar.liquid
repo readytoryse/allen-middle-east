@@ -1,0 +1,64 @@
+{% comment %}
+{% if section.settings.show_banner %}
+    {% assign bg_img = section.settings.bg_img %}
+    {% assign bg_color = section.settings.bg_color %}
+    {% assign right_bg_img = section.settings.right_bg_img %}
+    {% assign left_bg_img = section.settings.left_bg_img %}
+    {% assign title = section.settings.title %}
+    {% assign subtitle = section.settings.subtitle %}
+    {% assign show_search = section.settings.show_search %}
+
+    <div class="product-manuals-search" style="background: url({{ bg_img | img_url:"master" }}) no-repeat {{bg_color}};">
+      <div class="banner-bg-trunk" style="background-image:url('{{ right_bg_img | img_url :"master" }}') !important;"></div>
+      <div class="banner-bg-hitch" style="background-image:url('{{ left_bg_img | img_url :"master" }}') !important;"></div>
+      <div class="product-manuals-search-content">
+        <h1>{{ title | default:"PRODUCT MANUAL SEARCH" }}</h1>
+        <p>{{ subtitle }}</p>
+        {% if section.blocks.size > 0%}
+        <label for="product_type" class="label-hidden">"comparison type</label>
+        <select id="product_type" class="product_type" required="required">
+          <option value="">{{ 'Select Product Type' }}</option>
+          {% for block in section.blocks %}
+          {% if block.type == "comparison_type" %}
+          	<option value="{{ block.settings.compare_page }}" {% if page.handle == block.settings.compare_page %}selected{% endif %}>{{ block.settings.link_title}}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        {% endif %}
+      </div>
+    </div>
+{% endif %}
+{% endcomment %}
+
+
+    {% if section.settings.show_banner %}
+        {% assign bg_img = section.settings.bg_img %}
+        {% assign bg_color = section.settings.bg_color %}
+        {% assign right_bg_img = section.settings.right_bg_img %}
+        {% assign left_bg_img = section.settings.left_bg_img %}
+        {% assign title = section.settings.title %}
+        {% assign subtitle = section.settings.subtitle %}
+        {% assign show_search = section.settings.show_search %}
+
+      <div class="title_bar text-center">
+        <h1 class="blog-title comn_heading">{{ title | default:"PRODUCT MANUAL SEARCH" }}</h1>
+        <div class="stories-title comn_subheading ">{{ subtitle }}</div>
+        <div class="div_wrap">
+          <div class="lang_manual">
+              {% if section.blocks.size > 0%}
+              <label for="product_type" class="label-hidden">"comparison type</label>
+              <select id="product_type" class="product_type country_code" required="required">
+                <option value="">{{ 'Select Product Type' }}</option>
+                {% for block in section.blocks %}
+                {% if block.type == "comparison_type" %}
+                  <option value="{{ block.settings.compare_page }}" {% if page.handle == block.settings.compare_page %}selected{% endif %}>{{ block.settings.link_title}}</option>
+                {% endif %}
+                {% endfor %}
+              </select>
+              {% endif %}
+          </div>
+          <div class="stories-title comn_subheading ">{{ page.content }}</div>
+        </div>
+      </div>
+    {% endif %}
+

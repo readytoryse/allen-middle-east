@@ -1,0 +1,27 @@
+<div class="megamenu__cols" {{  block.id }}>
+  {% for i in (1..4) %}
+  {% assign title = 'title_' | append : i %}
+  {% assign link = 'link_' | append : i %}  
+  {% assign image = 'image_' | append : i %}  
+  {% assign image_link = 'image_link_' | append : i %}  
+    <div class="megamenu__col{% if block.settings[image] != blank %} has-image{% endif %}">
+      <div class="megamenu__col-title">
+        {% for link in block.settings[link].links %}
+            <a href="{{ link.url }}" class="megamenu_title{% if link.title contains 'Smart Suction™ Gear' %} pre-order{% endif %}">
+              {{- link.title -}}
+            </a>
+          {% for child_link in link.links %}
+           <a href="{{ child_link.url }}" class="site-nav__dropdown-link{% if child_link.title == 'Accessories & Parts' %} accessories{% endif %}">
+            {{ child_link.title }}
+          </a>
+            {% endfor %}
+        {% endfor %}
+      </div>
+        {% if block.settings[image] != blank %}
+        <a href="{{ block.settings[image_link] | default : "#" }}" class="mega_image">
+          <img class="animape animape-visible" loading="lazy" data-animape="fadein" src="{{ block.settings[image] | img_url : 'master' }}">
+        </a>
+      {% endif %}
+    </div>
+  {% endfor %}  
+</div>

@@ -1,0 +1,75 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- liquid
+  assign header_font = settings.type_header_font_family
+  assign base_font = settings.type_base_font_family
+  assign base_font_bold = base_font | font_modify: 'weight', '600'
+  assign base_font_italic = base_font | font_modify: 'style', 'italic'
+  assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic'
+-%}
+
+{%- style -%}
+  {{ header_font | font_face: font_display: 'swap' }}
+  {{ base_font | font_face: font_display: 'swap' }}
+
+  {{ base_font_bold | font_face: font_display: 'swap' }}
+  {{ base_font_italic | font_face: font_display: 'swap' }}
+  {{ base_font_bold_italic | font_face: font_display: 'swap' }}
+{%- endstyle -%}
+
+
+<style>
+  @font-face {
+    font-family: 'Klavika-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Klavika-Bold.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Klavika-Bold.eot?') format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Klavika-Bold.woff2') format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Klavika-Bold.woff') format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Klavika-Bold.ttf')  format('truetype'),;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Roboto-Light';
+    src: url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Light.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Light.eot?') format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Light.woff2') format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Light.woff') format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Light.ttf')  format('truetype'),;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Roboto-Regular';
+    src: url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Regular.eot');
+    src: url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Regular.eot?') format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Regular.woff2') format('woff2'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Regular.woff') format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Roboto-Regular.ttf')  format('truetype'),;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poster_Gothic_ATF';
+    src: url('/cdn/shop/files/Poster_Gothic_ATF.eot');
+    src: url('/cdn/shop/files/Poster_Gothic_ATF.eot?') format('embedded-opentype'),
+    url('/cdn/shop/files/Poster_Gothic_ATF.woff2') format('woff2'),
+    url('/cdn/shop/files/Poster_Gothic_ATF.woff') format('woff'),
+    url('/cdn/shop/files/Poster_Gothic_ATF.ttf')  format('truetype'),;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poster_Gothic_ATF_Medium';
+    src: url('/cdn/shop/files/Poster_Gothic_ATF_Medium.eot');
+    src: url('/cdn/shop/files/Poster_Gothic_ATF_Medium.eot?') format('embedded-opentype'),
+    url('/cdn/shop/files/Poster_Gothic_ATF_Medium.woff2') format('woff2'),
+    url('/cdn/shop/files/Poster_Gothic_ATF_Medium.woff') format('woff'),
+    url('/cdn/shop/files/Poster_Gothic_ATF_Medium.ttf')  format('truetype'),;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poster_Gothic_ATF_Bold';
+    src: url('/cdn/shop/files/Poster_Gothic_ATF_Bold.eot');
+    src: url('/cdn/shop/files/Poster_Gothic_ATF_Bold.eot?') format('embedded-opentype'),
+    url('/cdn/shop/files/Poster_Gothic_ATF_Bold.woff2') format('woff2'),
+    url('/cdn/shop/files/Poster_Gothic_ATF_Bold.woff') format('woff'),
+    url('/cdn/shop/files/Poster_Gothic_ATF_Bold.ttf')  format('truetype'),;
+    font-display: swap;
+  }
+</style>

@@ -1,0 +1,222 @@
+{% comment %}
+** FAQ page - custom view **
+- Page template
+- Uses blocks
+{% endcomment %}
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+        {% if section.settings.show_banner %}
+        	{% include "allen-care-page-header" %}
+        {% endif %}
+        <!-- <a name="pagecontent" id="pagecontent"></a> -->
+        
+        <div class="containerr main content">
+          <div class="">
+            <div class="page clearfix">
+              {% unless section.settings.show_banner %}
+              <h1>
+                {{ page.title }}
+              </h1>
+              <div class="feature_divider"></div>
+              {% endunless %}
+              <div>
+                {% include 'page-multi-column', content: page.content %}
+              </div>
+            </div>
+            <div class="row">
+              <div class="register-product-content">
+                <div class="sixteen columns alpha">
+                  <h3>{{ section.settings.form_heading }}</h3>
+                  <div class="contact-subtitle">{{ section.settings.contact_subtitle | strip_html }}</div>
+                  <div class="thanku-msg center">
+                    {{ section.settings.thanku_msg}}
+                    <div class="redirect-link"><a href="{{ section.setting.thanku_link }}">{{ section.settings.thanku_link_title | default:"Click here for new product registration" }}</a></div>
+                  </div>
+                </div>
+                {% include "product-register-form", btn_title:section.settings.contact_btn_title, captcha:section.settings.enable_captcha,product_models:section.settings.product_models %}
+                <form style="display:none" action="{% if settings.mailchimp_link != blank %}{{'https://allensportsusa.us19.list-manage.com/subscribe/post-json?u=a98e63d2ab01c979367e75d8f&id=00aa1b21cc&c=?'}}{% endif %}" method="post" id="product-register-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL" class="label-hidden">email</label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                    </div>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                      <label class="label-hidden" for="hidden-text">hidden text</label>
+                       <input type="text" name="b_a98e63d2ab01c979367e75d8f_00aa1b21cc" id="hidden-text" tabindex="-1" value="">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+
+{
+  "name": "t:labels.prp",
+  "class": "allen-care",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "t:labels.show_banner",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:labels.show_search",
+      "default": true
+    },
+	{
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "t:labels.background-color",
+      "info": "t:labels.background-color"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bg_img",
+      "label": "t:labels.right_bg_img",
+      "info": "t:labels.right_bg_img"
+    },
+	{
+      "type": "image_picker",
+      "id": "left_bg_img",
+      "label": "t:labels.left_bg_img",
+      "info": "t:labels.left_bg_img"
+    },
+	{
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:labels.background-color",
+      "info": "t:labels.background-color",
+	   "default":"#ea1d2d"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+	{
+      "type": "select",
+      "id": "text_position",
+      "label": "t:labels.text_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:labels.text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:labels.rps"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Form Heading",
+      "default": "t:labels.ryp"
+    },
+	{
+      "type": "textarea",
+      "id": "product_models",
+      "label": "t:labels.product_models",
+      "default": "t:labels.product_models-de",
+	  "info": "t:labels.product_models-in"
+    },
+	{
+      "type": "checkbox",
+      "id": "enable_captcha",
+      "label": "t:labels.enable-captcha",
+      "default": true
+    },
+	{
+      "type": "textarea",
+      "id": "contact_subtitle",
+      "label": "Form Subtitle",
+      "default": "t:labels.subheading"
+    },
+	{
+      "type": "header",
+      "content": "t:labels.submit-button"     
+    },
+	{
+      "type": "text",
+      "id": "contact_btn_title",
+      "label": "t:labels.submit-title",
+      "default": "t:labels.submit"
+    },
+	{
+      "type": "richtext",
+      "id": "thanku_msg",
+      "label": "t:labels.thank-you-message",
+	  "default": "t:labels.thank-you-message-de"
+    },
+	{
+      "type": "text",
+      "id": "thanku_link_title",
+      "label": "t:labels.thanku_link_title"
+    },
+	{
+      "type": "url",
+      "id": "thanku_link",
+      "label": "t:labels.thanku_link"
+    }	
+  ],  
+  "presets": [
+    {
+    "name": "t:labels.prp",
+        "settings": {
+      "title": "t:labels.page-faq-template",
+      "subtitle": "<p>Create an amazing FAQ page with a full-width banner</p>",
+      "text_position": "center",
+      "text_align": "center"
+    }
+  }
+  ]
+  
+}
+
+{% endschema %}

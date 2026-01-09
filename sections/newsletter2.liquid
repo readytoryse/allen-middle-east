@@ -1,0 +1,154 @@
+
+<style>
+  #shopify-section-{{ section.id }} .instafeed_main{
+    {% if section.settings.section_padding_desktop != blank %}
+      padding: {{ section.settings.section_padding_desktop }};
+    {% endif %}
+    {% if section.settings.section_margin_desktop != blank %}
+      margin: {{ section.settings.section_margin_desktop }};
+    {% endif %}
+  }
+  #shopify-section-{{ section.id }} .left_heading{
+    /* font-size: {{ section.settings.left_heading_font_size | modulo: 19.28 }}vw; */
+  }
+  #shopify-section-{{ section.id }} .heading{
+    /* font-size: {{ section.settings.heading_font_size | modulo: 19.28 }}vw; */
+  }
+  @media(min-width: 768px) and (max-width: 1550px){}
+  @media(max-width: 768px){
+    #shopify-section-{{ section.id }} .instafeed_main{
+      {% if section.settings.section_padding_mobile != blank %}
+        padding: {{ section.settings.section_padding_mobile }};
+      {% endif %}
+      
+      {% if section.settings.section_margin_mobile != blank %}
+        margin: {{ section.settings.section_margin_mobile }};
+      {% endif %}
+    }
+    #shopify-section-{{ section.id }} .left_heading{
+      /* font-size: {{ section.settings.left_heading_font_size_mobile }}px; */
+    }
+    #shopify-section-{{ section.id }} .heading{
+      /* font-size: {{ section.settings.heading_font_size_mobile }}px; */
+    }
+  }
+</style>
+
+<div class="newsletter2_main">
+  <div class="newsletter2_wrp page-width">
+    <div class="newsletter2_inner">
+
+      <div class="news2_left">
+        {% if section.settings.left_heading != blank %}
+        <div class="left_heading comn_heading">{{ section.settings.left_heading }}</div>
+        {% endif %}
+      </div>
+      <div class="news2_right">
+      {% if section.settings.heading != blank %}
+      <div class="heading comn_heading">{{ section.settings.heading }}</div>
+      {% endif %}
+        <div class="footer__newsletter">
+          {%- render 'newsletter-form', context: 'footer' -%}
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "t:actions.newsletter_signup",
+    "settings": [
+      {
+        "type":"header",
+        "content":"t:labels.left-heading"
+      },
+      {
+        "type": "text",
+        "id": "left_heading",
+        "label": "t:labels.left-heading"
+      },
+      {
+       "type": "range",
+       "id": "left_heading_font_size",
+       "label": "t:labels.left-heading-font-size",
+       "min": 10,
+       "max": 80,
+       "step": 1,
+        "unit": "px",
+       "default": 16
+      },
+      {
+       "type": "range",
+       "id": "left_heading_font_size_mobile",
+       "label": "t:labels.left-heading-font-size1",
+       "min": 10,
+       "max": 80,
+       "step": 1,
+        "unit": "px",
+       "default": 16
+      },
+      {
+        "type":"header",
+        "content":"t:labels.heading"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "t:labels.heading"
+      },
+      {
+       "type": "range",
+       "id": "heading_font_size",
+       "label": "t:labels.heading_font_size",
+       "min": 10,
+       "max": 80,
+       "step": 1,
+        "unit": "px",
+       "default": 16
+      },
+      {
+       "type": "range",
+       "id": "heading_font_size_mobile",
+       "label": "t:labels.heading_font_size_mobile",
+       "min": 10,
+       "max": 80,
+       "step": 1,
+        "unit": "px",
+       "default": 16
+      },
+      {
+        "type": "header",
+        "content": "t:labels.spacing"
+      },
+      {
+        "type": "text",
+        "id": "section_padding_desktop",
+        "label": "t:labels.section_padding_desktop"
+      },
+      {
+        "type": "text",
+        "id": "section_padding_mobile",
+        "label": "t:labels.section_padding_mobile"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_desktop",
+        "label": "t:labels.section_margin_desktop"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_mobile",
+        "label": "t:labels.section_margin_mobile"
+      },
+    ],
+    "presets": [
+      {
+        "name": "t:actions.newsletter_signup",
+      }
+    ]
+  }
+{% endschema %}

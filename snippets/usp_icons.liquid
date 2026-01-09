@@ -1,0 +1,42 @@
+{%-liquid
+  assign hideCarInfo = false   
+   if product.type == 'Trailer' or product.type == 'Accessories' or product.type == 'Trailer/Jogger' or product.type == 'Gift Card' or product.type == 'Part' 
+     assign hideCarInfo = true  
+   endif
+-%}
+<div class="simple_list hideCarInfo-{{ hideCarInfo }}">
+    <ul class="list_items">
+        {% for i in (1..6) %}
+            {% assign icon = 'icon_' | append : i %}
+            {% assign title = 'text_' | append : i %}
+            {% assign target = 'target_class_' | append : i %}
+            {% assign custom_class = 'custom_class_' | append : i %}
+            {% assign handle_title = block.settings[title] | handle %}
+            {% assign title = block.settings[title] %}
+          
+            {% if forloop.index == 1 %}
+               {% assign current_variant = product.selected_or_first_available_variant %}
+            {% for variant in product.variants %}
+            {% assign pdf = product.metafields.custom.easy_installation_pdf %}
+            {% if variant.metafields.custom.easy_installation_pdf != blank %}
+              {% assign pdf = variant.metafields.custom.easy_installation_pdf %}
+            {% endif %}
+              {% if pdf %}
+                <a id="pdf-{{ variant.id }}" data-fancybox class="installation_pdf {% unless current_variant.id == variant.id %}hide{% endunless %}" href="{{ pdf | file_url }}" >
+                    <img class="imgs" src="{{ block.settings[icon] | img_url : 'master' }}" width="" height="" alt="" />
+                    <span class="titles">{{title}}</span>
+                </a>
+                {% endif %}
+              {% endfor %}
+            {% else %}        
+            <a {% if block.settings[custom_class] != blank %}id="{{ block.settings[custom_class] }}"{% endif %} {% if title contains 'save' %}id="saveButton"{% endif %} class="usp_icon icon-{{ title | handle }}" href="javascript:;" {% if block.settings[target] != blank %}data-target="{{ block.settings[target] }}"{% endif %}>
+                <img class="imgs" src="{{ block.settings[icon] | img_url : 'master' }}" width="" height="" alt="" />
+                <span class="titles">{{ title }}</span>
+                {% if title contains 'save' %}
+                  <span class="saving_text hidden">Saving...</span>
+                {% endif %}  
+            </a>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,45 @@
+ {% assign final_link="" %}
+    {%- if store.catalog_store.value != true -%}
+      {% assign cc = store.store_code | upcase %}
+      {%- if store.store_urls.value[0] contains "eu.allen.bike" -%}
+         {% if settings.enable_theme_id and settings.eu_theme_id != blank %}
+           {% assign final_link = store.store_urls.value[0] | append:"?preview_theme_id=" | append : settings.eu_theme_id | append : '&cc=' | append : cc %}
+          {% else %}
+           {% assign final_link = store.store_urls.value[0] | append : '?cc=' | append : cc %}
+          {% endif %}
+      {% elsif store.store_urls.value[0] contains "uk.allen.bike" %}
+         {% if settings.enable_theme_id and settings.uk_theme_id != blank %}
+           {% assign final_link = store.store_urls.value[0] | append:"?preview_theme_id=" | append : settings.uk_theme_id | append : '&cc=' | append : cc %}
+          {% else %}
+           {% assign final_link = store.store_urls.value[0] | append : '?cc=' | append : cc %}
+          {% endif %}
+       {%- else -%}
+         {% if settings.enable_theme_id and settings.us_theme_id != blank %}
+           {% assign final_link = store.store_urls.value[0] | append:"?preview_theme_id=" | append : settings.us_theme_id | append : '&cc=' | append : cc %}
+          {% else %}
+           {% assign final_link = store.store_urls.value[0] | append : '?cc=' | append : cc %}
+          {% endif %}
+      {%- endif -%}
+    {%- else -%}
+      {% assign cc = store.store_code | upcase %}
+      {% assign au_cc = cc | handle %}
+      {% if au_cc == 'au-nz' %}
+      {% assign cc = 'AU' %}
+       {% endif %} 
+         {% if settings.enable_theme_id %}
+           {% assign final_link = 'https://allen.bike/?_ab=0&_fd=0&_sc=1&preview_theme_id=' | append : settings.us_theme_id | append : '&cc=' | append : cc %}
+          {% else %}
+           {% assign final_link = 'https://allen.bike' | append : '?cc=' | append : cc %}
+          {% endif %}
+    {%- endif -%}
+    <a data="{{ settings.us_theme_id }}" data-link="{{-store.store_urls.value-}}" data-catalog-store="{{ store.catalog_store.value }}"
+      href="{{ final_link }}" class="{{ class }}" data-store="{{ store.store_name.value }}">
+  <span
+    class="currency-flag currency-flag--small currency-flag--{{ store.store_code.value | downcase }}"
+    data-flag="{{ rest_of_world_store.system.handle| upcase }}"
+    aria-hidden="true"
+  ></span>
+  <span class="selected-country default_select hide">{{ store.store_code.value| upcase }}</span>
+  <span class="selected-country js_select"> {{ store.store_name.value }}</span>
+  <span class="right icon-down-arrow"></span>
+</a>

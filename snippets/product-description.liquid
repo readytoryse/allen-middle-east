@@ -1,0 +1,40 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the product description
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+  - is_tab {boolean} - Whether to render as a tab
+
+  Usage:
+  {% render 'product-description' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  if template contains 'page.resource-pdp'
+   assign product = page.metafields.custom.resource_product.value
+  endif
+  assign id = block.id | append: product.id
+  assign is_tab = is_tab | default: block.settings.is_tab, allow_false: true | default: true, allow_false: true
+  assign description = 'info.placeholder_product_description' | t
+
+  if product
+    assign description = product.description
+  endif
+-%}
+
+{%- if is_tab -%}
+  {% assign title = 'labels.description' | t %}
+  {%- render 'tab', id: id, title: title, content: description -%}
+{%- else -%}
+ <div class="product-description-container">
+  <div class="rte clearfix product-description-content">
+    {{ description }} 
+  </div>
+  <div class="read-more">
+    <a href="javascript:;">...Read More</a>
+  </div>
+</div>
+{%- endif -%}

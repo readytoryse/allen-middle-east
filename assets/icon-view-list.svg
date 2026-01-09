@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.89 4.89">
+    <rect class="list_boxm" xmlns="http://www.w3.org/2000/svg" x=".04" y=".04" width="4.82" height="4.82" fill="none" stroke-width=".07" stroke="#231f20"/>
+    <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="1.4" y="1.36" width=".74" height=".74" stroke="#231f20" stroke-width=".1" fill="none"/>
+    <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.5" y1="1.36" x2="3.49" y2="1.36" fill="none" stroke-width=".1" stroke="#231f20"/>
+    <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.5" y1="1.73" x2="3.49" y2="1.73" fill="none" stroke-width=".1" stroke="#231f20"/>
+    <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.5" y1="2.1" x2="3.49" y2="2.1" fill="none" stroke-width=".1" stroke="#231f20"/>
+    <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="1.4" y="2.72" width=".74" height=".74" stroke="#231f20" stroke-width=".1" fill="none"/>
+    <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.49" y1="2.72" x2="3.49" y2="2.72" fill="none" stroke-width=".1" stroke="#231f20"/>
+    <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.49" y1="3.09" x2="3.49" y2="3.09" fill="none" stroke-width=".1" stroke="#231f20"/>
+    <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.49" y1="3.46" x2="3.49" y2="3.46" fill="none" stroke-width=".1" stroke="#231f20"/>
+</svg>

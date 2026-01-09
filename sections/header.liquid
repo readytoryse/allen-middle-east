@@ -1,0 +1,270 @@
+{%- render 'section-header' -%}
+
+{% schema %}
+{
+  "name": "t:labels.header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type":"header",
+      "content": "Language selector label"
+    },
+    {
+      "type":"text",
+      "id": "language_label",
+      "label": "Label",
+      "default":"Select Language"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu_link_list",
+      "label": "t:labels.navigation",
+      "default": "t:labels.main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu_link_list_mobile",
+      "label": "t:labels.navigation_mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "hover_menu",
+      "label": "t:actions.enable_dropdown_on_hover",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "main_menu_alignment",
+      "label": "t:labels.layout",
+      "default": "below",
+      "options": [
+        {
+          "value": "below",
+          "label": "t:labels.logo_left_menu_below"
+        },
+        {
+          "value": "left",
+          "label": "t:labels.logo_left_menu_left"
+        },
+        {
+          "value": "left-center",
+          "label": "t:labels.logo_left_menu_center"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.logo_center_menu"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "mega_products",
+      "label": "t:actions.show_first_product",
+      "info": "t:info.learn_mega_menu",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "header_sticky",
+      "label": "t:actions.enable_sticky_header",
+      "default": true,
+      "info": "t:labels.recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_footer_menu",
+      "label": "t:actions.show_footer_content",
+      "default": true,
+      "info": "t:labels.recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_index",
+      "label": "t:actions.overlay_header_over_home",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_collection",
+      "label": "t:actions.overlay_header_over_collection",
+      "info": "t:info.if_collection_image_enabled",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:labels.resource_button_header",
+    },
+    {
+      "type": "checkbox",
+      "id": "show_resouce_button",
+      "label": "t:labels.resource_btn_enable"
+    },
+    {
+      "type": "text",
+      "id": "resouce_button_text",
+      "label": "t:labels.resource_btn_text"
+    },
+    {
+      "type": "url",
+      "id": "resouce_button_link",
+      "label": "t:labels.resource_btn_link"
+      
+    }
+  ],
+  "blocks": [
+    {
+      "type":"mega_menu",
+      "name":"t:labels.main-menu-1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.main-title",
+          "info": "t:labels.main-title-de"
+        },
+        {
+          "type": "header",
+          "content": "t:labels.first-name"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "t:labels.title"
+        },
+        {
+          "type": "link_list",
+          "id": "link_1",
+          "label": "t:labels.menu"
+        },
+        {
+          "type": "url",
+          "id": "image_link_1",
+          "label": "t:labels.image_link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "header",
+          "content": "Second Menu"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "t:labels.title"
+        },
+        {
+          "type": "link_list",
+          "id": "link_2",
+          "label": "t:labels.menu"
+        },
+        {
+          "type": "url",
+          "id": "image_link_2",
+          "label": "t:labels.image_link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "header",
+          "content": "Third Menu"
+        },
+        {
+          "type": "text",
+          "id": "title_3",
+          "label": "t:labels.title"
+        },
+        {
+          "type": "link_list",
+          "id": "link_3",
+          "label": "t:labels.menu"
+        },
+        {
+          "type": "url",
+          "id": "image_link_3",
+          "label": "t:labels.image_link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "header",
+          "content": "Fourth Menu"
+        },
+        {
+          "type": "text",
+          "id": "title_4",
+          "label": "t:labels.title"
+        },
+        {
+          "type": "link_list",
+          "id": "link_4",
+          "label": "t:labels.menu"
+        },
+        {
+          "type": "url",
+          "id": "image_link_4",
+          "label": "t:labels.image_link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "t:labels.image"
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "name": "t:labels.logo",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "t:labels.logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo-inverted",
+          "label": "t:labels.white_logo",
+          "info": "t:info.used_when_on_top_of_image"
+        },
+        {
+          "type": "range",
+          "id": "desktop_logo_width",
+          "label": "t:labels.desktop_logo_width",
+          "default": 200,
+          "min": 100,
+          "max": 400,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_logo_width",
+          "label": "t:labels.mobile_logo_width",
+          "default": 140,
+          "min": 60,
+          "max": 300,
+          "step": 10,
+          "unit": "px",
+          "info": "t:info.set_as_max_width"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {}
+  },
+  "disabled_on": {
+    "groups": ["footer", "custom.popups"]
+  }
+}
+{% endschema %}

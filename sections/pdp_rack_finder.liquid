@@ -1,0 +1,161 @@
+<div class="reverse_finder">
+    <div class="page-width">
+        <div class="heading comn_heading">Reverse Rack Finder</div>
+            <form id="reverse_fitmentSearch" method="get">
+                <input type="hidden" name="variant_id" id="variant_id" value="41541222465559">
+                <div class="pdp_filters">
+                    <div class="pdp_filters_left">
+                        <div class="form_group">
+                            <select class="form_control" id="reverse_year_select"><option value="">SELECT YEAR</option></select>
+                        </div>
+                        <div class="form_group">
+                            <select class="form_control disabled" id="reverse_model_select">
+                                <option value="">SELECT MODEL</option>
+                            </select>
+                        </div>
+                        <div class="form_group">
+                            <select class="form_control disabled" id="reverse_make_select">
+                                <option value="">SELECT MAKE</option>
+                            </select>
+                        </div>
+                        <div class="form_group">
+                            <select class="form_control disabled" id="reverse_bodytype_select">
+                                <option value="">BODY TYPE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="pdp_filters_right">
+                        <ul class="filter_list">
+                            <li class="items">
+                                <button class="title js-toggle-div active" type="button">
+                                <span>My Car has a Rear Spare Tire.</span>
+                                <span class="icon"></span>
+                                </button>
+                                <div class="content">
+                                <div class="left">
+                                    <label>
+                                    <input type="checkbox" id="filter-hitch_on_vehicle" class="ignore-filter" data-id="1" name="reverse_has_rear_spare_tire" value="yes">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox_label">YES</span>
+                                    </label>
+                                </div>
+                                </div>
+                            </li>
+                            <li class="items">
+                                <button class="title js-toggle-div active" type="button">
+                                <span>My Car Has a Hitch.</span>
+                                <span class="icon"></span>
+                                </button>
+                                <div class="content">
+                                <div class="full left">
+                                    <div class="radio_list">
+                                        <label>
+                                        <input type="checkbox" name="reverse_hitch_on_vehicle" class="radio" value="hitch_on_vehicle">
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox_label">YES</span>
+                                        </label>
+                                        <!-- <label>
+                                        <input type="radio" name="has_rear_spare_tire" class="radio" value="no">
+                                        <span>NO</span>
+                                        </label> -->
+                                    </div>
+                                </div>
+                                <div class="right hitch-sizes" style="display:none;">
+                                    <span class="checkbox_label">SIZE</span>
+                                    <div class="radio_list">
+                                        <label>
+                                        <input type="radio" name="reverse_hitch_size" class="radio" value="1 ¼">
+                                        <span>1.25"</span>
+                                        </label>
+                                        <label>
+                                        <input type="radio" name="reverse_hitch_size" class="radio" value="2">
+                                        <span>2"</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="last_childs">
+                        <div class="rack_submits">
+                            <input type="hidden" name="shopify_sku" id="shopify_sku" value="45033">
+                            <input type="submit" class="btns btn_normal btn_normal" value="SUBMIT" name="submit" disabled="">
+                            <div class="form-error error hidden"><p>Please complete year/make/model/body type before hitting "SUBMIT"</p></div>
+                        </div>
+                        <div class="rightt">
+                            <div class="pdp_step_right_wrp js-step2 rack-step2 result-step" data-step="2" style="">
+                                <div class="img_like_unlike">
+                                   <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/img_like_f3e2afa7-bfa0-4c43-a927-92084be77f26.png?v=1726050100">
+                                </div>
+                                <h2 class="warning success">YES, this rack will fit your car!</h2>
+                            </div>
+                            <div class="pdp_step_right_wrp js-step3 rack-step3 result-step" data-step="3" style="/* display: none; */">
+                                <div class="img_like_unlike">
+                                <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/img_unlike_0cb59339-e084-487f-8e83-78727dc63d17.png?v=1726050100" >
+                                </div>
+                                <h2 class="warning error">SORRY, this rack will NOT FIT your car.</h2>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <a class="btns" href="step-3.html">SUBMIT</a> -->
+                
+            </form>
+    </div>
+</div>
+{% schema %}
+    {
+      "name": "t:labels.rf",
+      "class": "pdp_rack_finder swirl_bg",
+      "settings": [        
+         {
+            "type": "text",
+            "id": "year_selector",
+            "label": "t:labels.year_selector",
+            "default": "t:labels.select-year"
+          },
+          {
+            "type": "text",
+            "id": "make_selector",
+            "label": "t:labels.make_selector",
+            "default": "t:labels.select-make"
+          },
+          {
+            "type": "text",
+            "id": "model_selector",
+            "label": "t:labels.model_selector",
+            "default": "t:labels.select-model"
+          },
+          {
+            "type": "text",
+            "id": "type_selector",
+            "label": "t:labels.type_selector",
+            "default": "t:labels.select-type"
+          },
+          {
+            "type": "text",
+            "id": "option_1",
+            "label": "t:labels.option_1",
+            "default": "t:labels.option-1"
+          },
+          {
+            "type": "text",
+            "id": "option_2",
+            "label": "t:labels.option_1",
+            "default": "t:labels.option-2"
+          },
+          {
+            "type": "text",
+            "id": "submit_text",
+            "label": "t:labels.submit_text",
+            "default": "t:labels.submit"
+          }
+      ],
+      "presets": [
+        {
+          "name": "t:labels.rf",
+        }
+      ]
+    }
+  {% endschema %}

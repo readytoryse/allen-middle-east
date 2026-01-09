@@ -1,0 +1,184 @@
+{% comment %}
+** Sidebar page - custom view **
+- Page template
+- Uses blocks
+{% endcomment %}
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+      {% if section.settings.show_banner %}
+      	{% include "allen-care-page-header" %}
+      {% endif %}
+      
+      {% comment %}Check to see if sidebar should be enabled{% endcomment %}
+      {% if section.blocks.size > 0 %}
+        {% assign sidebar = true %}
+      {% else %}
+        {% assign sidebar = false %}
+      {% endif %}
+      
+      <div class="containerr">
+        <div class="row">
+        {% if sidebar %}
+        <div class="four columns">
+          {% include 'sidebar' %}
+        </div>
+        <div class="twelve columns page page-warranties-content">
+          <div class="verticle-bdr"> <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/verticle-border.png?7674865547719583000" alt="vertical border"></div>
+          {% else %}
+          <div class="sixteen columns page">
+            {% endif %}
+            <h2 class="page-title">{{ page.title }}</h2>
+            <div class="section clearfix comn_desc">
+              {{ page.content }}
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+
+{
+  "name": "t:labels.returns-page",
+  "class": "sidebar-template-section page-allen-care-warranties",
+  "settings": [
+  	{
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "t:labels.show_banner",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:labels.show_search",
+      "default": false
+    },
+	{
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "t:labels.background_image",
+      "info": "t:labels.background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bg_img",
+      "label": "t:labels.right_bg_img",
+      "info": "t:labels.right_bg_img"
+    },
+	{
+      "type": "image_picker",
+      "id": "left_bg_img",
+      "label": "t:labels.left_bg_img",
+      "info": "t:labels.left_bg_img"
+    },	
+	{
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:labels.background-color",
+      "info": "t:labels.background-color",
+	   "default":"#ea1d2d"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+	{
+      "type": "select",
+      "id": "text_position",
+      "label": "t:labels.text_position",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "t:labels.center-value",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:labels.text_alignment",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "t:labels.center-value",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "t:labels.para-content"
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle",
+      "label": "t:label.toggle",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "t:labels.menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "custom_menu_linklist",
+          "label": "t:labels.menu"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:labels.text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "t:labels.heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "t:labels.text-default"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Returns page"
+    }
+  ]
+}
+
+{% endschema %}

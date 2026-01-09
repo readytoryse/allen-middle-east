@@ -1,0 +1,97 @@
+{%- render 'section-background-image-text' -%}
+
+{% schema %}
+{
+  "name": "t:labels.large_image_with",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "t:labels.large_image_with"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:labels.text",
+      "default": "t:labels.bit-text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:labels.button_label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.button_link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:labels.image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:labels.layout",
+      "default": "t:labels.left-value",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.text_on_left"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.text_on_right"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "t:labels.section_height",
+      "default": 550,
+      "min": 450,
+      "max": 750,
+      "step": 100,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax",
+      "label": "t:actions.enable_parallax"
+    },
+    {
+      "type": "select",
+      "id": "parallax_direction",
+      "label": "t:labels.parallax_direction",
+      "default": "t:labels.top-value",
+      "options": [
+        {
+          "value": "t:labels.top-value",
+          "label": "t:labels.vertical"
+        },
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.horizontal"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.large_image_with"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

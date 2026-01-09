@@ -1,0 +1,404 @@
+<div>
+  {% assign context = collections.products %}
+  {%- liquid
+    assign collapse_filters = false
+   assign parent = '_mobile-filter-'
+  -%}
+  {% assign hitch_class = blank %}
+  {% capture hitch_class %}
+  {%- for filter in context.filters -%}
+    {% if filter.label == 'Hitch Class' %}
+       <div
+              class="jplist-group"
+              data-control-type="checkbox-group-filter"
+              data-control-action="filter"
+              data-control-name="vehicle-hitch-class"
+            >
+              <span class="class-label">CLASS:</span>
+              <ul class="hitch-class-list">
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}hitch_size_class1"
+                      class="hitch-class-chk js-class-filter"
+                      data-path=".filter_hitch_class-class-1"
+                      name="{{ parent }}hitch_class"
+                      data-id="hitch-class0"
+                      value="filter_hitch_class-class-1"
+                    >
+                    <label for="{{ parent }}hitch_size_class1">Class I</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}hitch_size_class2"
+                      class="hitch-class-chk js-class-filter"
+                      data-path=".filter_hitch_class-class-2"
+                      name="{{ parent }}hitch_class"
+                      data-id="hitch-class0"
+                      value="filter_hitch_class-class-2"
+                    >
+                    <label for="{{ parent }}hitch_size_class2">Class II</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+      {% endif %}
+  {% endfor %}
+  {% endcapture %}
+  <hr>
+  {%- for filter in context.filters -%}
+    {%- capture filter_id -%}filter-{{ filter.label | handleize }}{%- endcapture -%}
+    {%- assign filter_index = forloop.index -%}
+    {%- assign collapsed_state = collapse_filters -%}
+    {%- assign label_handle = filter.label | handle -%}
+
+    {% if filter.label == 'My Car has a Hitch' %}
+      <div class="list-items">
+        <div class="inner-title inner-title-wrapper">
+          <h3>{{ filter.label }}</h3>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #000;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2px;
+                  }
+                </style>
+              </defs>
+              <title></title>
+              <g id="plus">
+                <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+                <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-inner-content">
+          <div class="flex-column">
+            <div class="grid__item form_chkbx checkbox">
+              <input
+                type="checkbox"
+                id="{{ parent }}hitch_on_vehicle"
+                class="ignore-filter"
+                data-id="1"
+                name="hitch_on_vehicle"
+                value="hitch_on_vehicle"
+              >
+              <label for="{{ parent }}hitch_on_vehicle"
+                >YES
+                <div class="hitch_count_lbl"></div>
+              </label>
+            </div>
+            <div class="right-side-size js-size-selection">
+              <div
+                class="jplist-group"
+                data-control-type="checkbox-group-filter"
+                data-control-action="filter"
+                data-control-name="vehicle-hitch-size"
+              >
+                <ul>
+                  <h3>SIZE</h3>
+                  <li>
+                    <div class="grid__item form_chkbx checkbox">
+                      <input
+                        type="radio"
+                        id="{{ parent }}hitch_size_1"
+                        class="hitch-size-chk"
+                        data-path=".filter_hitch_size-1-25"
+                        name="hitch_size"
+                        data-id="2"
+                        value="1 ¼"
+                      >
+                      <label for="{{ parent }}hitch_size_1">1.25”</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="grid__item form_chkbx checkbox">
+                      <input
+                        type="radio"
+                        id="{{ parent }}hitch_size_2"
+                        class="hitch-size-chk"
+                        data-path=".filter_hitch_size-2"
+                        name="hitch_size"
+                        data-id="2"
+                        value="2"
+                      >
+                      <label for="{{ parent }}hitch_size_2">2”</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              {{ hitch_class }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% elsif filter.label == 'My Car has a Rear Spare Tire' %}
+      <div class="list-items">
+        <div class="inner-title inner-title-wrapper">
+          <h3>{{ filter.label }}</h3>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #000;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2px;
+                  }
+                </style>
+              </defs>
+              <title></title>
+              <g id="plus">
+                <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+                <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-inner-content">
+          <div class="flex-column">
+            <div class="right-side-size">
+              <div
+                class="jplist-group"
+                data-control-type="checkbox-group-filter"
+                data-control-action="filter"
+                data-control-name="vehicle-spare-tire"
+              >
+                <ul>
+                  <li>
+                    <div class="grid__item form_chkbx checkbox">
+                      <input
+                        type="radio"
+                        id="{{ parent }}has_spare_tire_yes"
+                        data-path=".filter_has_rear_spare_tire_-true"
+                        data-id="3"
+                        name="{{ parent }}filter_has_rear_spare_tire_"
+                        value="filter_has_rear_spare_tire_-true"
+                      >
+                      <label for="{{ parent }}has_spare_tire_yes">yes</label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="grid__item form_chkbx checkbox">
+                      <input
+                        type="radio"
+                        id="{{ parent }}has_spare_tire_no"
+                        data-path=".filter_has_rear_spare_tire_-false"
+                        data-id="3"
+                        name="{{ parent }}filter_has_rear_spare_tire_"
+                        value="filter_has_rear_spare_tire_-na"
+                      >
+                      <label for="{{ parent }}has_spare_tire_no">no</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% elsif filter.label == 'Number of Bikes' %}
+      <div class="list-items">
+        <div class="inner-title inner-title-wrapper">
+          <h3>{{ filter.label }}</h3>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #000;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2px;
+                  }
+                </style>
+              </defs>
+              <title></title>
+              <g id="plus">
+                <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+                <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-inner-content">
+          <div class="flex-column">
+            <div class="right-side-size label-number-of-bikes">
+              <div
+                class="jplist-group"
+                data-control-type="checkbox-group-filter"
+                data-control-action="filter"
+                data-control-name="howmany"
+              >
+                <ul>
+                  {%- assign tag_count = filter.values.size -%}
+                  {%- for filter_value in filter.values -%}
+                    {% assign label = filter.label | handle %} 
+                     {% assign value = forloop.index %}
+                    {% assign cls_no = blank %}
+                    {%- capture cls_no -%}{%- render 'digit-to-words', number:value -%}{%- endcapture -%}
+                    <li>
+                      <div class="grid__item form_chkbx checkbox">
+                        <input
+                          type="checkbox"
+                          id="{{ parent }}ContactFormchkbx-{{ forloop.index }}"
+                          data-path=".bike-{{ cls_no }}"
+                          class="bike-{{ cls_no }}"
+                          data-id="bike-{{ forloop.index0 }}"
+                          name="filter_no_of_bikes[]"
+                          value="{{ value }}"
+                        >
+                        <label for="{{ parent }}ContactFormchkbx-{{ forloop.index }}">{{ value }}</label>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% elsif filter.label contains 'Mounting Type' %}  
+      <div class="list-items">
+        <div class="inner-title inner-title-wrapper">
+          <h3>{{ filter.label }}</h3>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #000;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2px;
+                  }
+                </style>
+              </defs>
+              <title></title>
+              <g id="plus">
+                <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+                <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-inner-content mounting-wrapper">
+        <div class="flex-column">
+          <div class="right-side-size">
+            <div class="jplist-group" data-control-type="checkbox-group-filter" data-control-action="filter" data-control-name="mountingtypes">
+              <ul>                
+                {%- for filter_value in filter.values -%}
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input type="checkbox" id="mobile-filter-ContactFormchkbx-{{ forloop.index }}" data-id="{{ forloop.index }}" data-path=".{{ filter_value.label | handle | replace:'-':'' }}" name="mounting_type_list[]" value="Hitch">
+                    <label for="mobile-filter-ContactFormchkbx-{{ forloop.index }}"> {{ filter_value.label }}</label>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      {% elsif filter.label contains 'Features' %}
+      <div class="list-items">
+         <div class="inner-title inner-title-wrapper">
+          <h3>{{ filter.label }}</h3>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                    stroke: #000;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 2px;
+                  }
+                </style>
+              </defs>
+              <title></title>
+              <g id="plus">
+                <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+                <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="filter-inner-content mounting-wrapper label-features">
+          <div class="flex-column">
+            <div class="jplist-group">
+              <div class="features-wrapper features_buttons">
+                 {%- for filter_value in filter.values -%}
+                   <div class="grid__item form_chkbx checkbox">
+                <label for="mobile-filter-ContactFormchkbx14">
+                  <span class="img"><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/allen-easy.png?v=1663657410"></span>
+                  <button class="icon-title new_title" type="button" data-id="6" data-control-type="button-filter" data-control-action="filter" data-control-name="{{ filter_value.value | handle }}-btn" data-path=".{{ filter_value.value | handle }}">
+                    {{ filter_value.value }}
+                  </button>                  
+                  <span class="mytooltip tooltip-effect-1 ">
+                    <span class="tooltip-item">
+                      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.125 8.25H6.75A.75.75 0 016 7.5V5.625a.375.375 0 00-.375-.375H5.25M5.813 3.375a.188.188 0 100 .375.188.188 0 000-.375z" stroke="#000" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"></path><path d="M.375 6a5.625 5.625 0 1011.25 0A5.625 5.625 0 00.375 6v0z" stroke="#000" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                    <span class="tooltip-content">
+                      {% if forloop.index == 1 %}
+                     <span class="tooltip-text">{{ settings.allen-easy }}</span>
+                      {% elsif forloop.index == 2 %}
+                     <span class="tooltip-text">{{ settings.light-weight }}</span>
+                      {% elsif forloop.index == 3 %}
+                     <span class="tooltip-text">{{ settings.compact }}</span>
+                      {% elsif forloop.index == 4 %}
+                     <span class="tooltip-text">{{ settings.tilt-rack }}</span>
+                      {% elsif forloop.index == 5 %}  
+                     <span class="tooltip-text">{{ settings.secure-locking }}</span>
+                      {% elsif forloop.index == 6 %}  
+                     <span class="tooltip-text">{{ settings.electric }}</span>
+                      {% endif %}
+                        </span>  
+                 </span>
+                </label>
+              </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {%- endfor -%}
+  <div class="grid-item plp_custom_img">
+       <a href="{{settings.btn_url}}" class="collection-item">
+              <div class="collection-image-wrap">
+                   <div class="collection-upload_img">
+                     <div class="collection-image image-wrap loaded">     
+                        <image-element data-image-type="">
+                          <img src="{{ settings.plp_image | img_url : 'master' }}" alt="">                                 
+                        </image-element>
+                      </div>
+                    </div>
+                  </div>
+          
+              <div class="collection_info">
+                  <h2 class="collection-item__title">{{ settings.heading }}</h2>
+                  <span class="collection-subtext">{{ settings.subheading }}</span>
+                  <button class="btn btn_normal btn_red btn_hover_white">{{ settings.btn_text }}</button>
+              </div>
+            </a>
+    </div>
+</div>

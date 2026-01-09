@@ -1,0 +1,232 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the mobile header navigation.
+
+  Accepts:
+  - main_menu {linklist} - The main menu object
+  - text_direction {string} - The text direction of the store
+
+  Usage:
+  {% render 'header-mobile-nav', text_direction: 'rtl' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign main_menu = section.settings.main_menu_link_list_mobile | default: section.settings.main_menu_link_list
+  assign text_direction = text_direction | default: settings.text_direction
+
+  if text_direction == 'rtl'
+    assign chevron_icon = 'chevron-left'
+  else
+    assign chevron_icon = 'chevron-right'
+  endif
+  assign resource_button = section.settings.show_resouce_button
+-%}
+
+<div class="slide-nav__wrapper overlay" data-level="1">
+  <ul class="slide-nav">
+    {%- for link in main_menu.links -%}
+      {%- liquid
+        assign link_index = forloop.index
+        assign child_list_handle = link.title | handleize | append: link_index
+
+        assign is_collection = false
+        assign have_image = false
+        if link.url contains '/collections/'
+          assign lang_code_string = request.locale.iso_code | prepend: '/' | downcase
+          assign subcollection_handle = link.url | remove: '/collections/' | remove: lang_code_string
+          assign subcollection_drop = collections[subcollection_handle]
+           if subcollection_drop.featured_image
+            assign have_image = subcollection_drop.featured_image
+           else
+            assign have_image = subcollection_drop.products.first.featured_media.preview_image
+           endif
+          assign is_collection = true
+        endif
+          assign link_title = link.title | handle
+          assign mega_block = ''
+          assign is_custom_megamenu = false
+          for block in section.blocks
+           assign block_title = block.settings.title | handle
+           if link_title == block_title
+             assign is_megamenu = true
+             assign is_custom_megamenu = true
+             assign mega_block = block
+           endif
+          endfor 
+      -%}
+
+      {%- if have_image -%}
+        {%- capture collection_image -%}
+          <div class="slide-nav__image">
+            {%- render 'image-element',
+              img: have_image,
+              loading: 'eager',
+              sizes: '40px',
+              alt: collections[subcollection_handle].title,
+            -%}
+          </div>
+        {%- endcapture -%}
+      {%- endif -%}
+
+      <li class="slide-nav__item">
+        {%- if link.levels > 0 or is_custom_megamenu -%}
+          <button
+            type="button"
+            class="slide-nav__button js-toggle-submenu"
+            data-target="tier-2-{{ child_list_handle }}"
+            {% if link.active or link.child_active %}
+              data-active="true"
+            {% endif %}
+          >
+            <span class="slide-nav__link">
+              {%- if have_image -%}
+                {{ collection_image }}
+              {%- endif -%}
+              <span>{{ link.title }}</span>
+              {% if link.links.size > 0 or is_custom_megamenu %}
+                  {% render 'icon', name: chevron_icon %}
+              {% endif %}
+              <span class="icon__fallback-text visually-hidden">{{ 'actions.expand_submenu' | t }}</span>
+            </span>
+          </button>
+          
+          {% if is_custom_megamenu %}
+             <div  class="slide-nav__dropdown"
+            data-parent="tier-2-{{ child_list_handle }}"
+            data-level="2">
+                <div class="page-width">
+                  <div class="site-nav__dropdown-animate megamenu__wrapper">
+                    {% render 'custom_megamenu' , block:mega_block %}
+                  </div>
+                </div>
+               </div>
+          {% else %}        
+           
+                <ul
+                  class="slide-nav__dropdown "
+                  data-parent="tier-2-{{ child_list_handle }}"
+                  data-level="2"
+                >
+                  <li class="slide-nav__item">
+                    <button
+                      type="button"
+                      class="slide-nav__button js-toggle-submenu"
+                    >
+                      <span class="slide-nav__link slide-nav__link--back">
+                        {% render 'icon', name: chevron_icon %}
+                        <span>{{ link.title }}</span>
+                      </span>
+                    </button>
+                  </li>
+      
+                  {% comment %}
+                    If a collection, automatically add 'view all' link
+                  {% endcomment %}
+                  {%- if is_collection -%}
+                    <li class="slide-nav__item">
+                      <a href="{{ link.url }}" class="slide-nav__link">
+                        <span>{{ 'actions.view_all' | t }}</span>
+                        {% render 'icon', name: chevron_icon %}
+                      </a>
+                    </li>
+                  {%- endif -%}
+      
+                  {%- for childlink in link.links -%}
+                    {%- liquid
+                      assign grand_child_list_handle = childlink.title | handleize
+                      assign grand_child_link_id = grand_child_list_handle | append: link_index
+                    -%}
+      
+                    <li class="slide-nav__item">
+                      {%- if childlink.levels > 0 -%}
+                        <button
+                          type="button"
+                          class="slide-nav__button js-toggle-submenu"
+                          data-target="tier-3-{{ grand_child_link_id }}"
+                          {% if link.active or link.child_active %}
+                            data-active="true"
+                          {% endif %}
+                        >
+                          <span class="slide-nav__link slide-nav__sublist-link">
+                            <span>{{ childlink.title }}</span>
+                            {% render 'icon', name: chevron_icon %}
+                            <span class="icon__fallback-text visually-hidden">{{ 'actions.expand_submenu' | t }}</span>
+                          </span>
+                        </button>
+                        <ul
+                          class="slide-nav__dropdown"
+                          data-parent="tier-3-{{ grand_child_link_id }}"
+                          data-level="3"
+                        >
+                          <li class="slide-nav__item">
+                            <button
+                              type="button"
+                              class="slide-nav__button js-toggle-submenu"
+                              data-target="tier-2-{{ child_list_handle }}"
+                            >
+                              <span class="slide-nav__link slide-nav__link--back">
+                                {% render 'icon', name: chevron_icon %}
+                                <span>{{ childlink.title }}</span>
+                              </span>
+                            </button>
+                          </li>
+      
+                          {% comment %}
+                            If a collection, automatically add 'view all' link
+                          {% endcomment %}
+                          {%- if childlink.url contains '/collections/' -%}
+                            <li class="slide-nav__item">
+                              <a href="{{ childlink.url }}" class="slide-nav__link">
+                                <span>{{ 'actions.view_all' | t }}</span>
+                                {% render 'icon', name: chevron_icon %}
+                              </a>
+                            </li>
+                          {%- endif -%}
+      
+                          {%- for grandchildlink in childlink.links -%}
+                            <li class="slide-nav__item">
+                              <a href="{{ grandchildlink.url }}" class="slide-nav__link">
+                                <span>{{ grandchildlink.title | escape }}</span>
+                                {% render 'icon', name: chevron_icon %}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- else -%}
+                        <a href="{{ childlink.url }}" class="slide-nav__link">
+                          <span>{{ childlink.title | escape }}</span>
+                          {% render 'icon', name: chevron_icon %}
+                        </a>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+          
+          {% endif %}
+          
+        {%- else -%}
+          <a href="{{ link.url }}" class="slide-nav__link">
+            {%- if have_image -%}
+              {{ collection_image }}
+            {%- endif -%}
+
+            <span>{{ link.title | escape }}</span>
+            {% if link.links.size > 0 or is_custom_megamenu %}
+                  {% render 'icon', name: chevron_icon %}
+            {% endif %}            
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%} 
+    {%- if section.settings.resouce_button_text != blank -%}
+    <li class="slide-nav__item">
+      <a href="{{ section.settings.resouce_button_link | default: '#' }}" class="slide-nav__link">
+        <span> {{- section.settings.resouce_button_text -}}</span>
+        {% comment %}
+        {% render 'icon', name: chevron_icon %}
+        {% endcomment %}
+      </a>
+    </li>
+  {% endif %}
+  </ul>
+</div>

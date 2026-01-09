@@ -1,0 +1,98 @@
+{%-liquid
+  assign hideCarInfo = false   
+   if product.type == 'Trailer' or product.type == 'Accessories' or product.type == 'Trailer/Jogger' or product.type == 'Gift Card' or product.type == 'Part' 
+     assign hideCarInfo = true  
+   endif
+    if template contains 'page.resource-pdp'
+     assign product = page.metafields.custom.resource_product.value
+    endif
+-%}
+ 
+<div class="simple_list hideCarInfo-{{ hideCarInfo }}">
+        {% if product %}
+          {% assign current_variant = product.selected_or_first_available_variant %}
+           {% for variant in product.variants %}
+            {% assign video = product.metafields.custom.installation_video %}
+            {% if variant.metafields.custom.installation_video != blank %}
+              {% assign video = variant.metafields.custom.installation_video %}
+            {% endif %}
+            {% if video %}
+                  <div id="video-{{ variant.id }}" class="grid-item product-installation{% unless current_variant.id == variant.id %} hide{% endunless %}">
+                        <a data-fancybox href={{video}}?wmode=opaque&amp;autoplay=1&amp;rel=0&amp;color=white&mute=1" class="grid-item_wrp"
+                          data-video="https://www.youtube.com/watch?v={{media.external_id }}">
+                            <div class="video_wrp">
+                              <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/video-prev.png?v=1736149006" class="video-image" />
+                            </div>
+                            <div class="content">
+                              <div class="ic_title">
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.9 6.92">
+              <rect width="6.9" height="6.92" fill="#e72230"></rect>
+              <path d="M4.57,3.44V3.5l-.12.17-.23.2a3.65,3.65,0,0,1-.64.41A5.52,5.52,0,0,1,3,4.54a1,1,0,0,1-.46.11s-.08,0-.1-.06L2.4,4.41a3,3,0,0,1-.07-.66,5.65,5.65,0,0,1,0-1,1.62,1.62,0,0,1,.09-.38.12.12,0,0,1,.13-.09,1.77,1.77,0,0,1,.33.08,5.35,5.35,0,0,1,.73.34,5,5,0,0,1,.71.49A.65.65,0,0,1,4.57,3.44Z" fill="#fff"></path>
+            </svg>
+                              <h2 class="heading">{{ settings.installation_text }}</h2>
+                              </div>
+                            </div>  
+                         </a>
+                    </div>  
+            {% endif %} 
+            {% endfor %} 
+        {% endif %} 
+    <ul class="list_items">
+        {% for i in (1..7) %}
+            {% assign icon = 'icon_' | append : i %}
+            {% assign title = 'text_' | append : i %}
+            {% assign target = 'target_class_' | append : i %}
+            {% assign custom_class = 'custom_class_' | append : i %}
+            {% assign link = 'link_' | append : i %}
+            {% assign handle_title = block.settings[title] | handle %}
+            {% assign title = block.settings[title] %}
+          
+            {% if forloop.index == 1 %}
+               {% assign current_variant = product.selected_or_first_available_variant %}
+            {% for variant in product.variants %}
+            {% assign pdf = product.metafields.custom.easy_installation_pdf %}
+            {% if variant.metafields.custom.easy_installation_pdf != blank %}
+              {% assign pdf = variant.metafields.custom.easy_installation_pdf %}
+            {% endif %}
+              {% if pdf %}
+                <a id="pdf-{{ variant.id }}" data-fancybox class="installation_pdf {% unless current_variant.id == variant.id %}hide{% endunless %}" href="{{ pdf | file_url }}" >
+                    <div class="left_content">
+                      <img class="imgs" src="{{ block.settings[icon] | img_url : 'master' }}" width="" height="" alt="" />
+                      <span class="titles">{{title}}</span>
+                    </div>
+                    <img class="arrow" src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/right_arrow.png?v=1736144788">
+                </a>
+                {% endif %}
+              {% endfor %}
+            {% else %}    
+            <a {% if block.settings[custom_class] != blank %}id="{{ block.settings[custom_class] }}"{% endif %} 
+              {% if title contains 'save' %}id="saveButton"{% endif %} 
+              class="usp_icon icon-{{ title | handle }}" href="{% if block.settings[link] != blank %}{{ block.settings[link] }}{% else %}javascript:;{% endif %}" 
+              {% if block.settings[target] != blank %}data-target="{{ block.settings[target] }}"{% endif %}>
+                <div class="left_content">  
+                  <img class="imgs" src="{{ block.settings[icon] | img_url : 'master' }}" width="" height="" alt="" />
+                  <span class="titles">{{ title }}</span>
+                  {% if title contains 'save' %}
+                    <span class="saving_text hidden">Saving...</span>
+                  {% endif %}  
+                </div>
+               <img class="arrow" src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/right_arrow.png?v=1736144788">
+            </a>
+            {% endif %}
+        {% endfor %}
+    </ul>
+  {% if template contains 'page.resource-pdp' %} 
+    <div class="resource_description medium-up--hide">
+        <block-description class="product-block" {{ block.shopify_attributes }}>
+          <div class="product-description-container">
+            <div class="rte clearfix product-description-content">
+              {{ product.description }} 
+            </div>
+            <div class="read-more">
+              <a href="javascript:;">...Read More</a>
+            </div>
+          </div> 
+        </block-description>
+      </div>
+  {% endif %}
+</div>

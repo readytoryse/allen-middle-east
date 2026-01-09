@@ -1,0 +1,397 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders a product media gallery
+
+  Accepts:
+  - product_zoom_size {string} - Size of the zoomed image
+  - context {string} - Context of the product
+  - isModal {boolean} - Whether the product is in a modal
+  - media_gallery_layout {string} - Layout of the media gallery
+  - product_zoom_enable {boolean} - Whether the product zoom is enabled
+  - thumbnail_position {string} - Position of the thumbnails
+  - image_size {string} - Size of the image
+  - image_position {string} - Position of the image
+  - thumbnail_arrows {boolean} - Whether the thumbnail arrows are enabled
+  - sizeVariable {string} - Size of the image
+  - thumbnail_height {string} - Height of the thumbnails
+
+  Usage:
+  {% liquid render 'product-images' %}
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  if template contains 'page.resource-pdp'
+   assign product = page.metafields.custom.resource_product.value
+  endif
+  assign product_zoom_size = product_zoom_size | default: '1800x1800'
+  assign sizeVariable = sizeVariable | default: 'medium-up--one-half'
+  assign context = context | default: 'main-product'
+  assign product_zoom_enable = product_zoom_enable | default: section.settings.product_zoom_enable, allow_false: true
+  assign image_size = image_size | default: section.settings.product_image_size | default: 'square'
+  assign image_position = image_position | default: section.settings.image_position | default: 'left'
+  assign thumbnail_arrows = thumbnail_arrows | default: section.settings.thumbnail_arrows, allow_false: true
+  assign thumbnail_height = thumbnail_height | default: section.settings.thumbnail_height | default: 'flexible'
+  assign isModal = isModal | default: false
+  assign media_gallery_layout = media_gallery_layout | default: section.settings.media_gallery_layout
+  assign section_id = section.id
+  assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+  assign first_3d_model = product.media | where: 'media_type', 'model' | first
+  assign thumbnail_position = section.settings.thumbnail_position
+
+  unless thumbnail_position
+    if media_gallery_layout == 'stacked'
+      assign thumbnail_position = 'hidden'
+    else
+      assign thumbnail_position = media_gallery_layout
+    endif
+  endunless
+-%}
+{%-liquid
+  assign hideCarInfo = false   
+   if product.type == 'Trailer' or product.type == 'Accessories' or product.type == 'Trailer/Jogger' or product.type == 'Gift Card' or product.type == 'Part' or template contains 'page.resource-pdp'
+     assign hideCarInfo = true  
+   endif
+-%}
+{%- if product -%}
+  <product-images
+    data-product-images
+    data-zoom="{{ product_zoom_enable }}"
+    data-has-slideshow="{% if product.media.size > 1 %}true{% else %}false{% endif %}"
+    data-media-gallery-layout="{{ media_gallery_layout }}"
+    data-modal="{{ isModal }}"
+    data-product-id="{{ product.id }}"
+    data-section-id="{{ section.id }}"
+  >
+    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}{% if product.media.size == 0 %} hide{% endif %}">
+      {% if hideCarInfo == false %}
+        <p class="vehicle-title">My car: <strong></strong></p>
+      {% endif %}
+      <div class="product__main-photos" data-product-single-media-group data-product-type="{{ product.type }}">
+        <div class="rack-fit-badge">
+          <span class="item-fit-on">Item Fits Your Car</span>
+          <span class="item-fit-off">Not a Fit</span>
+        </div>
+        <div
+          data-product-photos
+          data-zoom="{{ product_zoom_enable }}"
+          class="product-slideshow"
+          id="ProductPhotos-{{ section_id }}"
+        >          
+          {% assign static_index = 0 %}
+          {%- for media in product.media -%}
+            {% liquid
+              assign loading = 'eager'
+              assign animation = 'image-fade-in'
+              if context == 'main-product' and forloop.index == 1
+                # LCP image is loaded immediately
+                assign loading = false
+                assign animation = 'none'
+              endif
+            %}
+            {%- render 'media',
+              media: media,
+              static_index:static_index,
+              featured_media: featured_media,
+              loopIndex0: forloop.index0,
+              loopIndex: forloop.index,
+              isModal: isModal,
+              sizes: sizes,
+              sizeVariable: sizeVariable,
+              fallback: fallback,
+              loading: loading,
+              animation: animation
+            -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if first_3d_model -%}
+          <button
+            aria-label="{{ 'info.view_in_space_explanation' | t }}"
+            class="product-single__view-in-space"
+            data-shopify-xr
+            data-shopify-model3d-id="{{ first_3d_model.id }}"
+            data-shopify-title="{{ product.title }}"
+            data-shopify-xr-hidden
+          >
+            {% render 'icon', name: '3d' %}
+            <span class="product-single__view-in-space-text">
+              {{ 'actions.view_in_space' | t }}
+            </span>
+          </button>
+        {%- endif -%}
+      </div>
+
+   {% if media_gallery_layout != 'stacked' %}
+        <div
+          data-product-thumbs
+          class="product__thumbs product__thumbs--{{ thumbnail_position }} product__thumbs-placement--{{ image_position }}{% if product.media.size == 1 %} medium-up--hide{% endif %}"
+          data-position="{{ thumbnail_position }}"
+          data-arrows="{{ thumbnail_arrows }}"
+        >
+          {%- if thumbnail_arrows -%}
+            <button
+              type="button"
+              class="product__thumb-arrow product__thumb-arrow--prev hide"
+              aria-label="{%- render 't_with_fallback', key: 'actions.previous', fallback: 'Previous' -%}"
+            >
+              {% render 'icon', name: 'chevron-left' %}
+            </button>
+          {%- endif -%}
+
+          <div class="product__thumbs--scroller">
+             {% assign current_variant = product.selected_or_first_available_variant %}
+            {% for variant in product.variants %}
+            {% assign installation_video = product.metafields.custom.installation_video %}
+            {% assign lifestyle_video = product.metafields.custom.lifestyle_video %}  
+            {% if variant.metafields.custom.installation_video != blank %}
+              {% assign installation_video = variant.metafields.custom.installation_video %}
+            {% endif %}
+            {% if variant.metafields.custom.lifestyle_video %} 
+              {% assign lifestyle_video = variant.metafields.custom.lifestyle_video %}  
+            {% endif %}  
+            {% if installation_video != blank %}              
+               {% if installation_video contains 'mp4' %}
+                <div class="product__thumb-item mp4_video second_slide{% unless current_variant.id == variant.id %} hide{% endunless %}"  data-media-id="{{ variant.id }}">
+                 <a href="{{ installation_video }}" class="grid-item_wrp"
+                      data-video="{{ installation_video }}">
+                        <div class="video_wrp image-wrap image-wrap__thumbnail loaded">
+                          <img src="{{ settings.installation_image | img_url :"master" }}" class="video-image image-element" loading="eager" />
+                        </div>
+                        <div class="content">
+                          <div class="ic_title">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.9 6.92">
+                          <rect width="6.9" height="6.92" fill="#e72230"></rect>
+                          <path d="M4.57,3.44V3.5l-.12.17-.23.2a3.65,3.65,0,0,1-.64.41A5.52,5.52,0,0,1,3,4.54a1,1,0,0,1-.46.11s-.08,0-.1-.06L2.4,4.41a3,3,0,0,1-.07-.66,5.65,5.65,0,0,1,0-1,1.62,1.62,0,0,1,.09-.38.12.12,0,0,1,.13-.09,1.77,1.77,0,0,1,.33.08,5.35,5.35,0,0,1,.73.34,5,5,0,0,1,.71.49A.65.65,0,0,1,4.57,3.44Z" fill="#fff"></path>
+                        </svg>
+                          <h2 class="heading">{{ settings.installation_text }}</h2>
+                          </div>
+                        </div>  
+                     </a>
+               </div> 
+                {% else %}
+               <div class="product__thumb-item second_slide{% unless current_variant.id == variant.id %} hide{% endunless %}"  data-media-id="{{ variant.id }}">
+                 <a data-fancybox href="{{ installation_video }}?wmode=opaque&amp;autoplay=1&amp;rel=0&amp;color=white&mute=1" class="grid-item_wrp"
+                      data-video="{{ installation_video }}">
+                        <div class="video_wrp image-wrap image-wrap__thumbnail loaded">
+                          <img src="{{ settings.installation_image | img_url :"master" }}" class="video-image image-element" loading="eager" />
+                        </div>
+                        <div class="content">
+                          <div class="ic_title">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.9 6.92">
+                          <rect width="6.9" height="6.92" fill="#e72230"></rect>
+                          <path d="M4.57,3.44V3.5l-.12.17-.23.2a3.65,3.65,0,0,1-.64.41A5.52,5.52,0,0,1,3,4.54a1,1,0,0,1-.46.11s-.08,0-.1-.06L2.4,4.41a3,3,0,0,1-.07-.66,5.65,5.65,0,0,1,0-1,1.62,1.62,0,0,1,.09-.38.12.12,0,0,1,.13-.09,1.77,1.77,0,0,1,.33.08,5.35,5.35,0,0,1,.73.34,5,5,0,0,1,.71.49A.65.65,0,0,1,4.57,3.44Z" fill="#fff"></path>
+                        </svg>
+                          <h2 class="heading">{{ settings.installation_text }}</h2>
+                          </div>
+                        </div>  
+                     </a>
+               </div>
+               {% endif %}  
+            {% endif %}
+            {% if lifestyle_video %}
+              {% if lifestyle_video contains 'mp4' %}
+                <div class="product__thumb-item mp4_video second_slide{% unless current_variant.id == variant.id %} hide{% endunless %}"  data-media-id="{{ variant.id }}">
+                 <a href="{{ lifestyle_video }}" class="grid-item_wrp"
+                      data-video="{{ lifestyle_video }}">
+                        <div class="video_wrp image-wrap image-wrap__thumbnail loaded">
+                          <img src="{{ settings.lifestyle_image | img_url :"master" }}" class="video-image image-element" loading="eager" />
+                        </div>
+                        <div class="content">
+                          <div class="ic_title">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.9 6.92">
+                          <rect width="6.9" height="6.92" fill="#e72230"></rect>
+                          <path d="M4.57,3.44V3.5l-.12.17-.23.2a3.65,3.65,0,0,1-.64.41A5.52,5.52,0,0,1,3,4.54a1,1,0,0,1-.46.11s-.08,0-.1-.06L2.4,4.41a3,3,0,0,1-.07-.66,5.65,5.65,0,0,1,0-1,1.62,1.62,0,0,1,.09-.38.12.12,0,0,1,.13-.09,1.77,1.77,0,0,1,.33.08,5.35,5.35,0,0,1,.73.34,5,5,0,0,1,.71.49A.65.65,0,0,1,4.57,3.44Z" fill="#fff"></path>
+                        </svg>
+                          <h2 class="heading">{{ settings.lifestyle_text }}</h2>
+                          </div>
+                        </div>  
+                     </a>
+               </div> 
+              {% elsif lifestyle_video contains 'instagram' %}  
+                <div class="insta_video product__thumb-item second_slide{% unless current_variant.id == variant.id %} hide{% endunless %}"  data-media-id="{{ variant.id }}">
+                 <a href="{{ lifestyle_video }}" target="_blank" class="grid-item_wrp">
+                        <div class="video_wrp image-wrap image-wrap__thumbnail loaded">
+                          <img src="{{ settings.lifestyle_image | img_url :"master" }}" class="video-image image-element" loading="eager" />
+                        </div>
+                        <div class="content">
+                          <div class="ic_title">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.9 6.92">
+                          <rect width="6.9" height="6.92" fill="#e72230"></rect>
+                          <path d="M4.57,3.44V3.5l-.12.17-.23.2a3.65,3.65,0,0,1-.64.41A5.52,5.52,0,0,1,3,4.54a1,1,0,0,1-.46.11s-.08,0-.1-.06L2.4,4.41a3,3,0,0,1-.07-.66,5.65,5.65,0,0,1,0-1,1.62,1.62,0,0,1,.09-.38.12.12,0,0,1,.13-.09,1.77,1.77,0,0,1,.33.08,5.35,5.35,0,0,1,.73.34,5,5,0,0,1,.71.49A.65.65,0,0,1,4.57,3.44Z" fill="#fff"></path>
+                        </svg>
+                          <h2 class="heading">{{ settings.lifestyle_text }}</h2>
+                          </div>
+                        </div>  
+                     </a>
+               </div> 
+              {% else %}
+              <div class="product__thumb-item second_slide{% unless current_variant.id == variant.id %} hide{% endunless %}"  data-media-id="{{ variant.id }}">
+                 <a data-fancybox href="{{ lifestyle_video }}?wmode=opaque&amp;autoplay=1&amp;rel=0&amp;color=white&mute=1" class="grid-item_wrp"
+                      data-video="{{ lifestyle_video }}">
+                        <div class="video_wrp image-wrap image-wrap__thumbnail loaded">
+                          <img src="{{ settings.lifestyle_image | img_url :"master" }}" class="video-image image-element" loading="eager" />
+                        </div>
+                        <div class="content">
+                          <div class="ic_title">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.9 6.92">
+                          <rect width="6.9" height="6.92" fill="#e72230"></rect>
+                          <path d="M4.57,3.44V3.5l-.12.17-.23.2a3.65,3.65,0,0,1-.64.41A5.52,5.52,0,0,1,3,4.54a1,1,0,0,1-.46.11s-.08,0-.1-.06L2.4,4.41a3,3,0,0,1-.07-.66,5.65,5.65,0,0,1,0-1,1.62,1.62,0,0,1,.09-.38.12.12,0,0,1,.13-.09,1.77,1.77,0,0,1,.33.08,5.35,5.35,0,0,1,.73.34,5,5,0,0,1,.71.49A.65.65,0,0,1,4.57,3.44Z" fill="#fff"></path>
+                        </svg>
+                          <h2 class="heading">{{ settings.lifestyle_text }}</h2>
+                          </div>
+                        </div>  
+                     </a>
+               </div>                
+              {% endif %}  
+            {% endif %}  
+            {% endfor %}
+            {%- if product.media.size > 1 -%}
+              {%- for media in product.media -%}
+                {%- liquid
+                  assign image_set = false
+                  assign image_set_group = ''
+                  if media.alt contains '#'
+                    assign image_set_full = media.alt | split: '#' | last
+                    if image_set_full contains '_'
+                      assign image_set = true
+                      assign image_set_group = image_set_full | split: '_' | first
+                    endif
+                  endif
+                -%}
+                {%- assign img_colors = media.alt | split:"#" -%}
+                {%-assign img_color_attr = blank  -%}
+                {% assign flickity = false %}
+                {%- for img_clr in  img_colors -%}
+                  {% if img_clr != blank and forloop.last %}
+                    {%capture img_color_attr %}{{img_color_attr}} data-color="{{img_clr}}" {% endcapture %}
+                    {% assign alt_handle = img_clr | handle %}
+                    {% assign variant_handle = product.selected_or_first_available_variant.title | handle %}
+                      {% if alt_handle == variant_handle %}
+                        {% assign flickity = true %}
+                      {% endif %}  
+                  {% endif %}
+                {%- endfor -%}
+                <div
+                  class="product__thumb-item{% if flickity %} flickity{% endif %}{% unless media.alt contains "#" %} flickity{%endunless%}"
+                  {% if media.alt contains "#" %}{{img_color_attr}}{% else %}data-color="generic"{% endif %}
+                  data-index="{{ forloop.index0 }}"
+                  {% if image_set %}
+                    data-set-name="{{ image_set_group }}"
+                    data-group="{{ image_set_full }}"
+                  {% endif %}
+                >
+                  <a
+                    href="{{ media.preview_image | image_url: width: product_zoom_size }}"
+                    data-product-thumb
+                    class="product__thumb js-no-transition"
+                    data-index="{{ forloop.index0 }}"
+                    data-id="{{ media.id }}"
+                  >
+                    <div
+                      class="image-wrap image-wrap__thumbnail"
+                      style="height: 0; padding-bottom: {{ 100 | divided_by: media.preview_image.aspect_ratio }}%;"
+                    >
+                      {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                        <span class="product__thumb-icon">
+                          {% render 'icon', name: 'play' %}
+                        </span>
+                      {%- endif -%}
+                      {%- if media.media_type == 'model' -%}
+                        <span class="product__thumb-icon">
+                          {% render 'icon', name: '3d' %}
+                        </span>
+                      {%- endif -%}
+
+                      {%- assign loading = 'eager' -%}
+                      {%-
+                        render 'image-element',
+                        img: media.preview_image,
+                        alt: media.alt | escape | split: '#' | first,
+                        widths: '120, 360, 540, 720',
+                        sizeVariable: '80px',
+                        loading: loading,
+                      -%}
+                    </div>
+                  </a>
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+
+          {%- if thumbnail_arrows -%}
+            <button
+              type="button"
+              class="product__thumb-arrow product__thumb-arrow--next"
+              aria-label="{% render 't_with_fallback', key: 'actions.next', fallback: 'Next' -%}"
+            >
+              {% render 'icon', name: 'chevron-right' %}
+            </button>
+          {%- endif -%}
+        </div>
+      {% endif %}
+      {% if template contains 'page.resource-pdp' %}
+      <div class="resource_description small--hide">
+        <block-description class="product-block" {{ block.shopify_attributes }}>
+          <div class="product-description-container">
+            <div class="rte clearfix product-description-content">
+              {{ product.description }} 
+            </div>
+            <div class="read-more">
+              <a href="javascript:;">...Read More</a>
+            </div>
+          </div> 
+        </block-description>
+      </div>
+      {% endif %}
+    </div>
+    <script type="application/json" data-current-variant-json>
+      {{- product.selected_or_first_available_variant | json -}}
+    </script>
+    <script type="application/json" data-product-options-json>
+      {{- product.options | json -}}
+    </script>
+  </product-images>
+
+  <script type="module">
+    import 'components/product-images'
+  </script>
+
+  {% if thumbnail_height == 'fixed' %}
+    {% style %}
+      .product__photos-{{ section_id }} .product__thumbs:not(.product__thumbs--below) {
+        min-height: 400px;
+        max-height: 400px;
+      }
+
+      @media screen and (max-width: 798px) {
+        .product__photos-{{ section_id }} .product__thumbs:not(.product__thumbs--below) {
+          min-height: 300px;
+          max-height: 300px;
+        }
+      }
+    {% endstyle %}
+  {% endif %}
+
+  <script type="application/json" id="ModelJson-{{ section_id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{%- else -%}
+  <div
+    data-product-images
+    data-zoom="false"
+    data-has-slideshow="false"
+  >
+    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
+      <div class="product__main-photos" style="width: 100%">
+        <div data-product-photos class="product-slideshow">
+          <div class="product-main-slide" data-index="{{ forloop.index0 }}">
+            <a href="#">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

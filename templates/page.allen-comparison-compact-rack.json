@@ -1,0 +1,159 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+    "layout": "theme.allen-care",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "home_rack_finder_app_kbjm6w": {
+      "type": "home-rack-finder-app",
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "allen_comparision_compact_rack_VdVRLK": {
+      "type": "allen-comparision-compact-rack",
+      "blocks": {
+        "comparison_type_JCVa8C": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-locking-hitch-racks-deluxe-vs-premium",
+            "link_title": "Locking Hitch Racks"
+          }
+        },
+        "comparison_type_qwEaaN": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "hitch-racks-comparison",
+            "link_title": "Hitch Racks"
+          }
+        },
+        "comparison_type_nQCVRk": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-trunk-rack-deluxe-vs-premium",
+            "link_title": "Trunk Rack"
+          }
+        },
+        "comparison_type_7MRAee": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-compact-rack-deluxe-vs-premium",
+            "link_title": "Compact Rack"
+          }
+        },
+        "comparison_type_RQhFUe": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-spare-tire-rack-deluxe-vs-premium",
+            "link_title": "Spare Tire Rack"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_type_JCVa8C",
+        "comparison_type_qwEaaN",
+        "comparison_type_nQCVRk",
+        "comparison_type_7MRAee",
+        "comparison_type_RQhFUe"
+      ],
+      "settings": {
+        "show_banner": true,
+        "show_search": false,
+        "bg_img": "shopify://shop_images/allen-grid_96e37dee-7274-4401-b64b-608841d314f6.png",
+        "right_bg_img": "shopify://shop_images/trunkrack_f2d19f84-12d3-45e1-84e2-0ac2b0309252.png",
+        "left_bg_img": "shopify://shop_images/hitchrack_0db406bb-f2dc-403f-94f7-d47431761526.png",
+        "bg_color": "#ea1d2d",
+        "title": "FIND THE RIGHT RACK FOR YOU",
+        "subtitle": "<p>Deluxe? Premier? Locking? There is a lot to consider when buying a bike rack! We’ve made it easy for you. Check out the products below to see how the deluxe and premium models compare.</p>",
+        "text_position": "center",
+        "text_align": "center",
+        "deluxe_resource_heading": "Deluxe",
+        "deluxe_button": "Shop Now",
+        "deluxe_button_link": "",
+        "tag_position1_1": "",
+        "tag_position2_1": "",
+        "tag_title_1": "Play Video:",
+        "tag_subtitle_1": "Play Video Subtitle",
+        "popup_video_1": "Popup Video",
+        "tag_position1_2": "",
+        "tag_position2_2": "",
+        "tag_title_2": "Play Video:",
+        "tag_subtitle_2": "Play Video Subtitle",
+        "popup_video_2": "Popup Video",
+        "tag_position1_3": "",
+        "tag_position2_3": "",
+        "tag_title_3": "Play Video:",
+        "tag_subtitle_3": "Play Video Subtitle",
+        "popup_video_3": "Popup Video",
+        "tag_position1_4": "",
+        "tag_position2_4": "",
+        "tag_title_4": "Play Video:",
+        "tag_subtitle_4": "Play Video Subtitle",
+        "popup_video_4": "Popup Video",
+        "tag_position1_5": "",
+        "tag_position2_5": "",
+        "tag_title_5": "Play Video:",
+        "tag_subtitle_5": "Play Video Subtitle",
+        "popup_video_5": "Popup Video",
+        "feature_resource_heading": "Features",
+        "features_text": "Mouse over the features below to see their location on the racks.",
+        "premium_resource_heading": "Premium",
+        "premium_button": "Shop Now",
+        "premium_button_link": "",
+        "tag_position1_6": "",
+        "tag_position2_6": "",
+        "tag_title_6": "Play Video:",
+        "tag_subtitle_6": "Play Video Subtitle",
+        "popup_video_6": "Popup Video",
+        "tag_position1_7": "",
+        "tag_position2_7": "",
+        "tag_title_7": "Play Video:",
+        "tag_subtitle_7": "Play Video Subtitle",
+        "popup_video_7": "Popup Video",
+        "tag_position1_8": "",
+        "tag_position2_8": "",
+        "tag_title_8": "Play Video:",
+        "tag_subtitle_8": "Play Video Subtitle",
+        "popup_video_8": "Popup Video",
+        "tag_position1_9": "",
+        "tag_position2_9": "",
+        "tag_title_9": "Play Video:",
+        "tag_subtitle_9": "Play Video Subtitle",
+        "popup_video_9": "Popup Video",
+        "tag_position1_10": "",
+        "tag_position2_10": "",
+        "tag_title_10": "Play Video:",
+        "tag_subtitle_10": "Play Video Subtitle",
+        "popup_video_10": "Popup Video",
+        "bottom_feature_heading": "<p>*4 & 5 Bike models <strong>ARE NOT</strong> compatible with 1 1/4” Hitch</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "home_rack_finder_app_kbjm6w",
+    "allen_comparision_compact_rack_VdVRLK"
+  ]
+}

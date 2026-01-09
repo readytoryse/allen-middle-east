@@ -1,0 +1,217 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders product buy buttons
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+
+  Usage:
+  {% render 'block-buy-buttons', block: block %}
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign form_id = 'product-form-' | append: section.id
+
+  assign cart_type = settings.cart_type | default: 'dropdown'
+
+  assign show_dynamic_checkout = false
+
+  if block.settings.show_dynamic_checkout
+    assign show_dynamic_checkout = true
+  endif
+
+  assign check_against_inventory = true
+  assign quantity_rule_soldout = false
+
+  if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+    assign check_against_inventory = false
+  endif
+
+  if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+    assign quantity_rule_soldout = true
+  endif
+  assign preorder = false
+  if product.tags contains "preorder" or product.tags contains "pre-order"
+  assign preorder = true
+  endif 
+  assign button_text = 'actions.add_to_cart' | t
+    if preorder
+      assign button_text = settings.presale_text
+    endif
+  if product.has_only_default_variant == false and product.selected_variant == null 
+   for option in product.options_with_values 
+     assign title = title | append : option.name  
+     unless forloop.last 
+       assign title = title | append : ' & ' 
+     endunless   
+   endfor 
+    for tag in product.tags 
+       if tag contains 'optionName' 
+         assign title = tag | split : ':' | last 
+        break 
+       endif   
+     endfor 
+  assign button_text = settings.variant_prefix | append : ' - ' | append : title
+  endif 
+  
+  if product.selected_or_first_available_variant.available == false or quantity_rule_soldout
+    assign button_text = 'info.sold_out' | t  
+  endif
+
+  assign gift_card_recipient_feature_active = false
+  if block.settings.show_gift_card_recipient and product.gift_card?
+    assign gift_card_recipient_feature_active = true
+  endif
+-%}
+
+{% if product %}
+  <block-buy-buttons
+    class="block-buy-buttons product-block"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+    data-cart-type="{{ cart_type }}"
+    data-variant-title="{{ title }}"
+    {% if show_dynamic_checkout %}
+      data-show-dynamic-checkout=""
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    
+    <div class="esc-backinstock-form-wrapper">
+  <div id="esc-oos-form"></div>
+</div>
+    {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <script data-app="esc-out-of-stock" type="text/json">
+    [{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+  </script>
+  <script data-app="esc-out-of-stock" type="text/json">
+    [{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+  </script>
+  <script data-app="esc-out-of-stock" type="text/json">
+    [{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+  </script>
+  <script data-app="esc-out-of-stock" type="text/json">
+    [{% for variant in product.variants %}{"id":{{ variant.id }},"title":"{{ variant.title | escape }}","option1":{% if variant.option1 %}"{{ variant.option1 | escape }}"{% else %}null{% endif %},"option2":{% if variant.option2 %}"{{ variant.option2 | escape }}"{% else %}null{% endif %},"option3":{% if variant.option3 %}"{{ variant.option3 | escape }}"{% else %}null{% endif %},"sku":{% if variant.sku %}"{{ variant.sku | escape }}"{% else %}null{% endif %},"requires_shipping":{{ variant.requires_shipping }},"taxable":{{ variant.taxable }},"featured_image":{% if variant.featured_image %}"{{ variant.featured_image }}"{% else %}null{% endif %},"available":{{ variant.available }},"name":"{{ variant.name }} | escape","public_title":"{{ variant.public_title }} | escape","options":{{ variant.options | json }},"price":{{ variant.price }},"weight":{% if variant.weight %}{{ variant.weight }}{% else %}0{% endif %},"compare_at_price":{% if variant.compare_at_price %}{{ variant.compare_at_price }}{% else %}null{% endif %},"inventory_quantity":{{ variant.inventory_quantity }},"inventory_management":{% if variant.inventory_management %}"{{ variant.inventory_management }}"{% else %}null{% endif %},"inventory_policy":{% if variant.inventory_policy %}"{{ variant.inventory_policy }}"{% else %}null{% endif %},"barcode":{% if variant.barcode %}"{{ variant.barcode }}"{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+  </script>
+      {%- if gift_card_recipient_feature_active -%}
+        {%- render 'gift-card-recipient-form' -%}
+      {%- endif -%}     
+      {% if preorder %}
+        <input type="hidden" name="properties[_preorder]" value="true" class="product-pre-order">
+        {% endif %}
+      <input
+        type="hidden"
+        name="id"
+        {% comment %} value="{{ product.selected_or_first_available_variant.id }}" {% endcomment %}
+        {% if product.available %}
+        {% if product.has_only_default_variant == false %}
+         value='{% if product.selected_variant %}{{ product.selected_variant.id }}{% endif %}'
+        {% else %}
+         value='{{ product.selected_or_first_available_variant.id }}'
+        {% endif %}
+          {% else %}
+          value='{{ product.selected_or_first_available_variant.id }}'
+        {% endif %}
+        {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+          disabled
+        {% endif %}
+      >
+      <div class="btn_buy_wrp">
+        {% if preorder and settings.preorder_note != blank %}
+         <p class="preorder_note">{{ settings.preorder_note }}</p>
+        {% endif %}
+        <button
+          id="ProductSubmitButton-{{ section.id }}"
+          type="submit"
+          name="add"
+          class="{% if preorder %}preorder {% endif %}btn btn_normal{% if product.has_only_default_variant == false and product.selected_variant == null %} btn_gray{% else %} btn_hover_red{% endif %}{% unless product.selected_or_first_available_variant.available %} hide{% endunless %} add-to-cart"
+          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+            disabled
+          {% endif %}
+        >
+            <span> 
+            {{- button_text -}}
+          </span>
+        </button>
+        {% if settings.free_ship_img != blank %}
+        <div class="free-ship-img"><img src="{{ settings.free_ship_img | img_url : 'master' }}"></div>
+        {% endif %}
+         {% render "link-buttons" %}
+        {% comment %}
+        {% assign show_icon = false %}
+        {% if product.metafields.c_f.shop_walmart_url.value != blank %}
+          {% assign show_icon = true %}
+        {% elsif product.metafields.c_f.shop_homedepot_url.value != blank %}  
+          {% assign show_icon = true %}
+        {% elsif product.metafields.c_f.shop_amazon_url.value != blank %}  
+          {% assign show_icon = true %} 
+        {% elsif product.metafields.c_f.shop_academy_url.value != blank %}  
+          {% assign show_icon = true %} 
+        {% endif %}  
+        {% if show_icon %}
+        <div class="btn_pay_with">
+          <span class="headingss">also buy at</span>
+          <div class="buy_list">
+            {% if product.metafields.c_f.shop_walmart_url.value != blank %}
+              <a href="{{ product.metafields.c_f.shop_walmart_url.value }}" target="_blank" class="buy_item" title="{{ sections.settings.walmart_title }}">
+                <img src="{{ section.settings.walmart_img | img_url : 'master' }}" width="" height="" alt="" />
+              </a>
+            {% endif %}
+            {% if product.metafields.c_f.shop_amazon_url.value != blank %}
+            <a href="{{ product.metafields.c_f.shop_amazon_url.value }}" target="_blank" class="buy_item" title="{{ sections.settings.amazon_title }}">
+              <img src="{{ section.settings.amazon_img | img_url : 'master' }}" width="" height="" alt="" />
+            </a>
+            {% endif %}
+            {% if product.metafields.c_f.shop_homedepot_url.value != blank %}
+              <a href="{{ product.metafields.c_f.shop_homedepot_url.value }}" target="_blank" class="buy_item" title="{{ sections.settings.homedepot_title }}">
+                <img src="{{ section.settings.homedepot_img | img_url : 'master' }}" width="" height="" alt="" />
+              </a>
+            {% endif %}
+            {% if product.metafields.c_f.shop_academy_url.value != blank %}
+              <a href="{{ product.metafields.c_f.shop_academy_url.value }}" target="_blank" class="buy_item" title="{{ sections.settings.academy_title }}">
+                <img src="{{ section.settings.academy_img | img_url : 'master' }}" width="" height="" alt="" />
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+        {% endcomment %}
+
+        {%  comment %}
+        {%- if show_dynamic_checkout
+          and template != 'product.preorder'
+          and gift_card_recipient_feature_active == false
+        -%}
+          {{- form | payment_button -}}
+        {%- endif -%}
+        {% endcomment %}
+
+      </div>
+      
+    {%- endform -%}
+
+    <script type="application/json">
+      {
+        "addToCart": "{{ 'actions.add_to_cart' | t }}",
+        "soldOut": "{{ 'info.sold_out' | t }}",
+        "unavailable": "{{ 'info.unavailable' | t }}",
+        "preorder":"{{ settings.presale_text  }}"
+      }
+    </script>
+  </block-buy-buttons>
+
+  <script type="module">
+    import 'components/block-buy-buttons'
+  </script>
+
+  {%- if block.settings.surface_pickup_enable -%}
+    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+      | where: 'pick_up_enabled', true
+    -%}
+    {% if pick_up_availabilities.size > 0 %}
+      {%- render 'store-availability' -%}
+    {% endif %}
+  {%- endif -%}
+{%- endif -%}

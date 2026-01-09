@@ -1,0 +1,407 @@
+{% comment %}
+  ** FAQ page - custom view **
+  - Page template
+  - Uses blocks
+{% endcomment %}
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+      {% render 'compar_pro_titlebar' %}
+      <!-- <a name="pagecontent" id="pagecontent"></a> -->
+
+      <div class="containerr main content">
+        <div class="sixteen columns page clearfix">
+          {% unless section.settings.show_banner %}
+            <h1>
+              {{ page.title }}
+            </h1>
+            <div class="feature_divider"></div>
+          {% endunless %}
+        </div>
+        <div class="product-compare-container clearfix">
+          {% comment %}
+                <div class="product-comparison-title">
+            <!--       <h3 class="page-title">{{ page.title }}</h3> -->
+                  <div class="comparison-sub-list">
+                    <ul>
+                      {% for block in section.blocks %}
+                        {% if block.type == "comparison_type" %}
+                        <li><a href="/pages/{{block.settings.compare_page}}" class="{% if page.handle == block.settings.compare_page %}active{% endif %}">{{block.settings.link_title}}</a></li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="page-content">{{ page.content }}</div>
+                </div>
+          {% endcomment %}
+          <div class="product-compare-section">
+            <div class="product-compare-deluxe">
+              <h2 class="feature-title">{{ section.settings.deluxe_resource_heading }}</h2>
+              <a href="{{ section.settings.deluxe_button_link}}" class="shop-video-btn btn_normal btn_hover_red">
+                {{ section.settings.deluxe_button -}}
+              </a>
+            </div>
+            <div class="product-compare-feature">
+              <h2 class="feature-title">{{ section.settings.feature_resource_heading }}</h2>
+              {% comment %}
+                <p><img src="{{ "feature-title-bdr.png" | file_img_url:"master" }}" alt="border"></p>
+              {% endcomment %}
+              <p class="features-text center">{{ section.settings.features_text | strip_html }}</p>
+            </div>
+            <div class="product-compare-premium">
+              <h2 class="feature-title">{{ section.settings.premium_resource_heading }}</h2>
+              <a href="{{ section.settings.premium_button_link}}" class="shop-video-btn btn_normal btn_hover_red">
+                {{ section.settings.premium_button -}}
+              </a>
+            </div>
+          </div>
+
+          <div class="product-compare-section mobile_hidden product-compare-details">
+            <div class="product-compare-deluxe">
+              <div class="deluxe-parts-images">
+                <div class="left-tags-wrapper">
+                  <script>
+                    options.push({
+                      handlers: {click: function( e, data ) {
+                        var video =  data.uri;
+                        var inst = $('[data-remodal-id=tag_video_modal]').remodal();
+
+                        $("[data-remodal-id='tag_video_modal'] .product_video_wrapper").html('');
+                        $("[data-remodal-id='tag_video_modal'] .product_video_wrapper").html(video);
+                        inst.open();
+
+                      },mouseenter: 'show',mouseleave: 'show'}
+                    });
+                    var temp_opt = [];
+                    {% for i in (1..5) %}
+                              {% assign posxkey = "tag_position1_" | append:i  %}
+                              {% assign posx = section.settings[posxkey]  %}
+                              {% assign posykey = "tag_position2_" | append:i  %}
+                              {% assign posy = section.settings[posykey]  %}
+                              {% assign tag_title_key = "tag_title_" | append:i  %}
+                              {% assign tag_title = section.settings[tag_title_key]  %}
+                              {% assign tagsubtitlekey = "tag_subtitle_" | append:i  %}
+                              {% assign tag_subtitle = section.settings[tagsubtitlekey]  %}
+                              {% assign popupvideokey = "popup_video_" | append:i  %}
+                              {% assign popup_video = section.settings[popupvideokey]  %}
+                              {% assign play_icon_top_key = "play_icon_top_" | append:i  %}
+                              {% assign play_icon_top = section.settings[play_icon_top_key]  %}
+
+                              {% if posx != blank and posy != blank %}
+                    console.log({{posx | divided_by:10.0}},{{posy | divided_by:10.0}})
+                    temp_opt.push({ x: {{posx | divided_by:10.0}},  y: {{posy| divided_by:10.0}}, text: "{{tag_title}}",sub_text:"{{tag_subtitle}}",uri: '{{popup_video}}'});
+                                  {% endif %}
+                          {% endfor %}
+                    data.push(temp_opt);
+                  </script>
+                </div>
+                <div
+                  class="image_wrapper deluxe-part-img default-img"
+                  id="default-tag-left-image-1"
+                  data-title="{{'deluxe-default-img' | handleize }}"
+                >
+                  <img
+                    src="{{ section.settings.deluxe_default_image | img_url:"master" }}"
+                    alt="{{ section.settings.deluxe_default_image.alt }}"
+                    data-title="{{'deluxe-default-img' | handleize }}"
+                    class="deluxe-part-img default-img"
+                  >
+                </div>
+                {% if section.blocks.size > 0 %}
+                  {% assign for_index = 0 %}
+                  {% for deluxe_block in section.blocks %}
+                    {% if deluxe_block.type == 'deluxe_premium_product' %}
+                      {% assign for_index = for_index | plus: 1 %}
+                      <div
+                        class="image_wrapper deluxe-part-img"
+                        id="tag-image-{{for_index | handle}}"
+                        data-title="{{deluxe_block.settings.feature | handleize }}"
+                      >
+                        <img
+                          src="{{ deluxe_block.settings.deluxe_part_image | img_url:"master" }}"
+                          alt="{{ deluxe_block.settings.deluxe_part_image.alt }}"
+                          data-title="{{deluxe_block.settings.feature | handleize }}"
+                          class="deluxe-part-img"
+                        >
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+            <div class="product-compare-feature">
+              <div class="features-list">
+                <ul>
+                  {% if section.blocks.size > 0 %}
+                    {% assign li_active = 0 | plus: 0 %}
+                    {% for deluxe_block in section.blocks %}
+                      {% if deluxe_block.type == 'deluxe_premium_product' %}
+                        <li data-title="{{deluxe_block.settings.feature | handleize }}" class="feature-list-title">
+                          <span>
+                            {%- if deluxe_block.settings.deluxe_feature -%}
+                              <img src="{{ 'comparison-check.png' | file_img_url }}" alt="check">
+                            {%- endif -%}
+                          </span>
+                          {{- deluxe_block.settings.feature -}}
+                          <span>
+                            {%- if deluxe_block.settings.premium_feature -%}
+                              <img src="{{ 'comparison-check.png' | file_img_url }}" alt="check">
+                            {%- endif -%}
+                          </span>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                  <li class="last-feature-msg">
+                    <div>{{ section.settings.bottom_feature_heading }}</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="product-compare-premium">
+              <div class="premium-parts-images">
+                <script>
+                  options.push({
+                    handlers: {click: function( e, data ) {
+                      var video =  data.uri;
+                      var inst = $('[data-remodal-id=tag_video_modal]').remodal();
+
+                      $("[data-remodal-id='tag_video_modal'] .product_video_wrapper").html('');
+                      $("[data-remodal-id='tag_video_modal'] .product_video_wrapper").html(video);
+                      inst.open();
+
+                    },mouseenter: 'show',mouseleave: 'show'}
+                  });
+                  var temp_opt = [];
+                  {% for i in (6..10) %}
+                            {% assign posxkey = "tag_position1_" | append:i  %}
+                            {% assign posx = section.settings[posxkey]  %}
+                            {% assign posykey = "tag_position2_" | append:i  %}
+                            {% assign posy = section.settings[posykey]  %}
+                            {% assign tag_title_key = "tag_title_" | append:i  %}
+                            {% assign tag_title = section.settings[tag_title_key]  %}
+                            {% assign tagsubtitlekey = "tag_subtitle_" | append:i  %}
+                            {% assign tag_subtitle = section.settings[tagsubtitlekey]  %}
+                            {% assign popupvideokey = "popup_video_" | append:i  %}
+                            {% assign popup_video = section.settings[popupvideokey]  %}
+                            {% assign play_icon_top_key = "play_icon_top_" | append:i  %}
+                            {% assign play_icon_top = section.settings[play_icon_top_key]  %}
+
+                            {% if posx != blank and posy != blank %}
+                  temp_opt.push({ x: {{posx | divided_by:10.0 }},  y: {{posy | divided_by:10.0}}, text: "{{tag_title}}",sub_text:"{{tag_subtitle}}",uri: '{{popup_video}}'});
+                                {% endif %}
+                        {% endfor %}
+                  data.push(temp_opt);
+                </script>
+                <div
+                  class="image_wrapper deluxe-part-img default-img"
+                  id="default-tag-right-image-1"
+                  data-title="{{'premium-default-img' | handleize }}"
+                >
+                  <img
+                    src="{{ section.settings.premium_default_image | img_url:"master" }}"
+                    alt="{{ deluxe_block.settings.premium_part_image.alt }}"
+                    data-title="{{'premium-default-img' | handleize }}"
+                    class="deluxe-part-img default-img"
+                  >
+                </div>
+                {% if section.blocks.size > 0 %}
+                  {% for deluxe_block in section.blocks %}
+                    {% if deluxe_block.type == 'deluxe_premium_product' %}
+                      <div
+                        class="image_wrapper deluxe-part-img"
+                        data-title="{{deluxe_block.settings.feature | handleize }}"
+                      >
+                        <img
+                          src="{{ deluxe_block.settings.premium_part_image | img_url:"master" }}"
+                          alt="{{ deluxe_block.settings.premium_part_image.alt }}"
+                          data-title="{{deluxe_block.settings.feature | handleize }}"
+                          class="deluxe-part-img"
+                        >
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="product-compare-section mobile_only product-compare-details">
+            <div class="product-compare-feature">
+              <div class="features-list">
+                <a href="javascript:;" class="mobile-show-features btn_normal btn_red">Select Feature</a>
+                <ul class="mobile-feature-list-wrapper">
+                  {% if section.blocks.size > 0 %}
+                    {% assign li_active = 0 | plus: 0 %}
+                    {% for deluxe_block in section.blocks %}
+                      {% if deluxe_block.type == 'deluxe_premium_product' %}
+                        <li
+                          data-title="{{deluxe_block.settings.feature | handleize }}"
+                          class="mobile-feature-list feature-list-title"
+                        >
+                          <span>
+                            {%- if deluxe_block.settings.deluxe_feature -%}
+                              <img src="{{ 'comparison-check.png' | file_img_url }}" alt="check">
+                            {%- endif -%}
+                          </span>
+                          {{ deluxe_block.settings.feature }}
+                          <span>
+                            {%- if deluxe_block.settings.premium_feature -%}
+                              <img src="{{ 'comparison-check.png' | file_img_url }}" alt="check">
+                            {%- endif -%}
+                          ></span>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                  <li class="last-feature-msg">
+                    <div>{{ section.settings.bottom_feature_heading }}</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="product-compare-mobile-container">
+              <div class="product-compare-deluxe">
+                <div class="deluxe-parts-images">
+                  {% comment %}
+                    {% for i in (1..5) %}
+                            {% assign posXkey = "tag_position1_mobile_" | append:i  %}
+                            {% assign posX = section.settings[posXkey]  %}
+                            {% assign posYkey = "tag_position2_mobile_" | append:i  %}
+                            {% assign posY = section.settings[posYkey]  %}
+                            {% assign tag_title_key = "tag_title_" | append:i  %}
+                            {% assign tag_title = section.settings[tag_title_key]  %}
+                            {% assign tagsubtitlekey = "tag_subtitle_" | append:i  %}
+                            {% assign tag_subtitle = section.settings[tagsubtitlekey]  %}
+                            {% assign popupvideokey = "popup_video_" | append:i  %}
+                            {% assign popup_video = section.settings[popupvideokey]  %}
+                            {% assign play_icon_top_key = "play_icon_top_" | append:i  %}
+                            {% assign play_icon_top = section.settings[play_icon_top_key]  %}
+                            {% if posX != blank and posY != blank %}
+                                <span class="tagdiv {% if play_icon_top == true %}right-side {% endif %} mobile_only" data-remodal-target="video_modal_{{tag_title}}_{{i}}" style="top: {{posX}}px; left: {{posY}}px;">
+                                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/PlayIcon.svg?v=1593069025" class="play-icon">
+                                  <span class="vtitle">{{tag_title}}</span>
+                                  <span class="vsub_title">{{tag_subtitle}}</span>
+                                </span>
+                                {% if popup_video != blank %}
+                                <div class="remodal" data-remodal-id="video_modal_{{tag_title}}_{{i}}" data-remodal-options="hashTracking: false, closeOnOutsideClick: true">
+                                  <button data-remodal-action="close" class="remodal-close"></button>
+                                  <div class="product_video_wrapper">
+                                    {{popup_video}}
+                                  </div>
+                                </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                  {% endcomment %}
+                  <div
+                    id="default-tag-left-image-mobile-1"
+                    class="image_wrapper deluxe-part-img default-img"
+                    data-title="{{'deluxe-default-img' | handleize }}"
+                  >
+                    <img
+                      src="{{ section.settings.deluxe_default_image | img_url:"master" }}"
+                      alt="{{ section.settings.deluxe_default_image.alt }}"
+                      data-title="{{'deluxe-default-img' | handleize }}"
+                      class="deluxe-part-img default-img"
+                    >
+                  </div>
+                  {% if section.blocks.size > 0 %}
+                    {% for deluxe_block in section.blocks %}
+                      {% if deluxe_block.type == 'deluxe_premium_product' %}
+                        <div
+                          class="image_wrapper deluxe-part-img"
+                          data-title="{{deluxe_block.settings.feature | handleize }}"
+                        >
+                          <img
+                            src="{{ deluxe_block.settings.deluxe_part_image | img_url:"master" }}"
+                            alt="{{ deluxe_block.settings.deluxe_part_image.alt }}"
+                            data-title="{{deluxe_block.settings.feature | handleize }}"
+                            class="deluxe-part-img"
+                          >
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+              <div class="product-compare-premium">
+                <div class="premium-parts-images">
+                  {% comment %}
+                    {% for i in (6..10) %}
+                            {% assign posXkey = "tag_position1_mobile_" | append:i  %}
+                            {% assign posX = section.settings[posXkey]  %}
+                            {% assign posYkey = "tag_position2_mobile_" | append:i  %}
+                            {% assign posY = section.settings[posYkey]  %}
+                            {% assign tag_title_key = "tag_title_" | append:i  %}
+                            {% assign tag_title = section.settings[tag_title_key]  %}
+                            {% assign tagsubtitlekey = "tag_subtitle_" | append:i  %}
+                            {% assign tag_subtitle = section.settings[tagsubtitlekey]  %}
+                            {% assign popupvideokey = "popup_video_" | append:i  %}
+                            {% assign popup_video = section.settings[popupvideokey]  %}
+                            {% assign play_icon_top_key = "play_icon_top_" | append:i  %}
+                            {% assign play_icon_top = section.settings[play_icon_top_key]  %}
+                            {% if posX != blank and posY != blank %}
+                              <span class="tagdiv {% if play_icon_top == true %}right-side {% endif %} mobile_only"  data-remodal-target="video_modal_{{tag_title}}_{{i}}" style="top: {{posX}}px; left: {{posY}}px;">
+                                <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/PlayIcon.svg?v=1593069025" class="play-icon">
+                                <span class="vtitle">{{tag_title}}</span>
+                                <span class="vsub_title">{{tag_subtitle}}</span>
+                              </span>
+                            {% if popup_video != blank %}
+                            <div class="remodal" data-remodal-id="video_modal_{{tag_title}}_{{i}}" data-remodal-options="hashTracking: false, closeOnOutsideClick: true">
+                              <button data-remodal-action="close" class="remodal-close"></button>
+                              <div class="product_video_wrapper">
+                                {{popup_video}}
+                              </div>
+                            </div>
+                            {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                  {% endcomment %}
+                  <div
+                    id="default-tag-right-image-mobile-1"
+                    class="image_wrapper premium-part-img default-img"
+                    data-title="{{'premium-default-img' | handleize }}"
+                  >
+                    <img
+                      src="{{ section.settings.premium_default_image | img_url:"master" }}"
+                      alt="{{ deluxe_block.settings.premium_part_image.alt }}"
+                      data-title="{{'premium-default-img' | handleize }}"
+                      class="premium-part-img default-img"
+                    >
+                  </div>
+                  {% if section.blocks.size > 0 %}
+                    {% for deluxe_block in section.blocks %}
+                      {% if deluxe_block.type == 'deluxe_premium_product' %}
+                        <div
+                          class="image_wrapper deluxe-part-img"
+                          data-title="{{deluxe_block.settings.feature | handleize }}"
+                        >
+                          <img
+                            src="{{ deluxe_block.settings.premium_part_image | img_url:"master" }}"
+                            alt="{{ deluxe_block.settings.premium_part_image.alt }}"
+                            data-title="{{deluxe_block.settings.feature | handleize }}"
+                            class="deluxe-part-img"
+                          >
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="remodal"
+        data-remodal-id="tag_video_modal"
+        data-remodal-options="hashTracking: false, closeOnOutsideClick: true"
+      >
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <div class="product_video_wrapper"></div>
+      </div>
+    </div>
+  </div>
+</div>

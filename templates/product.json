@@ -1,0 +1,586 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "home_rack_finder_app_PXajpC": {
+      "type": "home-rack-finder-app",
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "feature_content_99CFWG": {
+      "type": "feature-content",
+      "blocks": {
+        "logo_image_bKHmkd": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_11_46b5c0fc-7400-4c1d-b242-af59e5f5c113.png",
+            "link": "#",
+            "text": "Latest Innovations!"
+          }
+        },
+        "logo_image_h7AVnw": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_6_7cfcfd2f-d679-47a4-b4d0-afaacd44a5b4.png",
+            "link": "shopify://collections/parts",
+            "text": "missing a parts?"
+          }
+        },
+        "logo_image_dahFKj": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/questions.png",
+            "link": "shopify://pages/allencare",
+            "text": "have questions?"
+          }
+        },
+        "logo_image_7p8Kkw": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_10_8421e01f-618f-4b1f-ab47-dce4675421da.png",
+            "link": "shopify://pages/product-manuals",
+            "text": "installation help?"
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_bKHmkd",
+        "logo_image_h7AVnw",
+        "logo_image_dahFKj",
+        "logo_image_7p8Kkw"
+      ],
+      "settings": {
+        "dekstop_hide": false,
+        "mobile_hide": true,
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false,
+        "section_background": "#f2f3f4",
+        "slider": false,
+        "per_row": "2"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_KCR4at": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": true
+          }
+        },
+        "stamped_reviews_star_rating_badge_dUnFJA": {
+          "type": "shopify://apps/stamped-reviews/blocks/star-rating-badge/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "use_metafields": false,
+            "sku_tagtype": "sku",
+            "is_featured_product": false,
+            "featured_product_handle": ""
+          }
+        },
+        "price_wpCKFr": {
+          "type": "price",
+          "settings": {}
+        },
+        "description_M6df7i": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": false,
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_mPmbFd": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "globe",
+            "text": "Free worldwide shipping"
+          }
+        },
+        "sales_point2": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "truck",
+            "text": "Free returns"
+          }
+        },
+        "sales_point3": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "leaf",
+            "text": "Carbon neutral"
+          }
+        },
+        "sales_point4": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "lock",
+            "text": "Secure payments"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "simple_list_MEJdGi": {
+          "type": "simple_list",
+          "settings": {
+            "icon_1": "shopify://shop_images/installation.svg",
+            "text_1": "easy installation",
+            "installation_pdf": "{{product.metafields.custom.easy_installation_pdf | file_url}}",
+            "custom_class_1": "",
+            "target_class_1": "",
+            "icon_2": "shopify://shop_images/need_part.svg",
+            "text_2": "need a part?",
+            "custom_class_2": "",
+            "target_class_2": "compatible-parts",
+            "icon_3": "shopify://shop_images/save_car.svg",
+            "text_3": "save your car search",
+            "custom_class_3": "",
+            "target_class_3": "",
+            "icon_4": "shopify://shop_images/add_vehicle.svg",
+            "text_4": "add another vehicle",
+            "custom_class_4": "AddVehicle",
+            "target_class_4": "home-rack-finder-app",
+            "icon_5": "shopify://shop_images/Asset_10.png",
+            "text_5": "Does it fit my car ?",
+            "custom_class_5": "",
+            "target_class_5": "pdp_rack_finder",
+            "icon_6": "shopify://shop_images/need_part.svg",
+            "text_6": "Clear Your vehicle",
+            "custom_class_6": "resetButton",
+            "target_class_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_KCR4at",
+        "stamped_reviews_star_rating_badge_dUnFJA",
+        "price_wpCKFr",
+        "description_M6df7i",
+        "variant_picker",
+        "buy_buttons_mPmbFd",
+        "sales_point",
+        "sales_point2",
+        "sales_point3",
+        "sales_point4",
+        "inventory_status",
+        "simple_list_MEJdGi"
+      ],
+      "settings": {
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_type": "dots",
+        "thumbnail_position": "below",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": true,
+        "mobile_layout": "partial",
+        "enable_video_looping": false,
+        "product_video_style": "muted",
+        "walmart_img": "shopify://shop_images/wallmart_304cfc09-93ea-407f-b67d-781871f74de3.png",
+        "walmart_title": "Walmart",
+        "amazon_img": "shopify://shop_images/amazon_430x_467ff627-93ab-433e-8fdb-2586424e1541.svg",
+        "amazon_title": "Amazon",
+        "homedepot_img": "shopify://shop_images/home-depot.png",
+        "homedepot_title": "Homedepot",
+        "academy_img": "shopify://shop_images/academy.png",
+        "academy_title": "Academy"
+      }
+    },
+    "pdp_video_column_CG8z9q": {
+      "type": "pdp_video_column",
+      "blocks": {
+        "block_KytWUK": {
+          "type": "block",
+          "settings": {
+            "title": "allen.bike brand",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/6f69744b6c8949b7b45d4f8c3ef2c1bd.mp4"
+          }
+        },
+        "block_w6LnhH": {
+          "type": "block",
+          "settings": {
+            "title": "in the wild",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/6f69744b6c8949b7b45d4f8c3ef2c1bd.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "block_KytWUK",
+        "block_w6LnhH"
+      ],
+      "settings": {}
+    },
+    "feature_content_jHXiMH": {
+      "type": "feature-content",
+      "blocks": {
+        "logo_image_acWbgQ": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_11_46b5c0fc-7400-4c1d-b242-af59e5f5c113.png",
+            "link": "#",
+            "text": "Latest Innovations!"
+          }
+        },
+        "logo_image_H8hACX": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_6_7cfcfd2f-d679-47a4-b4d0-afaacd44a5b4.png",
+            "link": "shopify://collections/parts",
+            "text": "missing a parts?"
+          }
+        },
+        "logo_image_EHzG6N": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/questions.png",
+            "link": "shopify://pages/allencare",
+            "text": "have questions?"
+          }
+        },
+        "logo_image_RGXPXm": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_10_8421e01f-618f-4b1f-ab47-dce4675421da.png",
+            "link": "shopify://pages/product-manuals",
+            "text": "installation help?"
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_acWbgQ",
+        "logo_image_H8hACX",
+        "logo_image_EHzG6N",
+        "logo_image_RGXPXm"
+      ],
+      "settings": {
+        "dekstop_hide": true,
+        "mobile_hide": false,
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false,
+        "section_background": "#f2f3f4",
+        "slider": true,
+        "per_row": "1"
+      }
+    },
+    "meta_faq_F6QjiD": {
+      "type": "Meta-faq",
+      "disabled": true,
+      "settings": {
+        "title": "FREQUENTLY ASKED QUESTIONS",
+        "heading_size": "h2",
+        "text_align": "left"
+      }
+    },
+    "compatible_parts_idrhLM": {
+      "type": "compatible_parts",
+      "settings": {
+        "bg_color": "rgba(0,0,0,0)",
+        "title": "Compatible Parts",
+        "sub_heading": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "btn_text": "",
+        "home_featured_products": "",
+        "product_list": "{{ product.metafields.custom.compatible_parts.value }}",
+        "count": 10,
+        "products_per_row": 5,
+        "enable_slider": true,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "Shop bestseller",
+        "related_count": 4,
+        "products_per_row": 4
+      }
+    },
+    "pdp_rack_finder_BnaWVK": {
+      "type": "pdp_rack_finder",
+      "settings": {
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit"
+      }
+    },
+    "home_featured_collection_JeDM8w": {
+      "type": "home-featured-collection",
+      "disabled": true,
+      "settings": {
+        "bg_color": "#ba4444",
+        "title": "Compatible Parts",
+        "sub_heading": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "btn_text": "",
+        "home_featured_products": "",
+        "product_list": "{{ product.metafields.custom.compatible_parts.value }}",
+        "count": 5,
+        "products_per_row": 5,
+        "products_per_row_mobile": 2,
+        "desktop_slider": false,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "review_widget_jVk7fc": {
+      "type": "review-widget",
+      "settings": {
+        "review_limit": 8,
+        "subheading": "Customer Reviews",
+        "subheading_text_color": "",
+        "heading": "Real Reviews from Allen Customers!",
+        "heading_text_color": "",
+        "align_text": "center",
+        "round_images": true,
+        "section_bg_color": "",
+        "section_padding_desktop": "",
+        "section_padding_mobile": "",
+        "section_margin_desktop": "",
+        "section_margin_mobile": ""
+      }
+    },
+    "testimonials_rmGqmg": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_3Xyh3T": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial-pro-name": "Bike Rack for the family",
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_Mx8jyG": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial-pro-name": "Bike Rack for the family",
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_QmcRWm": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial-pro-name": "Bike Rack for the family",
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_4zCgKh": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial-pro-name": "Bike Rack for the family",
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_YJQHtY": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial-pro-name": "Bike Rack for the family",
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_3Xyh3T",
+        "testimonial_Mx8jyG",
+        "testimonial_QmcRWm",
+        "testimonial_4zCgKh",
+        "testimonial_YJQHtY"
+      ],
+      "disabled": true,
+      "settings": {
+        "subheading": "Customer Reviews",
+        "subheading_text_color": "",
+        "heading": "Don't take our word for it.",
+        "heading_text_color": "",
+        "align_text": "center",
+        "round_images": true,
+        "section_bg_color": "",
+        "section_padding_desktop": "",
+        "section_padding_mobile": "",
+        "section_margin_desktop": "",
+        "section_margin_mobile": ""
+      }
+    },
+    "pdp_review_ctHpU9": {
+      "type": "pdp_review",
+      "settings": {}
+    },
+    "wild_gallery_MVz3jz": {
+      "type": "wild_gallery",
+      "settings": {}
+    },
+    "featured_collection_C7mTjK": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Shop bestseller",
+        "sub_heading": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "btn_text": "",
+        "home_featured_products": "bfcm-sale-2023",
+        "count": 4,
+        "products_per_row": 4,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": ""
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "tab",
+        "contact"
+      ],
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {}
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "2"
+      }
+    }
+  },
+  "order": [
+    "home_rack_finder_app_PXajpC",
+    "feature_content_99CFWG",
+    "main",
+    "pdp_video_column_CG8z9q",
+    "feature_content_jHXiMH",
+    "meta_faq_F6QjiD",
+    "compatible_parts_idrhLM",
+    "recommendations",
+    "pdp_rack_finder_BnaWVK",
+    "home_featured_collection_JeDM8w",
+    "review_widget_jVk7fc",
+    "testimonials_rmGqmg",
+    "pdp_review_ctHpU9",
+    "wild_gallery_MVz3jz",
+    "featured_collection_C7mTjK",
+    "sub",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "collection-return"
+  ]
+}

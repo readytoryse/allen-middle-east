@@ -1,0 +1,241 @@
+{% comment %}
+  ** FAQ page - custom view **
+  - Page template
+  - Uses blocks
+{% endcomment %}
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+          {% if section.settings.show_banner %}
+            {% include 'allen-care-page-header', search_type: 'page' %}
+          {% endif %}
+          <!-- <a name="pagecontent" id="pagecontent"></a> -->
+          
+          <div class="main content">
+            <div class="">
+              <div class="sixteen columns page clearfix">
+                {% unless section.settings.show_banner %}
+                  <h1>
+                    {{ page.title }}
+                  </h1>
+                  <div class="feature_divider"></div>
+                {% endunless %}
+                <div>
+                  {% include 'page-multi-column', content: page.content %}
+                </div>
+              </div>
+              <div class="pmanuals_wrp">
+                <div class="lang_manual">
+                  <div class="left"></div>
+                  {% unless template== 'page.product-manuals-sb-05' %}
+                  <div class="right">
+                    <select class="country_code" id="country_code">
+                      <option value="all">Select a language</option>
+                      <option value="all">all Manuals</option>
+                      <option value="en">English</option>
+                      <option value="eu">Europe</option>
+                      <option value="jp">Japanese</option>
+                      <option value="de">German</option>
+                      <option value="it">Italian</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="pt">Portuguese</option>
+                    </select>
+                  </div>
+                  {% endunless %}
+                </div>
+                {% if section.blocks.size > 0 %}
+                  <dl class="faqAccordion product-manuals">
+                    {% for block in section.blocks %}
+                      {% if block.type == 'heading' %}
+                        {% if block.settings.heading != blank %}
+                          <h2 class="title" data-code="all">{{ block.settings.heading }}</h2>
+                        {% endif %}
+                      {% endif %}
+                      {% if block.settings.title != blank %}
+                        {% assign country_code = 'all' %}
+                        {% if block.settings.country_code != blank %}                
+                          {% assign country_code = block.settings.country_code %}
+                        {% endif %}  
+                        <dt id="{{ block.settings.title | handleize  }}" data-code="{{ country_code }}">
+                          <button
+                            type="button"
+                            data-code="{{ block.settings.country_code }}"
+                            aria-controls="panel-01"
+                            aria-expanded="true"
+                          >
+                            {{ block.settings.title }}
+                          </button>
+                        </dt>
+                        <dd id="panel-01" aria-hidden="true" data-code="{{ country_code }}">
+                          {{ block.settings.subtitle }}
+                        </dd>
+                      {% endif %}
+                    {% endfor %}
+                  </dl>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  {% if section.settings.show_banner %}
+    .mobile_nav-fixed--true #pagecontent, .mobile_nav-fixed--false #pagecontent {
+      padding: 0;
+    }
+    @media only screen and (max-width: 479px) {
+      div.content {
+        padding-top: 0;
+      }
+    }
+  {% endif %}
+</style>
+
+
+{% schema %}
+{
+  "name": "t:labels.product_manuals",
+  "class": "product-manual-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "t:labels.show_banner",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:labels.show_search",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "t:labels.section_bg_image",
+      "info": "t:info.background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bg_img",
+      "label": "t:labels.right_bg_img",
+      "info": "t:labels.right_bg_img"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_bg_img",
+      "label": "t:labels.left_bg_img",
+      "info": "t:labels.left_bg_img"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:labels.background_color",
+      "info": "t:labels.background_color",
+      "default": "#ea1d2d"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "t:labels.text_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.text_on_left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.text_on_center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.text_on_right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:labels.text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.text_on_left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.text_on_center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.text_on_right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "t:labels.heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:labels.heading",
+          "default": "t:labels.title"
+        },
+        {
+          "type": "checkbox",
+          "id": "International_block",
+          "label": "t:labels.International_block"
+        }
+      ]
+    },
+    {
+      "name": "t:labels.faq",
+      "type": "Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.question",
+          "default": "t:labels.title"
+        },
+        {
+          "type": "text",
+          "id": "country_code",
+          "label": "t:labels.country_code",
+          "info": "t:labels.country_code-de"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "t:labels.answer",
+          "default": "t:labels.subtitle-default"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.product_manuals"
+    }
+  ]
+}
+{% endschema %}

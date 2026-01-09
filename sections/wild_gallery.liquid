@@ -1,0 +1,50 @@
+ {% if template contains 'page.resource-pdp' %}
+  {% assign product = page.metafields.custom.resource_product.value %}
+ {% endif %}
+<div class="pdp_wild_main swirl_bg">
+    <div class="pdp_wild_wrp page-width">
+        <div class="pdp_wild_inner">
+            <div class="heading comn_heading text-center">{{ product.title }} IN THE WILD</div>
+            <div id="stamped-reviews-widget"
+            data-widget-type="instagram-feed"
+            data-feed-type="gallery"
+            data-height="380"
+            data-auto-play="false"
+            data-auto-play-speed=""
+            data-style-color-hover=""
+            data-style-color-hover-opacity=""
+            data-take="12"
+            data-product-ids="{{ product.id }}"
+            data-hover-text=""
+            data-shop-button-text=""
+            data-review-ids=""
+            data-product-category=""
+            data-product-brand=""
+            data-tags=""
+            data-limit-words=""      
+            data-fill-empty="false"
+            data-random="false"
+            data-with-photos="false"
+            ></div> 
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+    {
+      "name": "t:labels.pdp-wild-gallery",
+      "settings": [
+        
+    ],
+    "blocks": [
+      
+    ],
+    "presets": [
+        {
+          "name": "t:labels.pdp-wild-gallery",
+        }
+      ]
+    }
+  {% endschema %}

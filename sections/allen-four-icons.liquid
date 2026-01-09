@@ -1,0 +1,68 @@
+{% comment %}
+  ** Allen 4 Icons - custom view **
+  - Page template
+  - Uses blocks
+{% endcomment %}
+
+<div class="page-width">
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      <div class="icon-block">
+        <a href="{{ block.settings.link }}">
+          <img
+            src="{{ block.settings.icon_img | img_url:'150x' }}"
+            width="150"
+            height="150"
+            alt="{{ block.settings.icon_img.alt | default:block.settings.text }}"
+          >
+          <span>{{ block.settings.text }}</span>
+        </a>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:labels.four_icon_heading",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "t:labels.background_color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_image",
+      "name": "t:labels.four_icon_block_type",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_img",
+          "label": "t:labels.four_icon_img"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:labels.link",
+          "info": "t:labels.optional"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:labels.feature_content_text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.four_icon_heading"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

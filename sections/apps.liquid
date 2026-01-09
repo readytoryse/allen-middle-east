@@ -1,0 +1,62 @@
+{%- render 'section-apps' -%}
+
+{% schema %}
+{
+  "name": "t:labels.apps",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:labels.full_page_width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "space_around",
+      "label": "t:actions.add_spacing_above",
+      "default": true
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label": "t:labels.heading"
+    },
+    {
+      "type":"text",
+      "id":"subheading",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "select",
+      "id": "text_alighn",
+      "label": "t:labels.text_alignment",
+      "default":"t:labels.center-value",
+      "options": [
+        {
+          "label": "t:labels.alignments.left",
+          "value": "t:labels.left-value"
+        },
+        {
+          "label": "t:labels.alignments.center",
+          "value": "t:labels.center-value"
+        },
+        {
+          "label": "t:labels.alignments.right",
+          "value": "t:labels.right-value"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.apps"
+    }
+  ]
+}
+{% endschema %}

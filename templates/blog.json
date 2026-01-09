@@ -1,0 +1,140 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+    "layout": "theme.allen-stories",
+  "sections": {
+    "main": {
+      "type": "blog-template",
+      "disabled": true,
+      "settings": {
+        "blog_show_rss": false,
+        "blog_show_tags": true,
+        "blog_show_date": true,
+        "blog_show_comments": true,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "wide"
+      }
+    },
+    "sidebar": {
+      "type": "blog-sidebar",
+      "blocks": {
+        "tags": {
+          "type": "tags",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "tags"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "sub_text": "",
+            "btn_text": ""
+          }
+        },
+        "collection2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "sub_text": "",
+            "btn_text": ""
+          }
+        },
+        "collection3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "sub_text": "",
+            "btn_text": ""
+          }
+        },
+        "collection4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "sub_text": "",
+            "btn_text": ""
+          }
+        },
+        "collection5": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "sub_text": "",
+            "btn_text": ""
+          }
+        },
+        "collection6": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "sub_text": "",
+            "btn_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection1",
+        "collection2",
+        "collection3",
+        "collection4",
+        "collection5",
+        "collection6"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "You may also like",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "sub_heading": "",
+        "sub_heading_position": "left",
+        "divider": false
+      }
+    },
+    "new_blog_template_MUCEzb": {
+      "type": "new-blog-template",
+      "settings": {
+        "image_darken": false,
+        "subtitle": "Come ride with us! Explore our insider tips, product reviews and everyday adventure tales from riders like you.",
+        "blog_posts_per_row": 3,
+        "blog_posts_per_page": 12,
+        "blog_tags": false,
+        "blog_author": false,
+        "blog_date": true,
+        "blog_comment_count": true,
+        "read_more_link": true,
+        "toggle": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sidebar",
+    "featured-collections",
+    "new_blog_template_MUCEzb"
+  ]
+}

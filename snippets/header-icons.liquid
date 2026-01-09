@@ -1,0 +1,135 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License %}
+{%- comment -%} 
+      Renders the header icons.
+     
+      Accepts: 
+      - cart_icon {string} - The cart icon to use 
+      - nav_position {string} - The navigation position
+     
+      Usage:
+      {% render 'header-icons', cart_icon: 'bag' %} 
+{%- endcomment -%}
+
+{%- liquid
+  assign cart_icon = cart_icon | default: settings.cart_icon | default: 'cart'
+  assign nav_position = nav_position | default: 'below'
+
+  assign hide_icon_labels = true
+
+  if nav_position == 'below'
+    assign hide_icon_labels = false
+  endif
+-%}
+
+<div class="site-nav">
+  <div class="site-nav__icons">
+    <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header js-no-transition">
+      <svg
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M20.5177 34.7854C28.3976 34.7854 34.7854 28.3976 34.7854 20.5177C34.7854 12.6379 28.3976 6.25 20.5177 6.25C12.6379 6.25 6.25 12.6379 6.25 20.5177C6.25 28.3976 12.6379 34.7854 20.5177 34.7854Z"
+          stroke="white"
+          stroke-width="2.08333" />
+        <path d="M43.2647 44.7355C43.6709 45.1417 44.3294 45.1417 44.7355 44.7355C45.1417 44.3294 45.1417 43.6709 44.7355 43.2647L43.2647 44.7355ZM44.7355 43.2647L30.4678 28.997L28.997 30.4678L43.2647 44.7355L44.7355 43.2647Z" fill="white" />
+      </svg>
+      <span class="icon__fallback-text visually-hidden">{{ 'labels.search' | t }}</span>
+    </a>
+
+    {%- if shop.customer_accounts_enabled -%}
+      <a class="site-nav__link site-nav__link--icon" href="{{ routes.account_url }}">
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M25 24.0833C28.4518 24.0833 31.25 21.2851 31.25 17.8333C31.25 14.3815 28.4518 11.5833 25 11.5833C21.5482 11.5833 18.75 14.3815 18.75 17.8333C18.75 21.2851 21.5482 24.0833 25 24.0833Z"
+            stroke="white"
+            stroke-width="2.08333"
+            stroke-linecap="round" />
+          <path
+            d="M25 43.75C35.3553 43.75 43.75 35.3553 43.75 25C43.75 14.6447 35.3553 6.25 25 6.25C14.6447 6.25 6.25 14.6447 6.25 25C6.25 35.3553 14.6447 43.75 25 43.75Z"
+            stroke="white"
+            stroke-width="2.08333" />
+          <path
+            d="M14.583 40.5V38.4167C14.583 35.654 15.6805 33.0045 17.634 31.051C19.5875 29.0975 22.237 28 24.9997 28C27.7623 28 30.4119 29.0975 32.3654 31.051C34.3189 33.0045 35.4163 35.654 35.4163 38.4167V40.5"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round" />
+        </svg>
+        <span class="site-nav__icon-label hide small--hide{% if hide_icon_labels %} icon__fallback-text visually-hidden{% endif %}">
+          {{ 'labels.account' | t }}
+        </span>
+      </a>
+    {%- endif -%}
+
+    <a
+      href="{{ routes.cart_url }}"
+      id="HeaderCartTrigger"
+      aria-controls="HeaderCart"
+      class="site-nav__link site-nav__link--icon js-no-transition"
+      data-icon="{{ cart_icon }}"
+      aria-label="{{ 'labels.cart' | t }}">
+      <span class="cart-link">
+        <svg
+          width="36"
+          height="34"
+          viewBox="0 0 36 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M3 3H5.58373C6.24212 3.03504 6.87297 3.2743 7.38781 3.68421C7.90266 4.09413 8.27568 4.65414 8.45455 5.28571L12.3302 19.5714C12.4929 20.2001 12.8659 20.7548 13.3877 21.1443C13.9095 21.5338 14.549 21.7348 15.201 21.7143H30.9905"
+            stroke="white"
+            stroke-width="2.08"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path
+            d="M15.0573 31C16.7221 31 18.0717 29.6569 18.0717 28C18.0717 26.3431 16.7221 25 15.0573 25C13.3925 25 12.043 26.3431 12.043 28C12.043 29.6569 13.3925 31 15.0573 31Z"
+            stroke="white"
+            stroke-width="2.08"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path
+            d="M28.1193 31C29.7841 31 31.1337 29.6569 31.1337 28C31.1337 26.3431 29.7841 25 28.1193 25C26.4546 25 25.105 26.3431 25.105 28C25.105 29.6569 26.4546 31 28.1193 31Z"
+            stroke="white"
+            stroke-width="2.08"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path
+            d="M12.0433 16.9999H27.8328C28.5173 16.9799 29.1746 16.7285 29.6964 16.2871C30.2182 15.8456 30.5734 15.2405 30.7036 14.5714L33.0002 6.99994H10.0337"
+            stroke="white"
+            stroke-width="2.08"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
+          <span class="cart-link__bubble-num">{{ cart.item_count }}</span>
+        </span>
+      </span>
+      <span class="site-nav__icon-label hide small--hide{% if hide_icon_labels %} icon__fallback-text visually-hidden{% endif %}">
+        {{ 'labels.cart' | t }}
+      </span>
+    </a>
+
+    <button
+      type="button"
+      aria-controls="MobileNav"
+      class="here site-nav__link site-nav__link--icon medium-up--hide mobile-nav-trigger small--hide">
+      {% render 'icon'
+        , name: 'hamburger' %}
+      <span class="icon__fallback-text visually-hidden">{{ 'labels.site_navigation' | t }}</span>
+    </button>
+  </div>
+  <div class="site-nav__close-cart">
+    <button type="button" class="cst site-nav__link site-nav__link--icon js-close-header-cart">
+      <span>{{ 'actions.close' | t }}</span>
+      {% render 'icon'
+        , name: 'close' %}
+    </button>
+  </div>
+</div>

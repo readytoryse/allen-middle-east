@@ -1,0 +1,166 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License %}
+{%- comment -%}
+  Renders a collection grid.
+
+  Accepts:
+  - context {object} - The collection or search object
+  - grid_style {'large'|'medium'|'list'} - The grid style
+
+  Usage:
+  {% render 'collection-grid', context: collection %}
+{%- endcomment -%}
+
+{% liquid
+  assign grid_style = grid_style | default: section.settings.grid_style | default: 'medium'
+
+  if context.products
+    assign count = context.products_count
+    assign current_offset = paginate.current_offset | plus: 1
+    assign end_prod_offset = paginate.current_offset | plus: paginate_by
+    assign count_label = 'info.product_count' | t: count: count, start_prod: current_offset, end_prod: end_prod_offset
+    assign items = items | default: context.products
+  endif
+
+  if context.results
+    assign count = context.results_count
+    assign count_label = 'info.search_result_count' | t: count: count
+    assign items = items | default: context.results
+  endif
+
+  assign current_filter_size = 0
+  for filter in filters
+    assign current_filter_size = current_filter_size | plus: filter.active_values.size
+  endfor
+%}
+
+<div class="collection-grid__wrapper">
+  <div class="collection-filter">
+    <div class="collection-filter__inner">
+      <div class="collection-filter__item collection-filter__item--drawer">
+        <button
+          type="button"
+          class="collection-filter__btn text-link"
+        >
+          {% render 'icon', name: 'filter' %}
+          {{ 'actions.filter' | t }}
+          {%- if current_filter_size > 0 -%}
+            ({{ current_filter_size }})
+          {%- endif -%}
+        </button>
+      </div>
+
+      <div class="collection-filter__item collection-filter__item--count small--hide">
+        <h3 class="vehicle-title">Your vehicle:<strong></strong></h3>
+        <span class="count">{{ count_label }}</span>
+      </div>
+
+      <div class="collection-filter__item collection-filter__item--right">
+        <div class="save_edit">
+          <a id="editButton" class="button less-pad see-result" href="javascript:;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1.55 1.38" width="15"><path d="M.69,1.38c-.18,0-.36-.07-.49-.2-.13-.13-.2-.3-.2-.49,0-.38.31-.69.69-.69s.69.31.69.69v.04l.07-.07s.07-.03.09,0c.01.01.02.03.02.05s0,.03-.02.05l-.18.18s0,0,0,0c-.01.01-.03.02-.04.02,0,0,0,0-.01,0-.01,0-.02,0-.03-.02,0,0,0,0,0,0l-.18-.18s-.03-.07,0-.09c.03-.03.07-.03.09,0l.07.07v-.04C1.25.38,1,.13.69.13S.13.38.13.69s.25.56.56.56c.04,0,.06.03.06.06s-.03.06-.06.06Z" fill="#231f20"/></svg>
+            {% comment %} <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Asset_4_4x-8.png?v=1722417293" width="" height="" alt=""> {% endcomment %}
+            <span>Edit</span>
+          </a>
+          <a id="saveButton" class="button save_car" href="javascript:;">
+            {% comment %} <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Asset_5_4x-8.png?v=1722417294" width="" height="" alt=""> {% endcomment %}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1.65 1.43" width="15"><path d="M1.19,0c-.14,0-.27.07-.36.19C.74.07.6,0,.46,0c-.08,0-.16.02-.23.07C.01.21-.07.51.06.75c.1.2.55.54.71.65.02.01.04.02.06.02s.04,0,.06-.02c.16-.12.6-.46.71-.65.13-.24.05-.55-.17-.69-.07-.05-.15-.07-.23-.07h0Z" fill="#e81f2f"/></svg>
+            <span>Save Car</span>
+          </a>
+        </div>
+        {%- assign sort_by = context.sort_by | default: context.default_sort_by -%}
+        <div class="collection-filter__sort small--hide">
+          <label for="SortBy" class="visually-hidden">{{ 'actions.sort' | t }}</label>
+          <select name="SortBy" id="SortBy" data-default-sortby="{{ context.default_sort_by }}">
+            <option
+              value="title-ascending"
+              {% if sort_by == context.default_sort_by %}
+                selected="selected"
+              {% endif %}
+            >
+              {{ 'actions.sort' | t }}
+            </option>
+            {%- for option in context.sort_options -%}
+              <option
+                value="{{ option.value }}"
+                {% if option.value == sort_by %}
+                  selected="selected"
+                {% endif %}
+              >
+                {{ option.name }}
+              </option>
+            {%- endfor -%}
+          </select>
+        </div>
+
+        {%- liquid
+          assign productGridView = grid_style
+          if cart.attributes.product_view != blank
+            assign productGridView = cart.attributes.product_view
+          endif
+        -%}
+
+        <ul class="no-bullets inline-list text-right">
+          <li class="hide">
+            <button
+              type="button"
+              class="grid-view-btn{% if productGridView == 'large' %} is-active{% endif %}"
+              data-view="large"
+              title="{{ 'labels.large' | t }}"
+            >
+              {% render 'icon', name: 'view-large' %}
+              <span class="icon__fallback-text visually-hidden">{{ 'labels.large' | t }}</span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="grid-view-btn{% if productGridView == 'medium' %} is-active{% endif %}"
+              data-view="medium"
+              title="{{ 'labels.small' | t }}"
+            >
+              {% render 'icon', name: 'view-small' %}
+              <span class="icon__fallback-text visually-hidden">{{ 'labels.small' | t }}</span>
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="grid-view-btn{% if productGridView == 'list' %} is-active{% endif %}"
+              data-view="list"
+              title="{{ 'labels.list' | t }}"
+            >
+              {% render 'icon', name: 'view-list' %}
+              <span class="icon__fallback-text visually-hidden">{{ 'labels.list' | t }}</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="collection-mobile-filters medium-up--hide">
+      <div class="collection-mobile-filters__holder" id="CollectionInlineFilterWrap"></div>
+    </div>
+  </div>
+
+  {%- if items == blank -%}
+    <div class="index-section">{{ 'info.collection_no_products' | t }}</div>
+  {%- endif -%}
+
+  <div
+    class="new-grid product-grid collection-grid cmn_grid"
+    data-view="{{ productGridView }}"
+    data-scroll-to
+  >
+    {%- liquid
+      for item in items
+        unless item.metafields.seo.hidden == 1
+          if item.object_type == 'product'
+            render 'product-grid-item', product: item, index: forloop.index
+          else
+            render 'search-grid-item', item: item
+          endif
+        endunless
+      endfor
+    -%}
+  </div>
+</div>

@@ -1,0 +1,393 @@
+{% comment %}
+  ** FAQ page - custom view **
+  - Page template
+  - Uses blocks
+{% endcomment %}
+{% if section.settings.show_banner %}
+  {% include 'allen-care-page-header' %}
+{% endif %}
+<a name="pagecontent" id="pagecontent"></a>
+
+<div class="page-width main content">
+  <div class="">
+    <div class="sixteen columns page clearfix">
+      {% unless section.settings.show_banner %}
+        <h1>
+          {{ page.title }}
+        </h1>
+        <div class="feature_divider"></div>
+      {% endunless %}
+      <div>
+        {% include 'page-multi-column', content: page.content %}
+      </div>
+    </div>
+    <div class="video-library-feature-video video-section custom-homepage-video-section-2">
+      {% assign default = '1400x' %}
+      {% assign size1 = '480x' %}
+      {% assign size2 = '765x' %}
+      {% assign size3 = '900x' %}
+      {% assign size4 = '1000x' %}
+      {% assign size5 = '1100x' %}
+      {% assign size6 = '1300x' %}
+      {% assign size7 = '1500x' %}
+      {% assign size8 = '1700x' %}
+      {% assign size9 = '1900x' %}
+      {% assign size10 = '2000x' %}
+      {% include 'include-custom-video-section', template: 'page' %}
+    </div>
+    <div class="">
+      {% for video_data in page.metafields.custom.video_library.value %} 
+      {% endfor %}
+      {% if page.metafields.custom.video_library.value != blank %}
+        <dl class="faqAccordion video-accordian product-manuals allen-video-library">
+          {% for video_data in page.metafields.custom.video_library.value %}
+            <div class="heading-wrapp">
+                <h2
+                  class="title video-accordion-title"
+                  id="{{ video_data.video_category_title | handleize}}"
+                  style="cursor:pointer;"
+                >
+                  {{ video_data.video_category_title }}
+                </h2>
+              {%- form 'localization' -%}
+                <select class="js-custom-lang-selector" id="js-custom-lang-selector">
+                  <option>Filter by Language</option>
+                  {%- for locale in form.available_locales -%}
+                    <option
+                      value="{{ locale.iso_code }}"
+                      {%- if locale.iso_code == form.current_locale.iso_code -%}
+                        selected
+                      {%- endif -%}
+                    >
+                      {{- locale.endonym_name | capitalize -}}
+                    </option>
+                  {% endfor %}
+                </select>
+              {% endform %}
+            </div>
+            {% for video in video_data.youtube_video_info.value %}
+              <div class="my-div">
+                <div class="allen-video">
+                  <a data-fancybox class="allen-video-link remodal-bg{% if video.video_poster == blank %} empty-poster{% endif %}" 
+                    href="https://www.youtube.com/embed/{{ video.video_url }}?wmode=opaque&amp;autoplay=1&amp;rel=0&amp;color=white&mute=1" 
+                    data-video="{{ video.video_url }}">
+                    {% if  video.video_poster != blank %}
+                      <img src=" {% if video.video_poster != blank %}{{ video.video_poster | img_url:"master" }}{% endif %}" class="video-image" alt="{{ video.video_title }}"/>
+                      {% else %}
+                       <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/dummy_400x194_ffffff_cccccc.png?v=1723705430" class="video-image" alt="{{ video.video_title }}"/>
+                    {% endif %}
+                    <div class="video-library-overlay"></div>
+                  </a>
+                  <h3>{{ video.video_title }}</h3>
+                </div>
+              </div>
+            {% endfor %} 
+          {% endfor %}
+        </dl>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  {% if section.settings.show_banner %}
+    .mobile_nav-fixed--true #pagecontent, .mobile_nav-fixed--false #pagecontent {
+      padding: 0;
+    }
+    @media only screen and (max-width: 479px) {
+      div.content {
+        padding-top: 0;
+      }
+    }
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "t:labels.video_library",
+  "class": "video-library-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "t:labels.show_banner",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:labels.show_search",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "t:labels.background_image",
+      "info": "t:info.background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bg_img",
+      "label": "t:labels.right_bg_img",
+      "info": "t:labels.right_bg_img"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_bg_img",
+      "label": "t:labels.left_bg_img",
+      "info": "t:labels.left_bg_img"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:labels.background_color",
+      "info": "t:labels.background-color",
+      "default": "#ea1d2d"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "select",
+      "id": "page_text_position",
+      "label": "t:labels.text_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.text_on_left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.text_on_center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.text_on_right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "page_text_align",
+      "label": "t:labels.text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.text_on_left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.text_on_center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.text_on_right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:labels.fvs"
+    },
+    {
+      "type": "select",
+      "id": "source",
+      "label": "t:labels.vs",
+      "options": [
+        {
+          "value": "youtube",
+          "label": "t:labels.youtube"
+        },
+        {
+          "value": "vimeo",
+          "label": "t:labels.vimeo"
+        },
+        {
+          "value": "html5",
+          "label": "t:labels.html5"
+        }
+      ],
+      "default": "youtube"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "t:labels.aspect_ratio",
+      "options": [
+        {
+          "value": "16:9",
+          "label": "16:9"
+        },
+        {
+          "value": "4:3",
+          "label": "4:3"
+        }
+      ],
+      "default": "16:9"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:actions.autoplay_video",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "autoloop",
+      "label": "t:actions.autoloop_video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_dark_overlay",
+      "label": "t:labels.dv"
+    },
+    {
+      "type": "video_url",
+      "id": "video",
+      "label": "t:labels.y_or_v",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "mp4",
+      "label": "t:labels.pvl-text"
+    },
+    {
+      "type": "text",
+      "id": "ogv",
+      "label": "t:labels.pvl-text1"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:labels.image",
+      "info": "t:labels.pvl-image-de"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_text_over_video",
+      "label": "t:labels.display_text_over_video",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "title_image",
+      "label": "t:labels.time-image-icon",
+      "info": "t:labels.title_image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "section_pretext",
+      "label": "t:labels.preheading"
+    },
+    {
+      "type": "richtext",
+      "id": "section_subtitle",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "t:labels.text_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:labels.text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "caption_background",
+      "label": "t:labels.caption_background"
+    },
+    {
+      "type": "checkbox",
+      "id": "caption_background_transparency",
+      "label": "t:labels.caption_background_transparency"
+    },
+    {
+      "type": "text",
+      "id": "button1_label",
+      "label": "t:labels.button1_label"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "t:labels.button1_link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button1_highlight",
+      "label": "t:labels.button1_highlight"
+    },
+    {
+      "type": "text",
+      "id": "button2_label",
+      "label": "t:labels.button2_label"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "t:labels.button2_link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button2_highlight",
+      "label": "t:labels.button2_highlight"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.video_library"
+    }
+  ]
+}
+{% endschema %}

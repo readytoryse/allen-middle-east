@@ -1,0 +1,251 @@
+<div class="page-widths">
+  <div class="rack-finder-tool-wrapper">
+    <div class="page-width">
+      <div class="rack-inner-wrapper">
+        <div class="rack-finder-bg">
+          {% comment %}
+          <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/banner-img_765b7e24-a1bc-4976-984c-1a90c2bbb521.png">
+          {% endcomment %}
+        </div>
+        <div class="rack-finder-tool-content">
+          {%- render 'filter-form', css_class: 'js-rack-form-home js-rack-finder-page', section: section -%}
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="plp_rack swirl_bg">
+    <div class="page-width">
+        <div class="filter-btn-wrapper">
+          <div class="filter-btn-text">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" viewBox="0 0 64 64">
+              <path d="M48 42h10">.</path>
+              <path d="M48 42a5 5 0 1 1-5-5 5 5 0 0 1 5 5z"></path>
+              <path d="M7 42h31">.</path>
+              <path d="M16 22H6">.</path>
+              <path d="M16 22a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+              <path d="M57 22H26">.</path>
+            </svg>
+            <h2>filter</h2>            
+          </div>
+        </div>
+      <div class="filter-wrapper" id="main-result-area">
+        <div class="desktop-filter-wrapper">
+          <div class="container">
+            <div class="filter-open-button four columns js-sticky-sidebar-filter">
+              <div class="theiaStickySidebar">
+                <div class="inner-filter-btn-wrapper">
+                  <div class="filter-btn-text">
+                    <div class="close-filter">
+                      <img
+                        alt="Close icon"
+                        srcset="https://img.icons8.com/ios-glyphs/2x/delete-sign.png 2x"
+                        style="filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(21deg) brightness(97%) contrast(103%);"
+                      >
+                      <h2>filter</h2>
+                    </div>
+                  </div>
+                  <div class="sidebar-filter jplist-panel box panel-top" id="js-rack-filter-wrapper">
+                    {% render 'rack-filter-sidebar', isMobile: true, parent: 'mobile-filter-' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="twelve columns">
+              <div class="filter-right-wrapper">
+                <div class="main-wrapp">
+                  <div class="top-wrapp">
+                    <h3 class="vehicle-title">Your vehicle: <strong></strong></h3>
+                    <div class="save_edit">
+                      <a id="resetButton" class="button less-pad see-result" href="javascript:;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1.55 1.38" width="15"><path d="M.69,1.38c-.18,0-.36-.07-.49-.2-.13-.13-.2-.3-.2-.49,0-.38.31-.69.69-.69s.69.31.69.69v.04l.07-.07s.07-.03.09,0c.01.01.02.03.02.05s0,.03-.02.05l-.18.18s0,0,0,0c-.01.01-.03.02-.04.02,0,0,0,0-.01,0-.01,0-.02,0-.03-.02,0,0,0,0,0,0l-.18-.18s-.03-.07,0-.09c.03-.03.07-.03.09,0l.07.07v-.04C1.25.38,1,.13.69.13S.13.38.13.69s.25.56.56.56c.04,0,.06.03.06.06s-.03.06-.06.06Z" fill="#231f20"/></svg>
+                        {% comment %} <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Asset_4_4x-8.png?v=1722417293" width="" height="" alt=""> {% endcomment %}
+                        <span>Edit</span>
+                      </a>
+                      <a id="saveButton" class="button save_car" href="javascript:;">
+                        {% comment %} <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Asset_5_4x-8.png?v=1722417294" width="" height="" alt=""> {% endcomment %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1.65 1.43" width="15"><path d="M1.19,0c-.14,0-.27.07-.36.19C.74.07.6,0,.46,0c-.08,0-.16.02-.23.07C.01.21-.07.51.06.75c.1.2.55.54.71.65.02.01.04.02.06.02s.04,0,.06-.02c.16-.12.6-.46.71-.65.13-.24.05-.55-.17-.69-.07-.05-.15-.07-.23-.07h0Z" fill="#e81f2f"/></svg>
+                        <span>Save Car</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="left filter-list">
+                    <h4 data-result-count></h4>
+                    <ul></ul>
+                  </div>
+                </div>
+                <div class="right-top-bar">
+                  <div class="filter-right-side mobile_hidden">
+                    <div class="sort-by-content jplist-panel">
+                      <select
+                        class="jplist-select"
+                        id="sort-by2"
+                        data-control-type="sort-select"
+                        data-control-name="sort"
+                        data-control-action="sort"
+                      >
+                        <option data-path="default">Featured</option>
+                        <option data-path=".product-name" data-order="asc" data-type="text">Alphabetically: A-Z</option>
+                        <option data-path=".product-name" data-order="desc" data-type="text">Alphabetically: Z-A</option>
+                        <option data-path=".product_price_number" data-order="asc" data-type="number">
+                          Price: Low to High
+                        </option>
+                        <option data-path=".product_price_number" data-order="desc" data-type="number">
+                          Price: High to Low
+                        </option>
+                      </select>
+                    </div>
+                    <div class="filter-view">
+                      <ul>
+                        <li>
+                          <button type="button" class="filter-icon js-view-icon" data-view="grid">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.89 4.89" class="icon icon-view-small">
+                              <rect class="list_boxm" xmlns="http://www.w3.org/2000/svg" x=".04" y=".04" width="4.82" height="4.82" fill="none" stroke-width=".07" stroke="#231f20"></rect>
+                              <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="1.39" y="1.38" width=".88" height=".88" stroke="#231f20" stroke-width=".1" fill="none"></rect>
+                              <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="2.55" y="1.38" width=".88" height=".88" stroke="#231f20" stroke-width=".1" fill="none"></rect>
+                              <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="1.39" y="2.55" width=".88" height=".88" stroke="#231f20" stroke-width=".1" fill="none"></rect>
+                              <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="2.55" y="2.55" width=".88" height=".88" stroke="#231f20" stroke-width=".1" fill="none"></rect>
+                            </svg>
+                          </button>
+                        </li>
+                        <li>
+                          <button type="button" class="filter-icon js-view-icon" data-view="list">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.89 4.89" class="icon icon-view-list">
+                              <rect class="list_boxm" xmlns="http://www.w3.org/2000/svg" x=".04" y=".04" width="4.82" height="4.82" fill="none" stroke-width=".07" stroke="#231f20"></rect>
+                              <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="1.4" y="1.36" width=".74" height=".74" stroke="#231f20" stroke-width=".1" fill="none"></rect>
+                              <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.5" y1="1.36" x2="3.49" y2="1.36" fill="none" stroke-width=".1" stroke="#231f20"></line>
+                              <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.5" y1="1.73" x2="3.49" y2="1.73" fill="none" stroke-width=".1" stroke="#231f20"></line>
+                              <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.5" y1="2.1" x2="3.49" y2="2.1" fill="none" stroke-width=".1" stroke="#231f20"></line>
+                              <rect class="list_boxi" xmlns="http://www.w3.org/2000/svg" x="1.4" y="2.72" width=".74" height=".74" stroke="#231f20" stroke-width=".1" fill="none"></rect>
+                              <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.49" y1="2.72" x2="3.49" y2="2.72" fill="none" stroke-width=".1" stroke="#231f20"></line>
+                              <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.49" y1="3.09" x2="3.49" y2="3.09" fill="none" stroke-width=".1" stroke="#231f20"></line>
+                              <line class="list_boxi" xmlns="http://www.w3.org/2000/svg" x1="2.49" y1="3.46" x2="3.49" y2="3.46" fill="none" stroke-width=".1" stroke="#231f20"></line>
+                          </svg>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sixteen columns" id="result-wrapper" data-result-wrapper></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:labels.rack-finder-page",
+  "class": "home-rack-finder-app page-rack-finder-app",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.title",
+      "default": "t:labels.find-the-perfect-rack"
+    },
+    {
+      "type": "text",
+      "id": "year_selector",
+      "label": "t:labels.year_selector",
+      "default": "t:labels.select-year"
+    },
+    {
+      "type": "text",
+      "id": "make_selector",
+      "label": "t:labels.make_selector",
+      "default": "t:labels.select-year"
+    },
+    {
+      "type": "text",
+      "id": "model_selector",
+      "label": "t:labels.model_selector",
+      "default": "t:labels.select-make"
+    },
+    {
+      "type": "text",
+      "id": "type_selector",
+      "label": "t:labels.type_selector",
+      "default": "t:labels.select-model"
+    },
+    {
+      "type": "text",
+      "id": "option_1",
+      "label": "t:labels.option_1",
+      "default": "t:labels.option-1"
+    },
+    {
+      "type": "text",
+      "id": "option_2",
+      "label": "t:labels.option_1",
+      "default": "t:labels.option-2"
+    },
+    {
+      "type": "text",
+      "id": "submit_text",
+      "label": "t:labels.submit_text",
+      "default": "t:labels.submit"
+    },
+    {
+      "type": "text",
+      "id": "reset_text",
+      "label": "t:labels.reset_text",
+      "default": "t:labels.reset"
+    },
+    {
+      "type": "text",
+      "id": "save_text",
+      "label": "t:labels.save_text",
+      "default": "t:labels.save-car"
+    },
+    {
+      "type": "richtext",
+      "id": "info_text",
+      "label": "t:labels.info_text"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.custom-image"
+    },
+    {
+      "type": "image_picker",
+      "id":"plp_image",
+      "label":"t:labels.plp-image"
+    },
+    {
+      "type":"text",
+      "id": "heading",
+      "label": "t:labels.heading"
+    },
+    {
+      "type":"text",
+      "id": "subheading",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "t:labels.button_label"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "t:labels.button_link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.rack_finder_home",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

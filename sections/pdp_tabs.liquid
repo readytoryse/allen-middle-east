@@ -1,0 +1,60 @@
+
+<div class="pdp_tabs_main swirl_bg">
+  <div class="pdp_tabs_wrp page-width">
+    <div class="pdp_tabs_inner">
+      <ul class="tabs_headings_list">
+        <li class="tabs_head_item" data-id="tabs1">
+          <span>ADDITIONAL INFORMATION</span>
+        </li>
+        <li class="tabs_head_item active" data-id="tabs2">
+          <span>PRODUCT IN THE WILD</span>
+        </li>
+        <li class="tabs_head_item" data-id="tabs3">
+          <span>MISSING A PART?</span>
+        </li>
+      </ul>
+      <div class="tabs_content">
+        <div class="tabs_content_items" id="tabs1">
+          <div class="tabs_content_item_wrp">
+            <h2>ADDITIONAL INFORMATION no content found</h2>
+          </div>
+        </div>
+        <div class="tabs_content_items active" id="tabs2">
+          <div class="tabs_content_item_wrp">
+            <div class="gallery_list">
+              {% for i in (1..16) %}
+                <div class="gallery_item">
+                  <div class="gallery_item_wrp">
+                    <div class="image_wrp">
+                      <img src="/cdn/shop/files/Path_6f4da7a4-9524-4bd2-8792-e7dd6cee096b.png" width="" height="" alt="" />
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="tabs_content_items" id="tabs3">
+          <div class="tabs_content_item_wrp">
+            <h2>MISSING A PART? no content found</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:labels.pdp-tabs",
+    "class": "pdp_tabs_sec",
+    "settings": [
+      
+    ],
+    "presets": [
+      {
+        "name": "t:labels.pdp-tabs",
+      }
+    ]
+  }
+{% endschema %}

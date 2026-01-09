@@ -1,0 +1,82 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a list of collection blocks.
+
+  Accepts:
+  - title {string} - The title of the section
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - heading_position {'left'|'center'|'right'} - The position of the heading
+  - divider {boolean} - Whether to add a divider above the section
+
+  Usage:
+  {% render 'section-featured-collections' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title = title | default: section.settings.title
+  assign sub_heading = sub_heading | default: section.settings.sub_heading
+  assign sub_heading_position = sub_heading_position | default: section.settings.sub_heading_position | default: 'left'
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-width">
+  <div class="section_heading_wrap text-{{ heading_position }}">
+    {% if sub_heading != blank %}
+      <div class="section-sub-heading comn_subheading text-{{ sub_heading_position }}">{{ sub_heading }}</div>
+    {% endif %}
+    {%- if title != blank -%}
+      <h2 class="section-header__title comn_heading {{ heading_size }}">{{ title }}</h2>
+    {%- endif -%}
+  </div>
+
+  <div
+    class="new-grid home-plp_slider"
+    {% if section.blocks.size < 6 %}
+      {%- render 'grid-view-type', products_per_row: section.blocks.size -%}
+    {% else %}
+      data-view="6-3"
+    {% endif %}
+  >
+    {%- liquid
+      assign is_empty = true
+      if section.blocks.size > 0
+        assign is_empty = false
+      endif
+    -%}
+
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign sizeVariable = section.blocks.size | at_most: 6
+
+        render 'collection-grid-item', block: block, collection: block.settings.collection, sizeVariable: sizeVariable, fallback: 'variable'
+      -%}
+    {%- endfor -%}
+
+    {%- if is_empty -%}
+      <div class="page-width">
+        <div class="rte clearfix">
+          {{ 'info.section_no_content' | t }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+  
+<div class="btn-wrap medium-up--hide">
+	<button class="prev-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 2.42 2.42" style="&#10;">
+    <circle xmlns="http://www.w3.org/2000/svg" cx="1.21" cy="1.21" r="1.16" fill="none" stroke="#fff" stroke-width=".1"/>
+    <polyline points="1.4 1.67 .94 1.21 1.4 .75" fill="none" stroke="#fff" stroke-width=".1"/>
+  </svg>
+  </button>
+	<button class="next-btn"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 2.42 2.42" style="&#10;">
+    <circle xmlns="http://www.w3.org/2000/svg" cx="1.21" cy="1.21" r="1.16" fill="none" stroke="#fff" stroke-width=".1"/>
+    <polyline points="1.02 1.67 1.48 1.21 1.02 .75" fill="none" stroke="#fff" stroke-width=".1"/>
+  </svg></button>
+</div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

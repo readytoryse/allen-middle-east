@@ -1,0 +1,410 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "home_rack_finder_app_6arnem": {
+      "type": "home-rack-finder-app",
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": "<p>Please complete year/make/model/body type before hitting \"SUBMIT\"</p>"
+      }
+    },
+    "slideshow_DeECBx": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_AyqEhV": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>GET OUT THERE!</p><p></p>",
+            "title_size": 88,
+            "subheading": "With ALLEN Bike Racks, Trailers & Strollers!",
+            "subtext": "Shop our latest innovations today.",
+            "link": "shopify://collections/best-sellers",
+            "link_text": "NEW PRODUCTS",
+            "link_2": "shopify://pages/rack-finder",
+            "link_text_2": "RACK FINDER TOOL",
+            "text_align": "vertical-center horizontal-center",
+            "enable_video": true,
+            "mp4_video_url": "https://cdn.shopify.com/videos/c/o/v/d5633f924744421a8e49ab25f73ce3c8.mp4",
+            "video": "",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_M7Lqae": {
+          "type": "hero",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "START SHOPPING &",
+            "title": "<p>GET OUT THERE!</p>",
+            "title_size": 70,
+            "subheading": "BIKE RACKS, TRAILERS & STROLLERS",
+            "subtext": "",
+            "link": "#",
+            "link_text": "SHOP NOW",
+            "link_2": "#",
+            "link_text_2": "RACK FINDER TOOL",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify://shop_images/Allen-Main-01.jpg",
+            "image_mobile": "shopify://shop_images/Path_6ff2383c-343d-4240-9629-b6608af02f0f.png",
+            "enable_video": false,
+            "mp4_video_url": "",
+            "video": "https://www.youtube.com/watch?v=lKYUMNrgGqY",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_AyqEhV",
+        "hero_M7Lqae"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "hero_video_RRQPwC": {
+      "type": "hero-video",
+      "name": "t:labels.video_hero",
+      "settings": {
+        "full_width": true,
+        "title": "GET OUT THERE!",
+        "title_size": 70,
+        "text": "With ALLEN Bike Racks, Trailers & Strollers!",
+        "subheading": "FREE SHIPPING ON $80+ (DOMESTIC USA)",
+        "link_text": "New Products",
+        "link": "shopify://collections/best-sellers",
+        "link_text1": "RACK FINDER TOOL",
+        "link1": "shopify://pages/rack-finder-tool",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/38dd77fe95c3496bb4c00016d4cd0e9f.mp4",
+        "overlay_opacity": 0,
+        "height": 900,
+        "height_mobile": 370
+      }
+    },
+    "feature_content_xniUYf": {
+      "type": "feature-content",
+      "blocks": {
+        "logo_image_tWQWhc": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_11_46b5c0fc-7400-4c1d-b242-af59e5f5c113.png",
+            "link": "/collections/whats-new",
+            "text": "What's New"
+          }
+        },
+        "logo_image_XhjHBg": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_6_7cfcfd2f-d679-47a4-b4d0-afaacd44a5b4.png",
+            "link": "shopify://collections/parts",
+            "text": "missing a part?"
+          }
+        },
+        "logo_image_LRhxUD": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/questions.png",
+            "link": "shopify://pages/allencare",
+            "text": "have questions?"
+          }
+        },
+        "logo_image_KpWMt8": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_10_8421e01f-618f-4b1f-ab47-dce4675421da.png",
+            "link": "shopify://pages/product-manuals",
+            "text": "installation help?"
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_tWQWhc",
+        "logo_image_XhjHBg",
+        "logo_image_LRhxUD",
+        "logo_image_KpWMt8"
+      ],
+      "settings": {
+        "dekstop_hide": false,
+        "mobile_hide": false,
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false,
+        "section_background": "#f2f3f4",
+        "slider": true,
+        "per_row": "1"
+      }
+    },
+    "featured_collections_YrcQqb": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_fjaxRH": {
+          "type": "collection",
+          "settings": {
+            "collection": "whats-new",
+            "link": "",
+            "title": "What's New?",
+            "sub_text": "Our Latest Innovations",
+            "btn_text": "SHOP NOW",
+            "image": "shopify://shop_images/Asset_1.png"
+          }
+        },
+        "collection_XMahah": {
+          "type": "collection",
+          "settings": {
+            "collection": "allen-easy-hitch-racks",
+            "link": "",
+            "title": "Hitch Racks",
+            "sub_text": "Durable, Easy to Install",
+            "btn_text": "shop now",
+            "image": "shopify://shop_images/Allen-Hitch-Racks.jpg"
+          }
+        },
+        "collection_igGwnC": {
+          "type": "collection",
+          "settings": {
+            "collection": "allen-easy-trunk-racks",
+            "link": "",
+            "title": "TRUNK RACKS",
+            "sub_text": "For Your Next Adventure",
+            "btn_text": "shop now",
+            "image": "shopify://shop_images/Allen-Trunk-Racks.jpg"
+          }
+        },
+        "collection_BzJhmL": {
+          "type": "collection",
+          "settings": {
+            "collection": "bike-trailer-stroller-combo",
+            "link": "",
+            "title": "BIKE TRAILERS & STROLLERS",
+            "sub_text": "Bring the Kids!",
+            "btn_text": "shop now",
+            "image": "shopify://shop_images/Allen-Trailer-stroller.jpg"
+          }
+        },
+        "collection_zYCNNt": {
+          "type": "collection",
+          "settings": {
+            "collection": "tray-hitch-racks",
+            "link": "",
+            "title": "TRAY RACKS",
+            "sub_text": "Our Top of the Line",
+            "btn_text": "shop now",
+            "image": "shopify://shop_images/Allen-Tray-Racks.jpg"
+          }
+        },
+        "collection_FKCybU": {
+          "type": "collection",
+          "settings": {
+            "collection": "spare-tire-racks",
+            "link": "",
+            "title": "Spare Tire Racks",
+            "sub_text": "Perfect for your SUV",
+            "btn_text": "shop now",
+            "image": "shopify://shop_images/Allen-RearTire-Racks.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "collection_fjaxRH",
+        "collection_XMahah",
+        "collection_igGwnC",
+        "collection_BzJhmL",
+        "collection_zYCNNt",
+        "collection_FKCybU"
+      ],
+      "settings": {
+        "title": "Shop by Catagory",
+        "heading_size": "h0",
+        "heading_position": "center",
+        "sub_heading": "PERFECT FOR ANY ADVENTURE",
+        "sub_heading_position": "center",
+        "divider": false
+      }
+    },
+    "home_featured_collection_GKx8QH": {
+      "type": "home-featured-collection",
+      "settings": {
+        "bg_color": "#e72230",
+        "title": "WE HAVE THE PARTS YOU NEED.",
+        "sub_heading": "NEED TO REPLACE OR UPGRADE?",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "btn_text": "Shop All Parts",
+        "home_featured_products": "parts",
+        "product_list": [],
+        "count": 8,
+        "products_per_row": 4,
+        "products_per_row_mobile": 2,
+        "desktop_slider": false,
+        "mobile_scrollable": false,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "1724992844235e5952": {
+      "type": "apps",
+      "blocks": {
+        "stamped_reviews_carousel_EMMVpd": {
+          "type": "shopify://apps/stamped-reviews/blocks/carousel/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "title": "",
+            "auto_play": false,
+            "take": 30,
+            "color_title": "",
+            "color_star": "",
+            "color_text": "",
+            "color_link": "",
+            "review_ids": "",
+            "product_ids": "",
+            "category": "",
+            "product_brand": "",
+            "tags": "",
+            "min_rating": "5",
+            "fill_empty": true,
+            "random": false,
+            "with_photos": false
+          }
+        }
+      },
+      "block_order": [
+        "stamped_reviews_carousel_EMMVpd"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "space_around": true,
+        "heading": "",
+        "subheading": "",
+        "text_alighn": "center"
+      }
+    },
+    "review_widget_zHiiGC": {
+      "type": "review-widget",
+      "settings": {
+        "review_limit": 9,
+        "subheading": "",
+        "subheading_text_color": "#191717",
+        "heading": "CUSTOMER PRODUCT REVIEWS",
+        "heading_text_color": "#191717",
+        "align_text": "center",
+        "round_images": true,
+        "section_bg_color": "",
+        "section_padding_desktop": "",
+        "section_padding_mobile": "",
+        "section_margin_desktop": "",
+        "section_margin_mobile": ""
+      }
+    },
+    "app_promotion_WB7VKB": {
+      "type": "app_promotion",
+      "disabled": true,
+      "settings": {
+        "heading": "<p>Get the all <strong>NEW ALLEN APP</strong> TODAY!</p>",
+        "heading_font_size": 34,
+        "heading_font_size_mobile": 26,
+        "subheading": "<p>Connect to your products, information and make it easier to find the perfect rack for your ride!</p>",
+        "subheading_font_size": 17,
+        "subheading_font_size_mobile": 16,
+        "left_image": "shopify://shop_images/Untitled-2.png",
+        "right_image1": "shopify://shop_images/Untitled-3.png",
+        "ios_link": "",
+        "right_image2": "shopify://shop_images/Untitled-4.png",
+        "android_link": ""
+      }
+    },
+    "allen_video_tv_NBGiAN": {
+      "type": "allen_video_tv",
+      "blocks": {
+        "video_block_Eyek4m": {
+          "type": "video_block",
+          "settings": {
+            "image": "shopify://shop_images/video-02.jpg",
+            "link": "shopify://pages/video-library",
+            "heading": "INSTALLATION HELP",
+            "description": "<p>Get a step-by-step video on how to install your new Allen product with our easy to follow instructional videos.</p>"
+          }
+        },
+        "video_block_7CKwwA": {
+          "type": "video_block",
+          "settings": {
+            "image": "shopify://shop_images/video-04.jpg",
+            "link": "shopify://pages/video-library",
+            "heading": "WHAT'S NEW?",
+            "description": "<p>Allen strives to lead with the latest technology and materials!  Check out what's new with Allen bike racks, trailers & strollers. </p>"
+          }
+        },
+        "video_block_VXc8yH": {
+          "type": "video_block",
+          "settings": {
+            "image": "shopify://shop_images/video-03.jpg",
+            "link": "shopify://pages/video-library",
+            "heading": "GET OUT THERE",
+            "description": "<p>Our goal is to help you get safe and secure to the places you want to go!  Check out all of the adventures awaiting you!</p>"
+          }
+        },
+        "video_block_iPaXPQ": {
+          "type": "video_block",
+          "settings": {
+            "image": "shopify://shop_images/video-01.jpg",
+            "link": "shopify://pages/video-library",
+            "heading": "ALLEN ADVENTURES",
+            "description": "<p>Our ambassadors and social media team are always out exploring. See what adventures they are up to this week!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_Eyek4m",
+        "video_block_7CKwwA",
+        "video_block_VXc8yH",
+        "video_block_iPaXPQ"
+      ],
+      "settings": {
+        "main_video": "https://cdn.shopify.com/videos/c/o/v/87eb05f3431c42bdbc2bb27f321fb4c3.mp4",
+        "heading_logo": "shopify://shop_images/videoTV_logo.png",
+        "section_bg_color": "",
+        "enable_section_img": true,
+        "section_bg_img": "shopify://shop_images/Asset_5.jpg",
+        "section_padding_desktop": "100px 0px",
+        "section_padding_mobile": "60px 0px",
+        "section_margin_desktop": "",
+        "section_margin_mobile": ""
+      }
+    }
+  },
+  "order": [
+    "home_rack_finder_app_6arnem",
+    "slideshow_DeECBx",
+    "hero_video_RRQPwC",
+    "feature_content_xniUYf",
+    "featured_collections_YrcQqb",
+    "home_featured_collection_GKx8QH",
+    "1724992844235e5952",
+    "review_widget_zHiiGC",
+    "app_promotion_WB7VKB",
+    "allen_video_tv_NBGiAN"
+  ]
+}

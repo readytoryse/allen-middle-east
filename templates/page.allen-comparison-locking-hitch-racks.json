@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.allen-care",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "home_rack_finder_app_kbjm6w": {
+      "type": "home-rack-finder-app",
+      "disabled": true,
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "allen_comparision_locking_hitch_racks_tTxDPp": {
+      "type": "allen-comparision-locking-hitch-racks",
+      "blocks": {
+        "comparison_type_ytEtQM": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-locking-hitch-racks-deluxe-vs-premium",
+            "link_title": "Locking Hitch Racks"
+          }
+        },
+        "comparison_type_LEGfp6": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "hitch-racks-comparison",
+            "link_title": "Hitch Racks"
+          }
+        },
+        "comparison_type_RQyieY": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-trunk-rack-deluxe-vs-premium",
+            "link_title": "Trunk Racks"
+          }
+        },
+        "deluxe_premium_product_9LW7fd": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Transparent.png",
+            "deluxe_feature": false,
+            "feature": "Quick Set-Up/Fold design",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_main.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_gbFQBD": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Transparent.png",
+            "deluxe_feature": false,
+            "feature": "Quick Secure Cradle Straps",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_Straps.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_P3Eqii": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Transparent.png",
+            "deluxe_feature": false,
+            "feature": "Rapid Tilt Away",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_RearAccess.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_4hixx8": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Transparent.png",
+            "deluxe_feature": false,
+            "feature": "Padded Spine Shield",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_SpineShield.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_Lgi7HR": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_CarryArms.png",
+            "deluxe_feature": true,
+            "feature": "2, 3, 4 & 5-Bike Capacity",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_CarryArms.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_BQCpnD": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Hitch.png",
+            "deluxe_feature": true,
+            "feature": "Fits 1 1/4” & 2” Hitch*",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_Hitch.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_nRYWYA": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Main_87b3378c-d712-4287-96a9-7a196c04e7e6.png",
+            "deluxe_feature": true,
+            "feature": "Powder Coating",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_main_2dc7fa3d-7df5-4346-aa19-53bf305bcf69.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_7YMkdJ": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Hitch.png",
+            "deluxe_feature": true,
+            "feature": "Wobble-Free Hitch Install",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_Hitch.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_GkfjRr": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_RearAccess.png",
+            "deluxe_feature": true,
+            "feature": "Rear of Vehicle Access",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_RearAccess_daef4f1e-2e15-432e-a9ec-3566db41ddf6.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_JTeLLj": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/LockingHitchComparison-Deluxe_CarryArms_be43d119-5917-4573-9474-3db7cef98732.png",
+            "deluxe_feature": true,
+            "feature": "Folding Carry Arms",
+            "premium_part_image": "shopify://shop_images/LockingHitchComparison-Premier_CarryArms_0040de9a-56ac-4e98-8892-18c4e59e34aa.png",
+            "premium_feature": true
+          }
+        }
+      },
+      "block_order": [
+        "comparison_type_ytEtQM",
+        "comparison_type_LEGfp6",
+        "comparison_type_RQyieY",
+        "deluxe_premium_product_9LW7fd",
+        "deluxe_premium_product_gbFQBD",
+        "deluxe_premium_product_P3Eqii",
+        "deluxe_premium_product_4hixx8",
+        "deluxe_premium_product_Lgi7HR",
+        "deluxe_premium_product_BQCpnD",
+        "deluxe_premium_product_nRYWYA",
+        "deluxe_premium_product_7YMkdJ",
+        "deluxe_premium_product_GkfjRr",
+        "deluxe_premium_product_JTeLLj"
+      ],
+      "settings": {
+        "show_banner": true,
+        "show_search": false,
+        "right_bg_img": "shopify://shop_images/truck-rank.png",
+        "left_bg_img": "shopify://shop_images/hitch-truck.png",
+        "bg_color": "#f4f4f4",
+        "title": "FIND THE RIGHT RACK FOR YOU",
+        "subtitle": "<p>Deluxe? Premier? Locking? There is a lot to consider when buying a bike rack! We’ve made it easy for you. Check out the products below to see how the deluxe and premium models compare.</p>",
+        "text_position": "center",
+        "text_align": "center",
+        "deluxe_resource_heading": "Deluxe**",
+        "deluxe_default_image": "shopify://shop_images/LockingHitchComparison-Deluxe_Main_9a740639-c5b5-4a27-bc0d-b06c46a92905.png",
+        "deluxe_button": "Shop Now",
+        "deluxe_button_link": "shopify://products/deluxe-locking-hitch-rack",
+        "tag_position1_1": "8.1",
+        "tag_position2_1": "2",
+        "tag_title_1": "Play Video:",
+        "tag_subtitle_1": "Individual Tie-Down Cradles",
+        "popup_video_1": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/IBUvQlUwX7Q\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_2": "4.8",
+        "tag_position2_2": "3",
+        "tag_title_2": "Play Video:",
+        "tag_subtitle_2": "Folding Carry Arms",
+        "popup_video_2": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/tRKBTmsEolc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_3": "5.6",
+        "tag_position2_3": "7.8",
+        "tag_title_3": "Play Video:",
+        "tag_subtitle_3": "Rear-of-Vehicle Access",
+        "popup_video_3": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/GBdP8pWYDOY\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_4": "5.3",
+        "tag_position2_4": "9.5",
+        "tag_title_4": "Play Video:",
+        "tag_subtitle_4": "Locking Hitch Insert",
+        "popup_video_4": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/AwlRs2st9rs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_5": "",
+        "tag_position2_5": "",
+        "tag_title_5": "Play Video:",
+        "tag_subtitle_5": "Play Video Subtitle",
+        "popup_video_5": "Popup Video",
+        "feature_resource_heading": "Features",
+        "features_text": "Mouse over the features below to see their location on the racks.",
+        "premium_resource_heading": "Premier**",
+        "premium_default_image": "shopify://shop_images/LockingHitchComparison-Premier_main_2dc7fa3d-7df5-4346-aa19-53bf305bcf69.png",
+        "premium_button": "Shop Now",
+        "premium_button_link": "shopify://products/premier-locking-hitch-rack",
+        "tag_position1_6": "7.2",
+        "tag_position2_6": "2.3",
+        "tag_title_6": "Play Video:",
+        "tag_subtitle_6": "Quick Secure Cradle Straps",
+        "popup_video_6": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/jfX4qqYgJ0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_7": "5.6",
+        "tag_position2_7": "3.3",
+        "tag_title_7": "Play Video:",
+        "tag_subtitle_7": "Quick Release Folding Arms",
+        "popup_video_7": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/lRobolfow34\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_8": "5",
+        "tag_position2_8": "7.1",
+        "tag_title_8": "Play Video:",
+        "tag_subtitle_8": "Quick Release Tilt-Away",
+        "popup_video_8": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/TG7-67wvLj8\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_9": "5.2",
+        "tag_position2_9": "9.5",
+        "tag_title_9": "Play Video:",
+        "tag_subtitle_9": "Locking Hitch Insert",
+        "popup_video_9": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/AwlRs2st9rs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_10": "",
+        "tag_position2_10": "",
+        "tag_title_10": "Play Video:",
+        "tag_subtitle_10": "Play Video Subtitle",
+        "popup_video_10": "Popup Video",
+        "bottom_feature_heading": "<p>*4 & 5 Bike models <strong>ARE NOT</strong> compatible with 1 1/4” Hitch</p><p>**<em>Features shown may not be included with all Premier and Deluxe models.  Please verify specific item for included features</em>.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "home_rack_finder_app_kbjm6w",
+    "allen_comparision_locking_hitch_racks_tTxDPp"
+  ]
+}

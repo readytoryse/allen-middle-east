@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.allen-care",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "home_rack_finder_app_kbjm6w": {
+      "type": "home-rack-finder-app",
+      "disabled": true,
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "product_registration_TWb4V8": {
+      "type": "product-registration",
+      "settings": {
+        "show_banner": true,
+        "show_search": false,
+        "bg_img": "shopify://shop_images/allen-grid_final.png",
+        "right_bg_img": "shopify://shop_images/trunkrack_f2d19f84-12d3-45e1-84e2-0ac2b0309252.png",
+        "left_bg_img": "shopify://shop_images/hitchrack_0db406bb-f2dc-403f-94f7-d47431761526.png",
+        "bg_color": "#ea1d2d",
+        "title": "PRODUCT REGISTRATION",
+        "subtitle": "<p>Please register your product to stay up to date with warranty information on your Allen Sports products</p>",
+        "text_position": "center",
+        "text_align": "center",
+        "form_heading": "Register Your Product",
+        "product_models": "QS2 - Deluxe 2 Bike #QS2\nQS3 - Deluxe 3 Bike #QS3\nADT2 - Deluxe Dog Trailer #ADT2\n102DB - Deluxe 2 Bike #102DB\n102DN - Deluxe 2 Bike #102DN\n102900CP - 102DN & 900B Combo Pack #102900CP\n103DB - Deluxe 3 Bike #103DB\n103DN - Deluxe 3 Bike #103DN\n104DB - Deluxe 4 Bike #104DB\n201B - 2-Bike Storage Rack #201B\n302DN - Deluxe 2 Bike #302DN\n322DN - Deluxe 2 Bike #322DN\n400QR - Premier Locking 4 Bike for Spare Tire Vehicles #400QR\n508S - Strap Kit #508S\n522QR - Deluxe Locking 2 Bike #522QR\n522RR - Deluxe 2 Bike #522RR\n532QR - Deluxe 3 Bike Locking #532QR\n532RR - Deluxe 3 Bike #532RR\n542QR - Deluxe 4 Bike Locking #542QR\n542RR - Deluxe 4 Bike #542RR\n552QR - Deluxe 5 Bike Locking #552QR\n552RR - Deluxe 5 Bike #552RR\n640QR- Locking 4-Bike Hitch Rack #640QR\n7010S - Surfboard Carry Kit #7010S\n820QR - 2-Bike Deluxe Locking #820QR\n830QR - 3-Bike Deluxe Locking #830QR\n840QR - 4-Bike Deluxe Locking #840QR\n850QR - 5-Bike Deluxe Locking #850QR\n900B - Adaptor Bar #900B\nAR100 - Premier 1-Bike Tray Rack #AR100\nAR200 - Premier 2-Bike Tray Rack #AR200\nAR300 - Premier 3-Bike Tray Rack #AR300\nAS1 - Deluxe 1-Child Bike Trailer & Stroller #AS1\nAS2 - Deluxe 2-Child Bike Trailer & Stroller #AS2\nAST2 - 2 Child Trailer #AST2\nAST202 - 2 Child Trailer #AST202\nES2 - Super ECO Trailer #ES2\nET2 - High-Viz 2-Child Bike Trailer #ET2\nJ1 - J1 Jogger #J1\nMT1 - Compact 1 Bike #MT1\nMT2 - Compact 2 Bike  #MT2\nQR525 - Premier 2 Bike Locking #QR525\nQR535 - Premier 3 Bike Locking #QR535\nQR545 - Premier 4 Bike Locking #QR545\nQR555 - Premier 5 Bike Locking #QR555\nS102 - Premier 2 Bike #S102\nS103 - Premier 3 Bike #S103\nS104 - Premier 4 Bike #S104\nS2 - Premier Bike Trailer & Stroller #S2\nS302 - Premier 2 Bike #S302\nS303 - Premier 3 Bike #S303\nS525 - Premier 2 Bike #S525\nS535 - Premier 3 Bike #S535\nS545 - Premier 4 Bike #S545\nS555 - Premier 5 Bike #S555\nS645 - Premier 4 Bike SpareTire #S645\nSST1 - 1 Child Trailer/Jogger #SST1\nT1 - Deluxe 1-Child Bike Trailer #T1\nT2 - Deluxe 2-Child Bike Trailer #T2\nXLT-X2 - 2 Child Alloy Trailer/Jogger #XLT-X2\nXR200TRAY - Deluxe 2 Bike Tray #XR200TRAY\n1520RR - Deluxe Quick-Install Hitch Racks - 2 Bike#1520RR\n1530RR - Deluxe Quick-Install Hitch Racks - 3 Bike#1530RR\n1540RR - Deluxe Quick-Install Hitch Racks - 4 Bike#1540RR\n1550RR - Deluxe Quick-Install Hitch Racks - 5Bike#1550RR",
+        "enable_captcha": true,
+        "contact_subtitle": "Your information is safe with us. We will never rent, sell, or exchange your contact information with anyone.",
+        "contact_btn_title": "Submit",
+        "thanku_msg": "<p><strong>Thank You</strong><br/>Your registration has been received</p>",
+        "thanku_link_title": "Click here for new product registration",
+        "thanku_link": "shopify://pages/register-your-product"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "home_rack_finder_app_kbjm6w",
+    "product_registration_TWb4V8"
+  ]
+}

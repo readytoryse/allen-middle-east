@@ -1,0 +1,96 @@
+{% assign p = product_models | newline_to_br | split: '<br />' %}
+<form class="contact-form register-product" action="https://allenapps.allen.bike/ProductRegistration/SubmitRegistration" method="POST">
+  <input type="hidden" name="favorite_item" value="" />
+  <input type="hidden" name="challenge" value="false" />
+  <input type="hidden" name="region" id="region" value="USA" />
+  <div class="sixteen columns alpha form-control">
+    <label for="contactFormName" class="label-hidden">fname</label>
+    <input type="text" id="contactFormName" name="name" placeholder="Fullname" autocapitalize="words" value="{% if customer %}{{ customer.name }}{% endif %}" required="required" />
+  </div>
+  <div class="eight columns alpha form-control">
+    <label for="contactFormEmail" class="label-hidden">email</label>
+    <input type="email" id="contactFormEmail" name="email" placeholder="Email Address" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required="required" />
+  </div>
+  <div class="eight columns omega form-control">
+    <label for="contactFormPhone" class="label-hidden">phone</label>
+    <input type="text" id="contactFormPhone" name="phone" placeholder="Phone" value="" required="required" />
+  </div>
+  <div class="sixteen columns alpha form-control">
+    <label for="contactFormAddress" class="label-hidden">address</label>
+    <input type="text" id="contactFormAddress" name="address" placeholder="Address" value="" required="required" />
+  </div>
+  <div class="eight columns alpha form-control">
+    <label for="contactFormCity" class="label-hidden">city</label>
+    <input type="text" id="contactFormCity" name="city" placeholder="City" value="" required="required" />
+  </div>
+  <div class="four columns omega form-control">
+    <label for="contactFormState" class="label-hidden">state</label>
+    <input type="text" class="" id="contactFormState" name="stateProvince" required="true" placeholder="State" />
+  </div>
+  <div class="four columns alpha form-control">
+    <label for="contactFormZipcode" class="label-hidden">pincode</label>
+    <input type="text" id="contactFormZipcode" name="postalCode" placeholder="Zipcode" value="" required="required" />
+  </div>
+  <div class="sixteen columns alpha form-control">
+    <label for="contactFormCountry" class="label-hidden">country</label>
+    <input type="text" id="contactFormCountry" name="country" placeholder="Country" value="" required="required" />
+  </div>
+  <div class="sixteen columns alpha form-control">
+    <label for="contactFormProductModel" class="label-hidden">select</label>
+    <select class="" id="contactFormProductModel" name="model" required="true" placeholder="Select your Product Model">
+      <option value="">Select your Product Model</option>
+      {% for pmodel in p %}
+      	{% assign pmodel2 = pmodel | split:'#' %}
+      <option value="{{pmodel2[1] | strip }}">{{ pmodel2[0] | strip }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="sixteen columns alpha form-control">
+    <label for="contactFormPurchaseLocation" class="label-hidden">location</label>
+    <input type="text" class="" id="contactFormPurchaseLocation" name="purchaseLocation" placeholder="Purchase Location" required="true" />
+  </div>
+  <div class="five columns alpha form-control">
+    <div class="form-wrapper">
+      <label for="contactFormPONo" class="label-hidden">PO #*</label>
+      <input type="text" id="contactFormPONo" name="poNumberDate" placeholder="PO #*" value="" required="required" />
+      <p class="po-number-note">*Found on sticker on product box</p>
+    </div>
+  </div>
+  <div class="eight columns omega form-control">
+    <div class="form-wrapper">
+    <label for="contactFormDatePackage" class="label-hidden">Date from package*</label>  
+    <input type="text" id="contactFormDatePackage" name="packagingDate" placeholder="Date from package*" value="" required="required" />
+    </div>
+  </div>
+  <div class="three columns omega form-control">
+    <div class="example-content">
+    <label class="example-note" for="example">Example:</label>    
+    <input type="text" id="example" class="hidden-label" />  
+    <img src="{{ 'example-img.png' | file_img_url }}" class="po-lable-img" alt="note"/>
+    </div>
+  </div>
+  <div class="sixteen columns omega">
+    <p class="product-note">Note: We only collect this data for product registration purposes and that we will never use this information for any other purposes. </p>
+  </div>
+  <div class="sixteen columns omega ">
+    <div class="form-choice-controler">
+      <input type="checkbox" name="agreement" value="true" id="contactFormTerms" />
+      <label for="contactFormTerms">I agree that I have read and fully understand the product's warranty, cautions and warnings explained in the item's instruction sheet.</label>
+    </div>  
+  </div>
+  <div class="sixteen columns omega form-control ">
+    <div class="form-choice-controler"> 
+      <input type="checkbox" name="newsletter_subscription" value="true" id="contactFormNewsletter" />
+      <label for="contactFormNewsletter">Sign me up for the Allen Newsletter so I can stay up to date on new product releases, speacial offers and more!</label>
+    </div>
+  </div>
+  <div class="sixteen columns omega ">
+    {% if captcha == true %}<div id="re-captcha"></div>{% endif %}
+    <div class="submit-area">
+      <input type="submit" class="submit action_button btn_normal btn_black btn_hover_red" value="{% if btn_title != blank %}{{ btn_title }}{% else %}{{ 'contact.form.send' | t }}{% endif %}" {% if captcha == true %}disabled{% endif %}/>
+      <div class="loader">
+        <img src="{{ 'ajax-loader.gif' | file_img_url }}"  style="width: 65%;" alt="loader"/>
+      </div>
+    </div>
+  </div>
+</form>

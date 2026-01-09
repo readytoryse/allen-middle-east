@@ -1,0 +1,272 @@
+{% comment %}
+** FAQ page - custom view **
+- Page template
+- Uses blocks
+{% endcomment %}
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+          {% if section.settings.show_banner %}
+          	{% include "allen-care-page-header" %}
+          {% endif %}
+          <!-- <a name="pagecontent" id="pagecontent"></a> -->
+
+          <div class="containerr main content">
+            <div class="">
+              <div class="page clearfix">
+                {% unless section.settings.show_banner %}
+                <h1>
+                  {{ page.title }}
+                </h1>
+                <div class="feature_divider"></div>
+                {% endunless %}
+                <div>
+                  {% include 'page-multi-column', content: page.content %}
+                </div>
+              </div>
+              <div class="row">
+                <div class="register-product-content">
+                  <div class="sixteen columns alpha">
+                    <h3>{{ section.settings.form_heading }}</h3>
+                    <div class="contact-subtitle">{{ section.settings.contact_subtitle  }}</div>
+                    <div class="thanku-msg center">
+                      {{ section.settings.thanku_msg}}
+                      <div class="redirect-link"><a href="{{ section.setting.thanku_link }}">{{ section.settings.thanku_link_title | default:"Click here for new product registration" }}</a></div>
+                    </div>
+                  </div>
+                  
+                  <form class="contact-form return-form" action="/contact#return-form" method="POST" id="return-form">
+                    <input type="hidden" name="favorite_size" value="" />
+                    
+                    <input type="hidden" name="contact[subject]" id="return_form_subject" autocapitalize="words" value="" />
+                    <input type="hidden" name="challenge" value="false" />
+                    <input type="hidden" name="contact[region]" value="USA" />
+                    <div class="sixteen columns alpha form-control">
+                      <label for="Ordernumber" class="label-hidden">Order number</label>
+                      <input type="text" id="Ordernumber" name="contact[order_number]" placeholder="Order number" autocapitalize="words" required="required" />
+                    </div>
+                    <div class="eight columns omega form-control">
+                      <label for="contactFormName" class="label-hidden">Fullname</label>
+                      <input type="text" id="contactFormName" name="contact[name]" placeholder="Fullname" autocapitalize="words" value="{% if customer %}{{ customer.name }}{% endif %}" required="required" />
+                    </div>
+                    <div class="eight columns alpha form-control">
+                      <label for="contactFormEmail" class="label-hidden">Email Address</label>
+                      <input type="email" id="contactFormEmail" name="contact[email]" placeholder="Email Address" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required="required" />
+                    </div>
+                    <div class="sixteen columns omega form-control">
+                      <label for="contactFormAddress" class="label-hidden">Address</label>
+                      <input type="text" id="contactFormAddress" name="contact[address]" placeholder="Address" value="" required="required" />
+                    </div>
+                    <div class="eight columns alpha form-control">
+                      <label for="contactFormCity" class="label-hidden">City</label>
+                      <input type="text" id="contactFormCity" name="contact[city]" placeholder="City" value="" required="required" />
+                    </div>
+                    <div class="eight columns omega form-control">
+                      <label for="contactFormState" class="label-hidden">State</label>
+                      <input type="text" class="" id="contactFormState" name="contact[stateProvince]" required="true" placeholder="State" />
+                    </div>
+                    <div class="eight columns alpha form-control">
+                      <label for="contactFormCountry" class="label-hidden">Country</label>
+                      <input type="text" id="contactFormCountry" name="contact[country]" placeholder="Country" value="" required="required" />
+                    </div>
+                    <div class="eight columns omega form-control">
+                      <label for="contactFormZipcode" class="label-hidden">Zipcode</label>
+                      <input type="text" id="contactFormZipcode" name="contact[postalCode]" placeholder="Zipcode" value="" required="required" />
+                    </div> 
+                    <div class="sixteen columns alpha form-control">
+                      <label for="contactFormPhone" class="label-hidden">Phone number</label>
+                      <input type="text" id="contactFormPhone" name="contact[phone]" placeholder="Phone number" value="" required="required" />
+                    </div>
+                    <div class="sixteen columns omega form-control contactitemno">
+                      <label for="contactItemNo" class="label-hidden">Item # to return</label>
+                      <input type="text" id="contactItemNo" name="contact[item_no_1]" placeholder="Item # to return" value="" required="required" />
+                    </div>
+                    <div class="sixteen columns alpha form-control contactreturn" >
+                      <label for="contactReturnReason" class="label-hidden">Return Reason</label>
+                      <textarea  id="contactReturnReason" name="contact[return_reason_1]" placeholder="Return reason" value=""></textarea>
+                    </div>
+                    <div class="sixteen columns omega form-control contactaddcomment">
+                      <label for="contactAddComments" class="label-hidden">Additional Comments</label>
+                      <textarea  id="contactAddComments" name="contact[additional_comments_1]" placeholder="Additional Comments" value=""></textarea>
+                    </div>
+                    <div class="sixteen columns omega form-control dynamic-fields">
+                      <label for="add-items" class="label-hidden">ADD ADDITIONAL ITEM</label>
+                      <input type="button" id="add-items" class="action_button submit-additional-item btn_normal btn_gray" value="ADD ADDITIONAL ITEM"/>
+                    </div>
+                    <div class="sixteen columns omega ">
+                      <div class="form-choice-controler">
+                        <input type="checkbox" name="agreement" value="true" id="contactFormTerms" />
+                        <label for="contactFormTerms">I have read and accept the Allen Sport’s <a href="/pages/make-a-return" target="_blank">Return Policy</a>.</label>
+                      </div>  
+                    </div>
+                    <div class="sixteen columns omega ">
+                      <!-- <div id="re-captcha"></div> -->
+                      <div class="submit-area">
+                        <label for="submit-return" class="label-hidden">SUBMIT RETURN FORM</label>
+                        <input id="submit-return" type="submit" class="submit action_button submit-return-form btn_normal btn_black btn_hover_red" value="SUBMIT RETURN FORM"/>
+                        <div class="loader">
+                          <img src="{{ 'ajax-loader.gif' | file_img_url }}"  style="width: 65%;" alt="loader"/>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="hidden" name="form_type" value="contact">
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+
+{
+  "name": "t:labels.return-form",
+  "class": "allen-care return-form",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "t:labels.show_banner",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:labels.show_search",
+      "default": true
+    },
+	{
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "t:labels.background_image",
+      "info": "t:info.background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bg_img",
+      "label": "t:labels.right_bg_img",
+      "info": "t:labels.right_bg_img"
+    },
+	{
+      "type": "image_picker",
+      "id": "left_bg_img",
+      "label": "t:labels.left_bg_img",
+      "info": "t:labels.left_bg_img"
+    },
+	{
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:labels.background-color",
+      "info": "t:labels.background-color",
+	   "default":"#ea1d2d"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+	{
+      "type": "select",
+      "id": "text_position",
+      "label": "t:labels.text_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:labels.text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:labels.rps"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "t:labels.form-heading1",
+      "default": "t:labels.ryp"
+    },
+	{
+      "type": "richtext",
+      "id": "contact_subtitle",
+      "label": "t:labels.form-subtitle",
+	   "default": "t:labels.contact_subtitle"
+    },
+	{
+      "type": "header",
+      "content": "t:labels.submit-button"     
+    },
+	{
+      "type": "text",
+      "id": "contact_btn_title",
+      "label": "t:labels.submit-title",
+      "default": "t:labels.submit"
+    },
+	{
+      "type": "richtext",
+      "id": "thanku_msg",
+      "label": "t:labels.thank-you-message",
+	  "default": "t:labels.thank-you-message-de"
+    },
+	{
+      "type": "text",
+      "id": "thanku_link_title",
+      "label": "t:labels.thanku_link_title"
+    },
+	{
+      "type": "url",
+      "id": "thanku_link",
+      "label": "t:labels.thanku_link"
+    }	
+  ],  
+  "presets":[ 
+    {
+      "name": "t:labels.return-form",
+    "settings": {
+      "title": "t:labels.page-faq-template",
+      "subtitle": "<p>Create an amazing FAQ page with a full-width banner</p>",
+      "text_position": "center",
+      "text_align": "center"
+    }
+  }
+  ]
+}
+
+{% endschema %}

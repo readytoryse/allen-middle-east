@@ -1,0 +1,170 @@
+
+<style>
+    #shopify-section-{{section.id}} .heading{
+        font-size:{{section.settings.heading_font_size}}px;
+    }
+    #shopify-section-{{section.id}} .subheading{
+        font-size:{{section.settings.subheading_font_size}}px;
+    }
+    @media(max-width: 768px){
+        #shopify-section-{{section.id}} .heading{
+            font-size:{{section.settings.heading_font_size_mobile}}px;
+        }
+        #shopify-section-{{section.id}} .subheading{
+            font-size:{{section.settings.subheading_font_size_mobile}}px;
+        }
+    }
+</style>
+
+
+<div class="apromotion_main" data-android-link="{{ section.settings.android_link }}" data-ios-link="{{ section.settings.ios_link }}">
+    <div class="apromotion_wrp page-width">
+        <div class="apromotion_inner">
+            <div class="apromotion_left">
+                {% if section.settings.left_image != blank %}
+                <div class="left_logo">
+                    <img class="animape animape-visible" width="70" height="70" data-animape="fadein" loading="lazy" src="{{ section.settings.left_image | img_url: 'master' }}" width="" height="" alt="" />
+                </div>
+                {% endif %}
+                <div class="left_headings">
+                    {% if section.settings.heading != blank %}
+                    <h2 class="heading">{{ section.settings.heading }}</h2>
+                    {% endif %}
+                    {% if section.settings.subheading != blank %}
+                    <div class="subheading">{{ section.settings.subheading }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="apromotion_right">
+                <div class="right_images">
+                    {% comment %}
+                    {% for i in (1..2) %}
+                        {% assign images = 'right_image' | append:i  %}
+                        {% assign images_link = 'right_image_link' | append:i  %}
+                        {% if section.settings[images] != blank %}
+                        <a href="{{section.settings[images_link]}}" class="right_image img_item_{{i}}" target="_blank">
+                            <img src="{{ section.settings[images] | img_url: 'master'  }}" width="" height="" alt="" />
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                     {% endcomment %}
+                    <a href="{{section.settings.ios_link}}" class="right_image img_item_1" target="_blank">                      
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366.99 326.99"><defs>
+                          <style>.cls-1{fill:#fff;fill-rule:evenodd;}</style>
+                          </defs><g id="Layer_2" data-name="Layer 2">
+                            <g id="Layer_2-2" data-name="Layer 2">
+                            <g id="Layer_1-2" data-name="Layer 1-2">
+                            <g id="iOSicon---App-Store">
+                            <path id="Combined-Shape" class="cls-1" d="M216.65,87.88l67.74,118h51.26c2.59,0,5.17,0,7.76.14a32.46,32.46,0,0,1,6.92,1.06,22.85,22.85,0,0,1,0,44,31.84,31.84,0,0,1-6.92,1.06c-2.16.12-4.31.14-6.47.14H311L329.78,285c1.29,2.26,2.6,4.5,3.76,6.83a32.27,32.27,0,0,1,2.54,6.56,22.88,22.88,0,0,1-10.6,25.52,22.58,22.58,0,0,1-27.27-3.52,33.17,33.17,0,0,1-4.38-5.5c-1.42-2.18-2.7-4.44-4-6.69L208.42,166.38A68.88,68.88,0,0,1,200,121.07a60.88,60.88,0,0,1,16.63-33.19ZM47.94,263.76c30.52-7.9,44,11.12,45.42,13.27L75.28,308.37c-1.29,2.24-2.57,4.48-4,6.64a32.69,32.69,0,0,1-4.36,5.45,22.61,22.61,0,0,1-37.75-21.82,32.21,32.21,0,0,1,2.54-6.51c1.16-2.31,2.46-4.54,3.75-6.78l12.46-21.61ZM224.76,3a22.71,22.71,0,0,1,9.52,11,23.09,23.09,0,0,1,1,14.54,32.52,32.52,0,0,1-2.53,6.55c-1.16,2.33-2.45,4.57-3.74,6.82L135.21,206.17H202.5a32.81,32.81,0,0,1,31.24,42.31,26.21,26.21,0,0,1-1.54,4H29.87c-2.14,0-4.28,0-6.43-.14a32.09,32.09,0,0,1-6.88-1.06,22.54,22.54,0,0,1-11.95-8.16,23,23,0,0,1,0-27.62,22.52,22.52,0,0,1,12-8.15,31.48,31.48,0,0,1,6.88-1.06c2.57-.15,5.14-.14,7.71-.14H82.3L156.94,75.46,137.78,41.91c-1.29-2.25-2.58-4.5-3.74-6.82a33.12,33.12,0,0,1-2.53-6.55,23.09,23.09,0,0,1,1-14.54A22.76,22.76,0,0,1,142,3.05a22.37,22.37,0,0,1,27.1,3.52,32,32,0,0,1,4.35,5.49c1.41,2.18,2.69,4.43,4,6.69l5.93,10.39,5.93-10.39c1.29-2.25,2.56-4.51,4-6.69a32,32,0,0,1,4.35-5.49,22.37,22.37,0,0,1,27.1-3.52Z"/></g></g></g></g></svg>
+                        <!-- <img src="{{ section.settings.right_image1 | img_url: 'master'  }}" width="" height="" alt="" /> -->
+                    </a>
+                    <a href="{{section.settings.android_link}}" class="right_image img_item_2" target="_blank">                      
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 668.07 800"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M417.55,800c26.74,0,50.07-23.33,50.07-50.07V633h33.44c20.06,0,33.43-13.38,33.43-33.44v-334H133.58v334C133.58,619.61,147,633,167,633h33.43V749.93c0,26.75,23.33,50.07,50.08,50.07s50.07-23.32,50.07-50.07V633h66.87V749.93C367.47,776.67,390.8,800,417.55,800Z"/><path class="cls-1" d="M618,599.55c26.74,0,50.06-23.33,50.06-50.08V315.58c0-26.61-23.32-50.05-50.06-50.05S567.93,289,567.93,315.58V549.47C567.93,576.22,591.25,599.55,618,599.55Z"/><path class="cls-1" d="M50.07,599.55c26.75,0,50.07-23.33,50.07-50.08V315.58c0-26.61-23.32-50.05-50.07-50.05S0,289,0,315.58V549.47C0,576.22,23.32,599.55,50.07,599.55Z"/><path class="cls-1" d="M494.37,5.05a16,16,0,0,0-23.32,0L426.2,49.74l-2.07,2.07q-39.88-20-89.6-20h-1q-49.79.09-89.6,20l-2.07-2.07L197,5.05a16,16,0,0,0-23.32,0,16,16,0,0,0,0,23.3l43.38,43.39a180.62,180.62,0,0,0-37.68,33.81,196.29,196.29,0,0,0-45.53,116.09c0,.46-.07.92-.09,1.37q-.21,4.52-.21,9.06H534.49q0-4.55-.21-9.06c0-.45-.06-.91-.09-1.37a196.36,196.36,0,0,0-45.53-116.09A180.62,180.62,0,0,0,451,71.74l43.39-43.39A16,16,0,0,0,494.37,5.05ZM250.47,173.69a25.05,25.05,0,1,1,25-25.05A25,25,0,0,1,250.47,173.69Zm167.14,0a25.05,25.05,0,1,1,25.05-25.05A25,25,0,0,1,417.61,173.69Z"/></g></g></svg>
+                        <!-- <img src="{{ section.settings.right_image2 | img_url: 'master'  }}" width="" height="" alt="" /> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "t:labels.app-promotion",
+      "settings": [
+        {
+        "type": "header",
+        "content": "t:labels.heading"
+        },
+        {
+        "type": "richtext",
+        "id": "heading",
+        "label": "t:labels.heading"
+        },
+        {
+        "type": "range",
+        "id": "heading_font_size",
+        "label": "t:labels.heading_font_size",
+        "min": 10,
+        "max": 60,
+        "step": 1,
+            "unit": "px",
+        "default": 48
+        },
+        {
+        "type": "range",
+        "id": "heading_font_size_mobile",
+        "label": "t:labels.heading_font_size_mobile",
+        "min": 10,
+        "max": 60,
+        "step": 1,
+            "unit": "px",
+        "default": 30
+        },
+        {
+        "type": "header",
+        "content": "t:labels.subheading"
+        },
+        {
+        "type": "richtext",
+        "id": "subheading",
+        "label": "t:labels.subheading"
+        },
+        {
+        "type": "range",
+        "id": "subheading_font_size",
+        "label": "t:labels.subheading_font_size",
+        "min": 10,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+        },
+        {
+        "type": "range",
+        "id": "subheading_font_size_mobile",
+        "label": "t:labels.subheading_font_size_mobile",
+        "min": 10,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+        },
+        {
+        "type": "header",
+        "content": "t:labels.images"
+        },
+        {
+        "type": "image_picker",
+        "id": "left_image",
+        "label": "t:labels.four_icon_block_type"
+        },
+        {
+        "type": "image_picker",
+        "id": "right_image1",
+        "label": "t:labels.ios-image"
+        },
+        {
+        "type": "url",
+        "id": "ios_link",
+        "label": "t:labels.ios-app-link"
+        },
+        {
+        "type": "image_picker",
+        "id": "right_image2",
+        "label": "t:labels.an-image"
+        },
+        {
+        "type": "url",
+        "id": "android_link",
+        "label": "t:labels.an-app-link"
+        },
+        
+      ],
+      "presets": [
+        {
+          "name": "t:labels.app-promotion",
+        }
+      ]
+    }
+{% endschema %}

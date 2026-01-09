@@ -1,0 +1,81 @@
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="content-wrapper">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>ARE YOU SHOPPING AT THE RIGHT LOCATION?</h2>
+    </div>
+    <div class="modal-body">
+      <p class="hide">Please select a store:</p>
+      <div class="flag-wrapper pop-flag-wrapper">
+          <span class="shop">SELECT REGION</span>
+         <div class="pop-deafult-country deafult-country"> 
+            <a href="javascript:;" class="se-country"> 
+              <span class="currency-flag currency-flag--small currency-flag--us" data-flag="US" aria-hidden="true"></span>
+              <span class="selected-country">US</span><span class="right icon-down-arrow"></span>
+            </a>
+          </div>
+          <div class="country_div country_div_de">
+            {% assign sorted_stores = shop.metaobjects.regional_stores.values %}
+            {% assign sorted_keys = '' %}
+            {% assign rest_of_world_store = null %}
+
+            {% for store in sorted_stores %}
+              {% if store.store_name.value == 'Rest of World' %}
+                {% assign rest_of_world_store = store %}
+              {% else %}
+                {% assign sorted_keys = sorted_keys | append: store.store_name.value | append: ',' %}
+              {% endif %}
+            {% endfor %}
+
+            {% assign sorted_keys = sorted_keys | split: ',' | sort %}
+
+            <div class="country_list_ul ">
+              {% for key in sorted_keys %}
+                {% for store in sorted_stores %}
+                  {% if store.store_name.value == key %}
+                    <div data-value="{{ store.store_code.value | upcase }}" data-co="{{ store.system.handle| upcase }}">
+                      {% render 'country-link' , store:store,class:'js-country-popup-inner pop-country-select' %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+              {% if rest_of_world_store != null %}
+                {% if settings.enable_theme_id %}
+                  {% assign final_url = rest_of_world_store.store_urls.value |  append:"?preview_theme_id=" | append : settings.us_theme_id | append : '&cc=' | append : 'RW' %}
+                {% else %}  
+                  {% assign final_url = rest_of_world_store.store_urls.value | append : '?cc=' | append : 'RW' %}
+                {% endif %}  
+                <div
+                  data-value="{{ rest_of_world_store.store_code.value | upcase }}"
+                  data-co="{{ rest_of_world_store.system.handle| upcase }}"
+                >
+                  <a
+                    href="{% if rest_of_world_store.catalog_store.value != true %}{{ final_url }}{% else %}{% endif %}"
+                    class="js-country-popup-inner pop-country-select" data-catalog-store="true"
+                  >
+                    <svg
+                      class="rest-of-world white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="Globe"
+                      viewBox="0 0 64 64"
+                      fill="#fff"
+                    >
+                      <path d="M53.85 47.85A27 27 0 0 1 24 57.8V56l3-3v-4l4-4v-3l4 4h5l2-2h8z"/><path d="M42 20.59v2.56L38.07 27H31l-5.36 5.26L31 37.51v5.06L27.44 39h-4.58L16 32.11V24.2L11.8 20h-4A27 27 0 0 1 32 5a26.55 26.55 0 0 1 7.06.94L36 9h-6v4l4 4h4.33z"/><path d="M32 60a28 28 0 1 1 28-28 28 28 0 0 1-28 28zm0-54a26 26 0 1 0 26 26A26 26 0 0 0 32 6z"/>
+                    </svg>
+                    <span class="selected-country"> {{ rest_of_world_store.store_name.value }}</span>
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      <button id="Co_confirm" class="action_button btn_normal btn_black btn_hover_red" data-href="" >Confirm</button>
+    </div>
+    </div>
+  </div>
+</div>
+

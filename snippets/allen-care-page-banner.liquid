@@ -1,0 +1,67 @@
+{% assign bg_img = section.settings.bg_img %}
+{% assign bg_color = section.settings.bg_color %}
+{% assign right_bg_img = section.settings.right_bg_img %}
+{% assign left_bg_img = section.settings.left_bg_img %}
+{% assign title = section.settings.title %}
+{% assign subtitle = section.settings.subtitle %}
+{% assign show_search = section.settings.show_search %}
+{% assign bg_attachment = blank %}
+{% if template contains "contact" %}
+    {% assign bg_attachment = 'background-attachment: unset !important;' %}
+{% endif %}
+
+
+<div class="title_bar text-center">
+  <h1 class="comn_heading h0">{{ title | default:"PRODUCT MANUAL SEARCH" }}</h1>
+  {% if subtitle != blank %}
+    <div class="section-subheading comn_subheading">{{ subtitle }}</div>
+  {% endif %}
+  {% if show_search%}
+    <form class="search-form faq-search" action="/search">
+      {% if settings.search_option != 'everything' %}
+      <input type="hidden" name="type" value="{% if search_type != blank or search_type %}{{search_type}}{% else %}product{% endif %}" />
+      {% endif %}
+      <label for="allen-search" class="label-hidden">search</label>
+      <input type="text" name="q" id="allen-search" placeholder="{{ 'actions.search_placeholder' | t }}" value="{{ search.terms }}" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" value="" />
+      <input type="submit" name="submit" class="search-img" aria-label="submit"/>
+    </form>      
+  {% else %}
+      {% if template contains "faq" %}
+      <div class="faq-search">
+        <label for="search-faq" class="label-hidden ">search</label>
+        <input id="search-faq" type="text" class="typeahead" placeholder="Search FAQs" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" />
+      </div>
+      {% endif %}
+  {% endif %}
+</div>
+
+{% comment %}
+<div class="product-manuals-search" style="background: url({{ bg_img | img_url:"master" }}) no-repeat {{bg_color}};{{bg_attachment}}">
+  
+  {% if right_bg_img != blank %}<div class="banner-bg-trunk" style="background-image:url('{{ right_bg_img | img_url :"master" }}') !important;"></div> {% endif %}
+  {% if left_bg_img != blank %}<div class="banner-bg-hitch" style="background-image:url('{{ left_bg_img | img_url :"master" }}') !important;"></div> {% endif %}
+  <div class="product-manuals-search-content">
+    <h1>{{ title | default:"PRODUCT MANUAL SEARCH" }}</h1>
+    {% if subtitle %}
+    <p>{{ subtitle }}</p>
+    {% endif %}
+    {% if show_search%}
+      <form class="search-form" action="/search">
+        {% if settings.search_option != 'everything' %}
+        <input type="hidden" name="type" value="{% if search_type != blank or search_type %}{{search_type}}{% else %}product{% endif %}" />
+        {% endif %}
+        <label for="allen-search" class="label-hidden">search</label>
+        <input type="text" name="q" id="allen-search" placeholder="{{ 'actions.search_placeholder' | t }}" value="{{ search.terms }}" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" value="" />
+        <input type="submit" name="submit" class="search-img" aria-label="submit"/>
+  <!--       <div class="search-img"><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/search-img.png" ></div> -->
+      </form>      
+    {% else %}
+        {% if template contains "faq" %}
+        <div class="faq-search">
+          <label for="search-faq" class="label-hidden ">search</label>
+          <input id="search-faq" type="text" class="typeahead" placeholder="Search FAQs" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" />
+        </div>
+        {% endif %}
+    {% endif %}
+  </div>
+</div>{% endcomment %}

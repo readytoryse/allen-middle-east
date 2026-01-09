@@ -1,0 +1,324 @@
+{% comment %}
+  ** FAQ page - custom view **
+  - Page template
+  - Uses blocks
+{% endcomment %}
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+      {% if section.settings.show_banner %}
+        {% include 'allen-care-page-banner', search_type: 'page' %}
+      {% endif %}
+      <!-- <a name="pagecontent" id="pagecontent"></a> -->
+      
+      <div class="containerr main content">
+        <div class="">
+            {% unless section.settings.show_banner %}
+          <div class="sixteen columns page clearfix">
+          
+              <h1>
+                {{ page.title }}
+              </h1>
+              <div class="feature_divider"></div>
+     
+            <div>
+                     {% endunless %}
+              {% include 'page-multi-column', content: page.content %}
+            </div>
+          </div>
+          <div class="">
+            <div class="faq-work-content">
+              <h3 class="page-title">{{ section.settings.faq_heading }}</h3>
+              {% if section.blocks.size > 0 %}
+                <dl class="faqAccordion allen-care-home">
+                  {% for block in section.blocks %}
+                    {% if block.type == 'heading' %}
+                      {% if block.settings.heading != blank %}
+                        <h2 class="title">{{ block.settings.heading }}</h2>
+                      {% endif %}
+                    {% endif %}
+                    {% if block.settings.title != blank %}
+                      <dt>
+                        <button type="button" aria-controls="panel-01" aria-expanded="true">
+                          {{ block.settings.title }}
+                        </button>
+                      </dt>
+                      <dd id="panel-01" aria-hidden="false">
+                        {{ block.settings.subtitle }}
+                      </dd>
+                    {% endif %}
+                  {% endfor %}
+                </dl>
+              {% endif %}
+              <div class="faq-viewmore">
+                <a href="{{ section.settings.view_faq_link | default:"javascript:;"}}" class="btn_normal btn_hover_red faq-viewmore-link">
+                  {{- section.settings.view_faq_title | default: 'VIEW ALL' -}}
+                </a>
+                <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/shape-border.png" alt="allen sports">
+              </div>
+            </div>
+            <h3 class="page-title center">{{ section.settings.more_resource_heading }}</h3>
+            <div class="allen-care-row row">
+              {% for block in section.blocks %}
+                {% if block.type == 'link_block' %}
+                  <div class="one-third column">
+                    <a href="{{ block.settings.link_url}}">
+                      <div class="resource-content">
+                        {% if block.settings.link_icon == blank %}
+                          {{ 'image' | placeholder_svg_tag }}
+                        {% else %}
+                          <img src="{{ block.settings.link_icon | img_url : "large" }}" alt="{{ block.settings.link_title}}">
+                        {% endif %}
+                        <h3>{{ block.settings.link_title }}</h3>
+                        <p>{{ block.settings.link_subtitle | strip_html }}</p>
+                      </div>
+                    </a>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="about-help-link">
+              <!-- <a href="{{ section.settings.contact_btn_link | default:"javascript:;"}}" class="btn_normal btn_hover_red about-help-btn"> -->
+                {{- section.settings.contact_btn_title -}}
+              <!-- </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<style>
+  {% if section.settings.show_banner %}
+    .mobile_nav-fixed--true #pagecontent, .mobile_nav-fixed--false #pagecontent {
+      padding: 0;
+    }
+    @media only screen and (max-width: 479px) {
+      div.content {
+        padding-top: 0;
+      }
+    }
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "t:labels.allen-care-page",
+  "class": "allen-care",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "t:labels.show_banner",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:labels.show_search",
+      "default": true
+    },
+	{
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "t:labels.background_image",
+      "info": "t:labels.background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bg_img",
+      "label": "t:labels.right_bg_img",
+      "info": "t:labels.right_bg_img"
+    },
+	{
+      "type": "image_picker",
+      "id": "left_bg_img",
+      "label": "t:labels.left_bg_img",
+      "info": "t:labels.left_bg_img"
+    },
+	{
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:labels.background-color",
+      "info": "t:labels.background-color",
+	   "default":"#ea1d2d"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+	{
+      "type": "select",
+      "id": "text_position",
+      "label": "t:labels.text_position",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "t:labels.center-value",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:labels.text_alignment",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "t:labels.center-value",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+	{
+      "type": "header",
+      "content": "t:labels.more-resource-section"
+    },
+    {
+      "type": "text",
+      "id": "more_resource_heading",
+      "label": "t:labels.more-resource-title",
+      "default": "t:labels.more_resource_heading"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.faq-section"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "t:labels.faq_heading",
+      "default": "t:labels.faq_heading-default"
+    },
+	{
+      "type": "text",
+      "id": "view_faq_title",
+      "label": "t:labels.view_faq_title",
+      "default": "t:labels.view_faq_title-default"
+    },
+	{
+      "type": "url",
+      "id": "view_faq_link",
+      "label": "t:labels.view_faq_link"
+    },
+	{
+      "type": "header",
+      "content": "t:labels.contact-button"
+    },
+	{
+      "type": "richtext",
+      "id": "contact_btn_title",
+      "label": "t:labels.contact_btn_title",
+      "default": "t:labels.contact_btn_title-default"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "t:labels.Faq",
+      "type": "Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.question",
+          "default": "t:labels.title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "t:labels.answer",
+          "default": "t:labels.subtitle-default"
+        }
+      ]
+    },
+	{
+      "name": "t:labels.link_block",
+      "type": "link_block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "link_icon",
+          "label": "t:labels.icon"
+        },
+        {
+          "type": "text",
+          "id": "link_title",
+          "label": "t:label.title",
+          "default": "t:label.title"
+        },
+        {
+          "type": "richtext",
+          "id": "link_subtitle",
+          "label": "t:labels.answer",
+          "default": "t:labels.subtitle-default"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "t:labels.link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.allen-care-page",
+          "settings": {
+      "title": "t:labels.page-faq-template", 
+      "subtitle": "<p>Create an amazing FAQ page with a full-width banner</p>",
+      "text_position": "t:labels.center-value",
+      "text_align": "t:labels.center-value"
+    },
+
+    "blocks": [
+      {
+        "type": "Content",
+        "settings": {
+          "title": "t:label.title",
+          "subtitle": "<p>Suspendisse feugiat. Fusce commodo aliquam arcu. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.</p>"
+        }
+      },
+      {
+        "type": "Content",
+        "settings": {
+          "title": "t:label.title",
+          "subtitle": "<p>Suspendisse feugiat. Fusce commodo aliquam arcu. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.</p>"
+        }
+      },
+      {
+        "type": "Content",
+        "settings": {
+          "title": "t:label.title",
+          "subtitle": "<p>Suspendisse feugiat. Fusce commodo aliquam arcu. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.</p>"
+        }
+      }
+    ]
+
+    }
+
+  ]
+}
+{% endschema %}

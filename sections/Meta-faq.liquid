@@ -1,0 +1,121 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a FAQ section with a list of questions and answers.
+
+  Accepts:
+  - title {string} - The title of the section
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - heading_position {'left'|'center'|'right'} - The position of the heading
+  - divider {boolean} - Whether to add a divider above the section
+
+  Usage:
+  {% render 'section-faq' %}
+{%- endcomment -%}
+
+{%- liquid
+  if template contains 'page.resource-pdp'
+   assign product = page.metafields.custom.resource_product.value
+  endif
+-%}
+{% if product and product.metafields.custom.question_answers != blank %}
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+<div class="page-width page-width--narrow">
+  {%- if section.settings.title != blank -%}
+    <header class="section-header text-{{ section.settings.text_align }}">
+      <h2 class="section-header__title {{ section.settings.heading_size }}">
+        {{ section.settings.title | escape }}
+      </h2>
+    </header>
+  {%- endif -%}
+       {% for data in product.metafields.custom.question_answers.value %}
+       <div>
+            <collapsible-elements>
+              <div>
+                <button
+                  type="button"
+                  class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height"
+                  aria-controls="FAQ-content-{{ forloop.index }}"
+                >
+                  <span class="collapsible-trigger__layout">
+                    <span>
+                      <span>Q: {{ data.question }}</span>
+                    </span>
+                    <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+                      {% render 'icon', name: 'chevron-down' %}
+                    </span>
+                  </span>
+                </button>
+                <div id="FAQ-content-{{ forloop.index }}" class="collapsible-content collapsible-content--all">
+                  <div class="collapsible-content__inner rte clearfix">
+                   {{ data.answers | metafield_text }}
+                  </div>
+                </div>
+              </div>
+            </collapsible-elements>
+      </div>
+       {% endfor %} 
+</div>
+
+{%- if divider -%}</div>{%- endif -%}
+{% endif %}
+{% schema %}
+  {
+    "name": "Meta Faq",
+    "class": "index-section meta-faq",
+    "settings": [      
+      {
+        "type": "text",
+        "id": "title",
+        "label": "t:labels.header"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "label": "t:labels.heading_size",
+        "default": "h2",
+        "options": [
+          {
+            "value": "h3",
+            "label": "t:labels.sizes.small"
+          },
+          {
+            "value": "h2",
+            "label": "t:labels.sizes.medium"
+          },
+          {
+            "value": "h1",
+            "label": "t:labels.sizes.large"
+          },
+          {
+            "value": "h0",
+            "label": "t:labels.sizes.extra_large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "t:labels.text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:labels.alignments.left"
+          },
+          {
+            "value": "center",
+            "label": "t:labels.alignments.center"
+          },
+          {
+            "value": "right",
+            "label": "t:labels.alignments.right"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Meta Faq"
+      }
+    ]
+  }
+{% endschema %}

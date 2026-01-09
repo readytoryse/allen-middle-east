@@ -1,0 +1,187 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "home_rack_finder_app_kbjm6w": {
+      "type": "home-rack-finder-app",
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow_jtdimy": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_myLrqz": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Where we are riding</p>",
+            "title_size": 70,
+            "subheading": "A new monthly series from Allen.",
+            "subtext": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/where-we-reide-main-01.jpg",
+            "enable_video": false,
+            "mp4_video_url": "",
+            "video": "https://www.youtube.com/watch?v=lKYUMNrgGqY",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_myLrqz"
+      ],
+      "name": "t:labels.hero_optional_slides",
+      "settings": {
+        "full_width": true,
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 7
+      }
+    },
+    "rich_text_YBRAzB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yiUhCa": {
+          "type": "heading",
+          "settings": {
+            "title": "So many great reasons to ride!",
+            "heading_size": "h2"
+          }
+        },
+        "text_HyjmeA": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>At Allen, cycling has always been about more than equipment. It’s about movement, curiosity, and the simple satisfaction of getting out the door and onto the bike. In 2026, we’re formalizing that idea with a new monthly feature: <strong>Where We’re Riding</strong>.</p><p>Each month, we’ll highlight a small selection of cycling events and ride destinations around the world—spanning gravel, road, and mountain biking. Some will be marquee events. Others will simply be places worth riding, whether or not an event is happening. Participation is optional. Inspiration is the point.</p><p>This series isn’t about results, rankings, or start times. It’s about giving yourself a reason to ride—something to plan for, look forward to, or draw ideas from as the year unfolds.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yiUhCa",
+        "text_HyjmeA"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "where_we_go_blog_template_q8eFF4": {
+      "type": "where-we-go-blog-template",
+      "name": "Where we go",
+      "settings": {
+        "blog": "where-were-riding",
+        "image_darken": false,
+        "subtitle": "",
+        "blog_posts_per_row": 3,
+        "blog_posts_per_page": 12,
+        "blog_tags": false,
+        "blog_author": false,
+        "blog_date": true,
+        "blog_comment_count": true,
+        "read_more_link": true,
+        "toggle": false
+      }
+    },
+    "blog_posts_3VzkKp": {
+      "type": "blog-posts",
+      "disabled": true,
+      "name": "t:labels.blog_posts",
+      "settings": {
+        "title": "Where We Are Riding!",
+        "heading_size": "t:labels.h1",
+        "heading_position": "t:labels.left-value",
+        "blog": "where-were-riding",
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "t:labels.square-value",
+        "divider": true
+      }
+    },
+    "rich_text_EJQrVU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mjnxHe": {
+          "type": "heading",
+          "settings": {
+            "title": "Why This Series Exists",
+            "heading_size": "h2"
+          }
+        },
+        "text_jcmrz6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>The purpose of <strong>Where We’re Riding</strong> isn’t to create obligation. It’s to create <strong>permission</strong>—permission to plan a trip, sign up for something new, or simply ride somewhere different than usual.</p><p>You don’t need to travel far.<br/>You don’t need to race.<br/>You just need one ride that gives the year a starting point.</p><p>We’ll be adding a new installment each month in 2026, following destinations and events across Europe, the U.S., and beyond. Some months will lean adventurous, others reflective. All of them are meant to encourage time on the bike.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mjnxHe",
+        "text_jcmrz6"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "2",
+        "divider": false
+      }
+    },
+    "1767731783a2613a98": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "heading": "",
+        "subheading": "",
+        "text_alighn": "t:labels.center-value"
+      }
+    }
+  },
+  "order": [
+    "home_rack_finder_app_kbjm6w",
+    "main",
+    "slideshow_jtdimy",
+    "rich_text_YBRAzB",
+    "where_we_go_blog_template_q8eFF4",
+    "blog_posts_3VzkKp",
+    "rich_text_EJQrVU",
+    "1767731783a2613a98"
+  ]
+}

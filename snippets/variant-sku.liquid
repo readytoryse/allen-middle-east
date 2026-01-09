@@ -1,0 +1,23 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the SKU of a given variant
+
+  Accepts:
+  - variant {variant} - Variant object
+  - product {product} - Product object
+
+  Usage:
+  {% render 'variant-sku', variant: variant %}
+{%- endcomment -%}
+ {% if template contains 'page.resource-pdp' %}
+   {% assign product = page.metafields.custom.resource_product.value %}
+  {% endif %}
+<variant-sku data-product-id="{{ product.id }}">
+  {%- if variant.sku != blank -%}
+    {{ variant.sku }}
+  {%- endif -%}
+</variant-sku>
+
+<script type="module">
+  import 'components/variant-sku'
+</script>

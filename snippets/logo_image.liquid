@@ -1,0 +1,83 @@
+{% if url contains 'easybike' %}
+  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/2dcf9378fb784930a186e2a5cfb4256e.jpg?v=1717586118" width="50px" height="50px">
+{% endif %}  
+{% if site_name == 'amazon' %}
+  {% if settings.amazon != blank %}
+    <img src="{{ settings.amazon  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_amazon == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_amazon }}
+  {% endif %}
+{% endif %}
+{% if site_name == 'londonbikes' %}
+  {% if settings.londonbikes != blank %}
+    <img src="{{ settings.londonbikes  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_londonbikes == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_londonbikes }}
+  {% endif %}
+{% endif %}
+{% if site_name == 'falabella' %}
+  {% if settings.falabella != blank %}
+    <img src="{{ settings.falabella  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_falabella == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_falabella }}
+  {% endif %}
+{% endif %}
+{% if site_name == 'mercadolibre' %}
+  {% if settings.mercadolibre != blank %}
+    <img src="{{ settings.mercadolibre  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_mercadolibre == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_mercadolibre }}
+  {% endif %}
+{% endif %}
+{% if site_name == 'solocletas' %}
+  {% if settings.solocletas != blank %}
+    <img src="{{ settings.solocletas  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_solocletas == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_solocletas }}
+  {% endif %}
+{% endif %}
+{% if site_name == '99bikes' %}
+  {% if settings.ninetyninebikes != blank %}
+    <img src="{{ settings.ninetyninebikes  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_ninetyninebikes == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_ninetyninebikes }}
+  {% endif %}
+{% endif %}
+{% if site_name == 'bikeexchange' %}
+  {% if settings.bikeexchange != blank %}
+    <img src="{{ settings.bikeexchange  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_bikeexchange == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_bikeexchange }}
+  {% endif %}
+{% endif %}
+{% if site_name == 'mtbdirect' %}
+  {% if settings.mtbdirect != blank %}
+    <img src="{{ settings.mtbdirect  | img_url: 'master' }}" width="50px" height="50px">
+  {% endif %}
+  {% if settings.text_mtbdirect == blank %}
+    Buy on {{ site_name }}
+  {% else %}
+    {{ settings.text_mtbdirect }}
+  {% endif %}
+{% endif %}

@@ -1,0 +1,327 @@
+{% comment %}
+** Main blog page - default view **
+- Template section
+- Uses blocks
+{% endcomment %}
+{% layout 'theme.allen-stories' %}
+{% assign blog = blog %}
+{% if blog == blank and section.settings.blog != blank %}
+  {% assign blog = blogs[section.settings.blog] %}
+{% endif %} 
+
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+        <div class="title_bar text-center">
+
+            {% if current_tags %}
+              <h1 class="blog-title blog-tags--true comn_heading">
+                <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
+              </h1>
+            {% else %}
+              <h1 class="blog-title comn_heading">
+                {{ blog.title }}
+              </h1>
+             
+            {% endif %}
+        
+          {% if section.settings.subtitle %}
+          <div class="stories-title comn_subheading ">   
+            {{ section.settings.subtitle }}
+          </div>
+          {% endif %}
+        
+            <!--Start tab labels-->
+            {% assign blog_tags = blog.tags %}
+            {% assign categories = blank %}
+            {% for tag in blog_tags %}
+            	{% if tag contains "Category:" %}
+            		{% assign categories = categories | append:tag | append:"," %}
+            	{% endif %}
+            {% endfor %}
+            {% assign size = categories | size | minus: 1 %}
+            {% assign categories = categories | slice: 0, size | split:',' %}
+        </div>
+        
+        <!-- <a name="pagecontent" id="pagecontent"></a> -->
+        
+        <div class="containerr main content">
+        
+        {% paginate blog.articles by 9999 %}
+          <div class="blog-header clearfix">
+            {% unless section.settings.image != nil %}
+              <div class="eight columns">
+
+                
+        
+              </div>
+            {% endunless %}
+             {% unless section.settings.image != nil %}
+              <div class="sixteen columns">
+                <div class="feature_divider"></div>
+              </div>
+            {% endunless %}
+          </div>
+        
+          <div class="{% if sidebar %}twelve{% else %}sixteen{% endif %} columns">
+            <div class="stories-tab">
+             <div class="wrapper">
+                <div class="tabs">
+                    <li><a class="active" data-category="all" href="javascript:;">{{'All'}}</a></li>
+                    {% for cate in categories %}
+                        <li><a class="" data-category="{{cate|remove:"Category:"}}" href="javascript:;">{{cate | remove:"Category:"}}</a></li>
+                    {% endfor %}
+                </div>
+                {% assign show_country = false %}
+                {% for tag in blog.tags %}
+                    {% if tag contains "Country:" %}
+                         {% assign show_country = true %}
+                    {% endif %}    
+                {% endfor %}      
+                {% if show_country %}  
+                <div class="coutry-select">
+                  <select name="country-select">
+                    <option selected value="">Select Country</option>
+                    {% for tag in blog.tags %}
+                        {% if tag contains "Country:" %}
+                            <option value="{{ tag | remove:"Country:" }}">{{ tag | remove:"Country:" }}</option>
+                        {% endif %}
+                    {% endfor %}    
+                  </select>
+                </div>
+                {% endif %}
+            </div>
+              {% capture all_stories %}
+              {{all_stories}}
+                {% for article in blog.articles reversed %}
+                  {% include 'new-article' %}
+                {% endfor %}      
+              {% endcapture %}
+              <div class="all_stories_wrapper">
+                {{all_stories}}
+              </div>
+            </div>
+          </div>
+        
+        <br class="clear" />  
+        {% include 'pagination' %}
+          
+        {% endpaginate %}
+        </div>
+
+      
+    </div>
+  </div>
+</div>
+<script>
+    const container = document.querySelector('.all_stories_wrapper');
+  const articles = Array.from(container.querySelectorAll('.article'));
+ 
+  articles.sort((a, b) => {
+    const dateA = new Date(a.dataset.publish);
+    const dateB = new Date(b.dataset.publish);
+    return dateB - dateA; // Descending order (newest first)
+  });
+ 
+  articles.forEach(article => container.appendChild(article));
+ 
+</script>
+{% schema %}
+
+{
+  "name": "Where we go",
+  "class": "blog-section where-we-go",
+  "settings": [
+      {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:labels.banner-image",
+        "info": "t:labels.banner-image-i"
+      },
+      {
+        "type": "checkbox",
+        "id": "image_darken",
+        "label": "t:labels.dbi",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "t:labels.subheading",
+        "default": "t:labels.subheading"
+      },
+      {
+        "type": "range", 
+        "id": "blog_posts_per_row",
+        "label": "t:labels.bpn",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "blog_posts_per_page",
+        "label": "t:labels.bpp",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 12
+      },
+      {
+       "type": "checkbox",
+       "id": "blog_tags",
+       "label": "t:labels.sbp"
+      },
+      {
+       "type": "checkbox",
+       "id": "blog_author",
+       "label": "t:actions.show_author"
+      },
+
+      {
+       "type": "checkbox",
+       "id": "blog_date",
+       "label": "t:actions.show_date",
+       "default": true
+      },
+      {
+       "type": "checkbox",
+       "id": "blog_comment_count",
+       "label": "t:actions.show_comment_count",
+       "default": true
+      },
+      {
+       "type": "checkbox",
+       "id": "read_more_link",
+       "label": "t:labels.read_more_link-de",
+       "default": true
+      },
+      {
+       "type": "header",
+       "content": "t:labels.sidebar"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:labels.nbt-co"
+      },
+      {
+        "type": "checkbox",
+        "id": "toggle",
+        "label": "t:labels.toggle",
+        "default": false
+      }
+  ],
+  "blocks": [
+    {
+      "type": "post_tags",
+      "name": "t:labels.bp",
+      "limit": 1
+    },
+    {
+      "type": "menu",
+      "name": "t:labels.menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "custom_menu_linklist",
+          "label": "t:labels.menu"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "t:labels.nsu",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "newsletter_title",
+          "label": "t:labels.heading",
+          "default": "t:labels.subscribe"
+        },
+        {
+          "type": "richtext",
+          "id": "newsletter_text",
+          "label": "t:labels.subheading",
+          "default": "t:labels.newsletter_text-de"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "t:labels.page",
+      "settings": [
+        {
+          "type": "page",
+          "id": "content_page",
+          "label": "t:labels.page"
+        }
+      ]
+    },
+    {
+      "type": "recent_posts",
+      "name": "t:labels.rbp",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "blog_post_count",
+          "label": "t:labels.dbp",
+          "options": [
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            }
+          ],
+          "default": "10"
+        }
+      ]
+    },
+    {
+      "type": "search",
+      "name": "t:labels.sf",
+      "limit": 1
+    },
+    {
+      "type": "text",
+      "name": "t:labels.text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "t:labels.heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "t:labels.nbt-text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Where we go"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,288 @@
+<div class="main-img-wrapper">
+  <div class="inner-four-img">
+    <img src="{{ section.settings.top-img1 | image_url }}">
+  </div>
+  <div class="inner-four-img">
+    <img src="{{ section.settings.top-img2 | image_url }}">
+  </div>
+  <div class="inner-four-img">
+    <img src="{{ section.settings.top-img3 | image_url }}">
+  </div>
+  <div class="inner-four-img">
+    <img src="{{ section.settings.top-img4 | image_url }}">
+  </div>
+</div>
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+      <div class="containerr register-product-content">
+      <div class="title_bar">
+        <h1 class="comn_heading h0">{{ section.settings['content-heading'] }}</h1>
+        <div class="ambassador-detail">
+          {{ section.settings['content-info'] }}
+          <p class="text-red">{{ section.settings['content-info-last'] }}</p>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="//cdn.refersion.com/iframe.js"></script>
+      <div id="refersion-iframe-goes-here" data-frame-url="https://allen-bike.refersion.com/affiliate/registration" ></div>
+        
+        {% comment %}
+        <form
+          class="Ambassador-form"
+          action="https://allenapps.allen.bike/Ambassadors/SubmitRegistration"
+          method="POST"
+        >
+          <input type="hidden" name="source" value="{{ shop.name | escape }}">
+          <input type="hidden" name="favorite_color" value="">
+          <h1 class="comn_heading ambassador-h1">{{ section.settings['form-heading'] }}</h1>
+          <div class="form-inner row">
+            <div class="eight columns omega form-control">
+              <label class="label-hidden">First & Last Name:</label>
+              <input type="text" name="fullname" placeholder="First & Last Name:">
+            </div>
+            <div class="eight columns omega form-control">
+              <label class="label-hidden">Email address:</label>
+              <input type="email" name="email_address" placeholder="Email address:">
+            </div>
+            <div class="eight columns omega form-control">
+              <label class="label-hidden">Mailing address:</label>
+              <input type="text" name="mailing_address1" placeholder="Street address">
+              <label class="label-hidden">street address</label>
+            </div>
+            <div class="eight columns omega form-control">
+              <input type="text" name="mailing_address2" placeholder="Street address line 2">
+              <label class="label-hidden">Street address line 2</label>
+            </div>
+            <div class="eight columns omega form-control">
+              <input type="text" name="city" required placeholder="City">
+              <label class="label-hidden">city</label>
+            </div>
+            <div class="four columns omega form-control">
+              <input type="text" name="state" required placeholder="state/province">
+              <label class="label-hidden">state/province</label>
+            </div>
+            <div class="four columns omega form-control">
+              <input type="text" name="zipcode" required placeholder="postal/zip code">
+              <label class="label-hidden">postal/zip code</label>
+            </div>
+         
+                {% comment %}
+                  <div class="eight columns alpha form-control">
+                    <input type="number" name="age" placeholder="age">
+                    <label class="label-hidden">age</label>
+                  </div>
+                {% endcomment %}
+                <div class="eight columns alpha form-control">
+                  <input type="text" id="my_date_picker" name="dob" autocomplete="off" required placeholder="DOB">
+                  <label class="label-hidden">DOB</label>
+                </div>
+                <div class="eight columns alpha form-control">
+                  <select name="gender" id="gender" required>
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+                    <option value="na">Prefer not to answer</option>
+                  </select>
+                  <label class="label-hidden">Gender</label>
+                </div>
+                <div class="eight columns alpha form-control">
+                  <input type="text" name="insta_username" placeholder="Instagram username">
+                  <label class="label-hidden">Instagram username</label>
+                </div>
+                <div class="eight columns alpha form-control">
+                  <input type="text" name="tiktok_username" placeholder="Tiktok username">
+                  <label class="label-hidden">Tiktok username</label>
+                </div>
+            <div class="sixteen columns alpha form-control">  
+                <label>T-shirt size:</label>   
+                  <select name="tshirt_size" id="tshirt_size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>            
+            </div>
+            <div class="sixteen columns alpha form-control">
+                <label class="label-hidden"l>Why do you want to be an allen ambassador?:</label>
+                  <textarea name="why_do_you" id="why_do_you" placeholder="Why do you want to be an allen ambassador?"></textarea>
+            </div>
+            <div class="sixteen columns alpha form-control">
+                <label class="label-hidden">Any other relevant social handles or comments?</label>
+                  <textarea name="social_media_handles" placeholder="Any other relevant social handles or comments?"></textarea>
+            </div>
+            <div class="sixteen columns alpha form-control">
+                <label>What allen product do you have? if any.</label>
+                  <input type="text" name="allen_products" placeholder="If you don’t have any, please type none.">   
+            </div>
+            <div class="sixteen columns alpha form-control">
+                <label>PLEASE PROVE YOU'RE HUMAN</label>
+                  <div id="re-captcha"></div>
+            </div>
+
+            <div class="sixteen columns alpha form-control">
+              <div class="submit-center">
+                <button class="btn_normal btn_black btn_hover_red" type="submit" disabled>Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <p class="text-red footer-warning">*Indicates required question</p>
+        {% endcomment %}
+      </div>
+
+      <div class="thanku-msg center">
+        <div class="containerr">
+          <div class="thanks_titlebar">
+            <h2 class="thanks_title">Thank You</h2>
+            <div class="thanks_desc">
+              for submitting your application with Allen. We will reach out to you with more details and requirements if
+              you are accepted into the program.
+            </div>
+          </div>
+          <div class="thanks_icons">
+            <div class="thanks_logo">
+              <a href="{{ shop.url }}">
+                <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/thanks_logo.png?v=1692603952">
+              </a>
+            </div>
+            <div class="thanks_desc_2">Explore all the ways you can share your adventures:</div>
+            <ul class="thanks_social_ic">
+              <li>
+                <a href="https://www.facebook.com/AllenSportsGlobal" target="_blank">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_facebook.png?v=1692604142">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/allen.global/" target="_blank">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_instagram.png?v=1692604142">
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/allensportsusa" target="_blank">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_tiktok2.png?v=1692684960">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@allen.global" target="_blank">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_tiktok.png?v=1692604142">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="thanks_insta_feed">
+          <div class="thanks_insta_feed_wrap">
+            <div class="thanks_insta_feed_inner">
+              <div class="thanks_insta_feed_slide">
+                <div class="image_wrap">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_1.png?v=1692608599">
+                </div>
+              </div>
+              <div class="thanks_insta_feed_slide">
+                <div class="image_wrap">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_2.png?v=1692608599">
+                </div>
+              </div>
+              <div class="thanks_insta_feed_slide">
+                <div class="image_wrap">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_3.png?v=1692608599">
+                </div>
+              </div>
+              <div class="thanks_insta_feed_slide">
+                <div class="image_wrap">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_4.png?v=1692608599">
+                </div>
+              </div>
+              <div class="thanks_insta_feed_slide">
+                <div class="image_wrap">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_5.png?v=1692608599">
+                </div>
+              </div>
+              <div class="thanks_insta_feed_slide">
+                <div class="image_wrap">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_6.png?v=1692608599">
+                </div>
+              </div>
+              <div class="thanks_insta_feed_slide">
+                <div class="image_wrap">
+                  <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_3.png?v=1692608599">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:labels.ambassador-form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:labels.top-images-part"
+    },
+    {
+      "type": "image_picker",
+      "id": "top-img1",
+      "label": "t:labels.image-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "top-img2",
+      "label": "t:labels.image-2"
+    },
+    {
+      "type": "image_picker",
+      "id": "top-img3",
+      "label": "t:labels.image-3"
+    },
+    {
+      "type": "image_picker",
+      "id": "top-img4",
+      "label": "t:labels.image-4"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.form-content-part"
+    },
+    {
+      "type": "text",
+      "id": "content-heading",
+      "label": "t:labels.heading",
+      "default": "t:labels.content-heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content-info",
+      "label": "t:labels.paragraph",
+      "default": "t:labels.content-info"
+    },
+    {
+      "type": "textarea",
+      "id": "content-info-last",
+      "label": "t:labels.paragraph-last",
+      "default": "t:labels.content-info-last"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.form"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "form-heading",
+      "label": "t:labels.heading",
+      "default": "t:labels.form-heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.ambassador-form"
+    }
+  ]
+}
+{% endschema %}

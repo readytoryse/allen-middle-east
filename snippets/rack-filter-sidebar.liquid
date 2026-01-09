@@ -1,0 +1,668 @@
+<div class="left-sidebar">
+  <div class="filter-title">
+    <h2>FILTER 123</h2>
+    <a
+      type="button"
+      href="javascript:;"
+      class="jplist-reset-btn"
+      >RESET</a
+    >
+  </div>
+  <div class="filter-list-wrapper" id="js-{{ parent }}product-filters">
+    <div class="list-items mobile_only">
+      <div class="inner-title inner-title-wrapper">
+        <h3>Sort</h3>
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="mobile_hidden">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+            <title></title>
+            <g id="plus">
+              <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+              <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+            </g>
+          </svg>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+            class="icon icon--wide icon-chevron-down mobile_only"
+            viewBox="0 0 28 16"
+          >
+            <path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path>
+          </svg>
+        </span>
+      </div>
+      <div class="filter-inner-content sort-wrapper">
+        <div class="flex-column">
+          <div class="grid__item form_chkbx checkbox jplist-panel">
+            <ul
+              data-control-type="sort-buttons-group"
+              data-control-name="sort-buttons-group-1"
+              data-control-action="sort"
+              data-mode="single"
+            >
+              <li
+                class="jplist-drop-down"
+                data-type="text"
+                data-order="asc"
+                data-path="default"
+              >
+                Featured
+              </li>
+              <li
+                class="jplist-drop-down"
+                data-type="text"
+                data-path=".product-name"
+                data-order="asc"
+                data-type="text"
+              >
+                Alphabetically: A-Z
+              </li>
+              <li
+                class="jplist-drop-down"
+                data-type="text"
+                data-path=".product-name"
+                data-order="desc"
+                data-type="text"
+              >
+                Alphabetically: Z-A
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="right-side-size"><ul><li>best match</li><li>best match</li><li>best match</li></ul></div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="list-items">
+      <div class="inner-title inner-title-wrapper">
+        <h3>Hitch Mount Installation</h3>
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+            <title></title>
+            <g id="plus">
+              <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+              <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div class="filter-inner-content">
+        <div class="flex-column">
+          <div class="grid__item form_chkbx checkbox">
+            <input
+              type="checkbox"
+              id="{{ parent }}hitch_on_vehicle"
+              class="ignore-filter"
+              data-id="1"
+              name="hitch_on_vehicle"
+              value="hitch_on_vehicle"
+            >
+            <label for="{{ parent }}hitch_on_vehicle"
+              >YES
+              <div class="hitch_count_lbl"></div>
+            </label>
+          </div>
+          <div class="right-side-size js-size-selection">
+            <div
+              class="jplist-group"
+              data-control-type="checkbox-group-filter"
+              data-control-action="filter"
+              data-control-name="vehicle-hitch-size"
+            >
+              <ul>
+                <h3>SIZE</h3>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}hitch_size_1"
+                      class="hitch-size-chk"
+                      data-path=".filter_hitch_size-1-25"
+                      name="hitch_size"
+                      data-id="2"
+                      value="1 ¼"
+                    >
+                    <label for="{{ parent }}hitch_size_1">1.25”</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}hitch_size_2"
+                      class="hitch-size-chk"
+                      data-path=".filter_hitch_size-2"
+                      name="hitch_size"
+                      data-id="2"
+                      value="2"
+                    >
+                    <label for="{{ parent }}hitch_size_2">2”</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="jplist-group"
+              data-control-type="checkbox-group-filter"
+              data-control-action="filter"
+              data-control-name="vehicle-hitch-class"
+            >
+              <span class="class-label">CLASS:</span>
+              <ul class="hitch-class-list">
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}hitch_size_class1"
+                      class="hitch-class-chk js-class-filter"
+                      data-path=".filter_hitch_class-class-1"
+                      name="{{ parent }}hitch_class"
+                      data-id="hitch-class0"
+                      value="filter_hitch_class-class-1"
+                    >
+                    <label for="{{ parent }}hitch_size_class1">Class I</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}hitch_size_class2"
+                      class="hitch-class-chk js-class-filter"
+                      data-path=".filter_hitch_class-class-2"
+                      name="{{ parent }}hitch_class"
+                      data-id="hitch-class0"
+                      value="filter_hitch_class-class-2"
+                    >
+                    <label for="{{ parent }}hitch_size_class2">Class II</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-items">
+      <div class="inner-title inner-title-wrapper">
+        <h3>Does your car have an external rear spare tire?</h3>
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+            <title></title>
+            <g id="plus">
+              <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+              <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div class="filter-inner-content">
+        <div class="flex-column">
+          <div class="right-side-size">
+            <div
+              class="jplist-group"
+              data-control-type="checkbox-group-filter"
+              data-control-action="filter"
+              data-control-name="vehicle-spare-tire"
+            >
+              <ul>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}has_spare_tire_yes"
+                      data-path=".filter_has_rear_spare_tire_-true"
+                      data-id="3"
+                      name="{{ parent }}filter_has_rear_spare_tire_"
+                      value="filter_has_rear_spare_tire_-true"
+                    >
+                    <label for="{{ parent }}has_spare_tire_yes">yes</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="radio"
+                      id="{{ parent }}has_spare_tire_no"
+                      data-path=".filter_has_rear_spare_tire_-false"
+                      data-id="3"
+                      name="{{ parent }}filter_has_rear_spare_tire_"
+                      value="filter_has_rear_spare_tire_-na"
+                    >
+                    <label for="{{ parent }}has_spare_tire_no">no</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-items">
+      <div class="inner-title inner-title-wrapper">
+        <h3>NUMBER OF BIKES</h3>
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+            <title></title>
+            <g id="plus">
+              <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+              <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div class="filter-inner-content">
+        <div class="flex-column">
+          <div class="right-side-size label-number-of-bikes">
+            <div
+              class="jplist-group"
+              data-control-type="checkbox-group-filter"
+              data-control-action="filter"
+              data-control-name="howmany"
+            >
+              <ul>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx6"
+                      data-path=".bike-one"
+                      class="bike-1"
+                      data-id="4"
+                      name="filter_no_of_bikes[]"
+                      value="1"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx6">1</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx7"
+                      data-id="4"
+                      class="bike-2"
+                      data-path=".bike-two"
+                      name="filter_no_of_bikes[]"
+                      value="2"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx7">2</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx8"
+                      data-id="4"
+                      class="bike-3"
+                      data-path=".bike-three"
+                      name="filter_no_of_bikes[]"
+                      value="3"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx8">3</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx9"
+                      data-id="4"
+                      class="bike-4"
+                      data-path=".bike-four"
+                      name="filter_no_of_bikes[]"
+                      value="4"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx9">4</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx10"
+                      data-id="4"
+                      class="bike-5"
+                      data-path=".bike-five"
+                      name="filter_no_of_bikes[]"
+                      value="5"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx10">5</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-items">
+      <div class="inner-title inner-title-wrapper">
+        <h3>Mounting type</h3>
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+            <title></title>
+            <g id="plus">
+              <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+              <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div class="filter-inner-content mounting-wrapper">
+        <div class="flex-column">
+          <div class="right-side-size">
+            <div
+              class="jplist-group"
+              data-control-type="checkbox-group-filter"
+              data-control-action="filter"
+              data-control-name="mountingtypes"
+            >
+              <ul>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx11"
+                      data-id="5"
+                      data-path=".hitch"
+                      name="mounting_type_list[]"
+                      value="Hitch"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx11">Hitch</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx12"
+                      data-id="5"
+                      data-path=".trunkstrap"
+                      name="mounting_type_list[]"
+                      value="Trunk/Strap"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx12">Trunk/Strap</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="grid__item form_chkbx checkbox">
+                    <input
+                      type="checkbox"
+                      id="{{ parent }}ContactFormchkbx13"
+                      data-id="5"
+                      data-path=".tire"
+                      name="mounting_type_list[]"
+                      value="Tire"
+                    >
+                    <label for="{{ parent }}ContactFormchkbx13">Tire</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-items">
+      <div class="inner-title inner-title-wrapper">
+        <h3>features</h3>
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #000;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+            <title></title>
+            <g id="plus">
+              <line class="cls-1 plus-icon" x1="16" x2="16" y1="7" y2="25"></line>
+              <line class="cls-1 minus-icon" x1="7" x2="25" y1="16" y2="16"></line>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div class="filter-inner-content mounting-wrapper label-features">
+        <div class="flex-column">
+          <div
+            class="jplist-group"
+            {% comment %}
+              data-control-type="checkbox-group-filter"
+              data-control-action="filter"
+            {% endcomment %}
+          >
+            <div class="features-wrapper features_buttons">
+              <div class="grid__item form_chkbx checkbox">
+                <label for="{{ parent }}ContactFormchkbx14">
+                  <span class="img"
+                    ><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/allen-easy.png?v=1663657410"
+                  ></span>
+                  <button
+                    class="icon-title"
+                    type="button"
+                    data-id="6"
+                    data-control-type="button-filter"
+                    data-control-action="filter"
+                    data-control-name="allen-easy-btn"
+                    data-path=".allen-easy"
+                  >
+                    Allen Easy
+                  </button>
+                  {% assign tooltip_text = 'Easy to install with quick release levers and straps.' %}
+                  {% render 'tooltip-icon', tooltip_text: tooltip_text %}
+                </label>
+              </div>
+              <div class="grid__item form_chkbx checkbox">
+                <label for="{{ parent }}ContactFormchkbx16">
+                  <span class="img"
+                    ><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/compact.png?v=1663657410"
+                  ></span>
+                  <button
+                    class="icon-title"
+                    type="button"
+                    data-id="6"
+                    data-control-type="button-filter"
+                    data-control-action="filter"
+                    data-control-name="compact-btn"
+                    data-path=".compact"
+                  >
+                    Compact
+                  </button>
+                  {% assign tooltip_text = 'Lightweight and folds up for easy storage.' %}
+                  {% render 'tooltip-icon', tooltip_text: tooltip_text %}
+                </label>
+              </div>
+              {% comment %}
+                <div class="grid__item form_chkbx checkbox">
+                  <label for="{{ parent }}ContactFormchkbx_electric">
+                    <span class="img"
+                      ><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Bolt_35x35.png?v=1670998027"
+                    ></span>
+                    <button
+                      class="icon-title"
+                      type="button"
+                      data-id="6"
+                      data-control-type="button-filter"
+                      data-control-action="filter"
+                      data-control-name="electric-btn"
+                      data-path=".electric"
+                    >
+                      Electric
+                    </button>
+                    {% assign tooltip_text = 'Specifically designed for electric/heavy bikes.' %}
+                    {% render 'tooltip-icon', tooltip_text: tooltip_text %}
+                  </label>
+                </div>
+              {% endcomment %}
+              <div class="grid__item form_chkbx checkbox">
+                <label for="{{ parent }}ContactFormchkbx_electric">
+                  <span class="img"
+                    ><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/Bolt_35x35.png?v=1670998027"
+                  ></span>
+                  <button
+                    class="icon-title"
+                    type="button"
+                    data-id="6"
+                    data-control-type="button-filter"
+                    data-control-action="filter"
+                    data-control-name="electric-btn"
+                    data-path=".electric-bike-max-70-lbs"
+                  >
+                    Electric Bike (max 70 lbs.)
+                  </button>
+                  {% assign tooltip_text = 'Specifically designed for electric/heavy bikes.' %}
+                  {% render 'tooltip-icon', tooltip_text: tooltip_text %}
+                </label>
+              </div>
+              <div class="grid__item form_chkbx checkbox">
+                <label for="{{ parent }}ContactFormchkbx15">
+                  <span class="img"
+                    ><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/light-weight.png?v=1663657410"
+                  ></span>
+                  <button
+                    class="icon-title"
+                    type="button"
+                    data-id="6"
+                    data-control-type="button-filter"
+                    data-control-action="filter"
+                    data-control-name="light-weight-btn"
+                    data-path=".light-weight"
+                  >
+                    Light Weight
+                  </button>
+                  {% assign tooltip_text = 'Super light and easy to install.' %}
+                  {% render 'tooltip-icon', tooltip_text: tooltip_text %}
+                </label>
+              </div>
+              <div class="grid__item form_chkbx checkbox">
+                <label for="{{ parent }}ContactFormchkbx18">
+                  <span class="img"
+                    ><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/secure-locking.png?v=1663657409"
+                  ></span>
+                  <button
+                    class="icon-title"
+                    type="button"
+                    data-id="6"
+                    data-control-type="button-filter"
+                    data-control-action="filter"
+                    data-control-name="secure-locking-btn"
+                    data-path=".secure-locking"
+                  >
+                    Lock to Vehicle
+                  </button>
+                  {% assign tooltip_text = 'Key locking system to prevent theft.' %}
+                  {% render 'tooltip-icon', tooltip_text: tooltip_text %}
+                </label>
+              </div>
+              <div class="grid__item form_chkbx checkbox">
+                <label for="{{ parent }}ContactFormchkbx17">
+                  <span class="img"
+                    ><img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/tilt-rack.png?v=1663657770"
+                  ></span>
+                  <button
+                    class="icon-title"
+                    type="button"
+                    data-id="6"
+                    data-control-type="button-filter"
+                    data-control-action="filter"
+                    data-control-name="tilt-rack-btn"
+                    data-path=".tilt-rack"
+                  >
+                    Tilt Rack
+                  </button>
+                  {% assign tooltip_text = 'Folds down to allow rear gate to open.' %}
+                  {% render 'tooltip-icon', tooltip_text: tooltip_text %}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if section.settings.plp_image != blank and section.settings.btn_url != blank %}
+              <div class="grid-item plp_custom_img js-custom-app-link">
+                <a href="{{section.settings.btn_url}}" class="collection-item app-download">
+                  <div class="collection-image-wrap">
+                    <div class="collection-upload_img">
+                      <div class="collection-image image-wrap loaded">
+                        <image-element data-image-type="">
+                          <img src="{{ section.settings.plp_image | img_url : 'master' }}" alt="{{ collection.title }}">
+                        </image-element>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="collection_info">
+                    <h2 class="collection-item__title">{{ section.settings.heading }}</h2>
+                    <span class="collection-subtext">{{ section.settings.subheading }}</span>
+                    {% if section.settings.btn_text != blank %}
+                        <button class="btn btn_normal btn_red btn_hover_white">{{ section.settings.btn_text }}</button>
+                    {% endif %}
+                  </div>
+                </a>
+              </div>
+        {%- endif -%}
+  </div>
+</div>

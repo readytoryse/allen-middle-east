@@ -1,0 +1,106 @@
+<div class="mbile-top-part medium-up--hide">
+  <span>
+    {{ section.settings.title }}
+  </span>
+  <span class="rackfinder_btn">
+    arrow
+  </span>
+</div>
+<div class="rack-finder-tool-wrapper swirl_bg">
+  <div class="page-width">
+    <div class="rack-inner-wrapper">
+      <div class="rack-finder-bg">
+        {% comment %}
+        <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/banner-img_765b7e24-a1bc-4976-984c-1a90c2bbb521.png">
+        {% endcomment %}
+      </div>
+      <div class="rack-finder-tool-content">
+        {%- render 'filter-form',css_class:"js-rack-form-home" , section:section -%}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "t:labels.rack_finder_home",
+    "class":"home-rack-finder-app",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "t:labels.title",
+        "default":"t:labels.find-the-perfect-rack"
+      },
+      {
+        "type": "text",
+        "id": "year_selector",
+        "label": "t:labels.year_selector",
+        "default":"t:labels.select-year"
+      },
+      {
+        "type": "text",
+        "id": "make_selector",
+        "label": "t:labels.make_selector",
+        "default":"t:labels.select-make"
+      },
+      {
+        "type": "text",
+        "id": "model_selector",
+        "label": "t:labels.model_selector",
+        "default":"t:labels.select-model"
+      },
+      {
+        "type": "text",
+        "id": "type_selector",
+        "label": "t:labels.type_selector",
+        "default":"t:labels.select-type"
+      },
+      {
+        "type": "text",
+        "id": "option_1",
+        "label": "t:labels.option_1",
+        "default":"t:labels.option-1"
+      },
+      {
+        "type": "text",
+        "id": "option_2",
+        "label": "t:labels.option_1",
+        "default":"t:labels.option-2"
+      },
+      {
+        "type": "text",
+        "id": "submit_text",
+        "label": "t:labels.submit_text",
+        "default":"t:labels.submit"
+      },
+      {
+        "type": "text",
+        "id": "reset_text",
+        "label": "t:labels.reset_text",
+        "default":"t:labels.reset"
+      },
+      {
+        "type": "text",
+        "id": "save_text",
+        "label": "t:labels.save_text",
+        "default":"t:labels.save-car"
+      },
+      {
+        "type":"richtext",
+        "id": "info_text",
+        "label":"t:labels.info_text"
+      }
+    ],
+    "presets": [{
+    "name": "t:labels.rack_finder_home",
+    "settings": {
+    }
+  }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

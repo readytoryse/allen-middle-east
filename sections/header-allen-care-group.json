@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "toolbar": {
+      "type": "care-toolbar",
+      "settings": {
+        "show_shop_icons": false,
+        "announcement_center": false,
+        "toolbar_social": false,
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false
+      }
+    },
+    "header_allen_care_hGD6Nh": {
+      "type": "header-allen-care",
+      "blocks": {
+        "logo_F3AV37": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/allen-care-logo.png",
+            "desktop_logo_width": 170,
+            "mobile_logo_width": 240
+          }
+        }
+      },
+      "block_order": [
+        "logo_F3AV37"
+      ],
+      "settings": {
+        "main_menu_link_list": "allen-care",
+        "hover_menu": true,
+        "main_menu_alignment": "left-center",
+        "mega_products": true,
+        "header_sticky": true,
+        "header_footer_menu": false,
+        "sticky_index": false,
+        "sticky_collection": false,
+        "show_resouce_button": true,
+        "resouce_button_text": "BACK TO ALLENSPORTS",
+        "resouce_button_link": "/"
+      }
+    }
+  },
+  "order": [
+    "toolbar",
+    "header_allen_care_hGD6Nh"
+  ]
+}

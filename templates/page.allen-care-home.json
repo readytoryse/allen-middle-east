@@ -1,0 +1,158 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.allen-care",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "home_rack_finder_app_kbjm6w": {
+      "type": "home-rack-finder-app",
+      "disabled": true,
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "allen_care_page_r3e3r7": {
+      "type": "allen-care-page",
+      "blocks": {
+        "content_AaBYCF": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: The rack finder only shows hitch racks as a fit for my vehicle, will the trunk mounted carriers work as well?",
+            "subtitle": "<p>A: If the Rack Finder returns only hitch mounted models then it would mean that you can’t safely use a strap mounted carrier on your vehicle. Typically this is the case where there is not adequate structural support at the top of the rear door for the rack and bicycles.</p>"
+          }
+        },
+        "content_czypyY": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Do I need an adaptor bar for my bike?",
+            "subtitle": "<p>A: For most step-through, full suspension, children’s and women’s style bicycles an adaptor bar will allow these bicycles to be installed onto a bicycle carrier. The adaptor bar fits bicycles with a distance of 18” and 27” between the headset and seat tube. Please refer to the video for this item <a href=\"https://www.youtube.com/watch?v=RCQ3tjK3z9s\" title=\"https://www.youtube.com/watch?v=RCQ3tjK3z9s\">HERE</a></p>"
+          }
+        },
+        "content_ywj6gq": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: How do I unlock and re-move my QR rack from my vehicle?",
+            "subtitle": "<p>A: To quickly unlock remove your QR rack from your vehicle, please refer to the instructional video for this item <a href=\"https://youtu.be/vl2nb97sajs\" title=\"https://youtu.be/vl2nb97sajs\">HERE</a></p>"
+          }
+        },
+        "content_K8ED7Y": {
+          "type": "Content",
+          "settings": {
+            "title": "Q: Will the new tie down cradles fit on my older carrier?",
+            "subtitle": "<p>A: If you have the removable end caps on the carry arm of your older model Allen Rack, then yes, the New Tie-Down Cradles will fit. Since the new tie-downs are about ½” longer than the deluxe version tie-downs, you will need to shorten the black tubular spacers that go between the tie-downs.</p>"
+          }
+        },
+        "link_block_YHmrXM": {
+          "type": "link_block",
+          "settings": {
+            "link_icon": "shopify://shop_images/manual-icon.png",
+            "link_title": "PRODUCT MANUALS",
+            "link_subtitle": "<p>Find all the instructions you need to properly install your Allen product here!</p>",
+            "link_url": "shopify://pages/product-manuals"
+          }
+        },
+        "link_block_QbWPtA": {
+          "type": "link_block",
+          "settings": {
+            "link_icon": "shopify://shop_images/video-library-icon.png",
+            "link_title": "VIDEO LIBRARY",
+            "link_subtitle": "<p>View instructional videos on how to install your rack or watch our latest AllenTV special!</p>",
+            "link_url": "shopify://pages/video-library"
+          }
+        },
+        "link_block_AP6RFE": {
+          "type": "link_block",
+          "settings": {
+            "link_icon": "shopify://shop_images/product-registration-icon.png",
+            "link_title": "PRODUCT REGISTRATION",
+            "link_subtitle": "<p>Make sure to register your product so we can honor your warranty</p>",
+            "link_url": "shopify://pages/register-your-product"
+          }
+        },
+        "link_block_xRpEWM": {
+          "type": "link_block",
+          "settings": {
+            "link_icon": "shopify://shop_images/warrenty-icon.png",
+            "link_title": "MAKE A RETURN",
+            "link_subtitle": "<p>Need to return your product? View our return policy and get your return started here</p>",
+            "link_url": "shopify://pages/make-a-return"
+          }
+        },
+        "link_block_ctGzwm": {
+          "type": "link_block",
+          "settings": {
+            "link_icon": "shopify://shop_images/find-icon.png",
+            "link_title": "FIND A SELLER",
+            "link_subtitle": "<p>Want to see who else carries our products? Find our list of authorized third party sellers here.</p>",
+            "link_url": "#"
+          }
+        },
+        "link_block_4MqY3d": {
+          "type": "link_block",
+          "settings": {
+            "link_icon": "shopify://shop_images/product-manual-icon.png",
+            "link_title": "PRODUCT COMPARISON",
+            "link_subtitle": "<p>Deluxe? Premier? There is a lot to consider when buying a rack! We’ve made it easy for you.</p>",
+            "link_url": "shopify://pages/product-comparison"
+          }
+        }
+      },
+      "block_order": [
+        "content_AaBYCF",
+        "content_czypyY",
+        "content_ywj6gq",
+        "content_K8ED7Y",
+        "link_block_YHmrXM",
+        "link_block_QbWPtA",
+        "link_block_AP6RFE",
+        "link_block_xRpEWM",
+        "link_block_ctGzwm",
+        "link_block_4MqY3d"
+      ],
+      "settings": {
+        "show_banner": true,
+        "show_search": true,
+        "bg_img": "shopify://shop_images/allen-grid_final.png",
+        "right_bg_img": "shopify://shop_images/trunkrack_f2d19f84-12d3-45e1-84e2-0ac2b0309252.png",
+        "left_bg_img": "shopify://shop_images/hitchrack_f93b0458-0627-4195-bd92-8e1972fd8f5a.png",
+        "bg_color": "#ea1d2d",
+        "title": "WHAT CAN WE HELP YOU WITH?",
+        "subtitle": "",
+        "text_position": "center",
+        "text_align": "center",
+        "more_resource_heading": "More Resource",
+        "faq_heading": "Frequently Asked Questions",
+        "view_faq_title": "View All",
+        "view_faq_link": "shopify://pages/faqs",
+        "contact_btn_title": "<p>Still Need Help? <a href=\"/pages/contact-us\" title=\"/pages/contact-us\">Contact Us</a></p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "home_rack_finder_app_kbjm6w",
+    "allen_care_page_r3e3r7"
+  ]
+}

@@ -1,0 +1,140 @@
+{%- render 'section-feature-content' -%}
+
+{% schema %}
+{
+  "name": "t:labels.feature_content",
+  "class": "inline-index-section",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "dekstop_hide",
+      "label": "Hide on Desktop",
+      "default":false
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_hide",
+      "label": "Hide on Mobile",
+      "default":false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "t:labels.our-brands"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:labels.heading_size",
+      "default": "t:labels.h2",
+      "options": [
+        {
+          "value": "t:labels.h3",
+          "label": "t:labels.sizes.small"
+        },
+        {
+          "value": "t:labels.h2",
+          "label": "t:labels.sizes.medium"
+        },
+        {
+          "value": "t:labels.h1",
+          "label": "t:labels.sizes.large"
+        },
+        {
+          "value": "t:labels.h0",
+          "label": "t:labels.sizes.extra_large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:labels.heading_position",
+      "default": "t:labels.left-value",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "t:labels.center-value",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:actions.show_section_divider",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "t:labels.background_color"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Specific settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "slider",
+      "label": "Slider",
+      "default":true
+    },
+    {
+      "type": "select",
+      "id": "per_row",
+      "label": "Slide Per row",
+      "default":"1",
+      "options": [
+        {
+          "label": "Single",
+          "value": "1"
+        },
+        {
+          "label": "Double",
+          "value": "2"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo_image",
+      "name": "t:labels.logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image",
+          "info": "t:actions.add_alt_text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:labels.link",
+          "info": "t:labels.optional"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:labels.feature_content_text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.feature_content",
+    }
+  ]
+}
+{% endschema %}

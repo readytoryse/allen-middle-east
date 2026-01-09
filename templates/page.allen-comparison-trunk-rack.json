@@ -1,0 +1,233 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.allen-care",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "home_rack_finder_app_kbjm6w": {
+      "type": "home-rack-finder-app",
+      "disabled": true,
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "allen_comparison_trunk_rack_yaQn3P": {
+      "type": "allen-comparison-trunk-rack",
+      "blocks": {
+        "comparison_type_cRnaan": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-locking-hitch-racks-deluxe-vs-premium",
+            "link_title": "Locking Hitch Racks"
+          }
+        },
+        "comparison_type_HrMx8z": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "hitch-racks-comparison",
+            "link_title": "Hitch Racks"
+          }
+        },
+        "comparison_type_q3QFVY": {
+          "type": "comparison_type",
+          "settings": {
+            "compare_page": "comparison-trunk-rack-deluxe-vs-premium",
+            "link_title": "Trunk Racks"
+          }
+        },
+        "deluxe_premium_product_QgVQVj": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_Transparent.png",
+            "deluxe_feature": false,
+            "feature": "Quick Set-Up/Fold Design",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_QuickFold.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_AbDbMi": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_Transparent.png",
+            "deluxe_feature": false,
+            "feature": "Quick Secure Cradle Straps",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_Cradles.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_Y88GKt": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_Transparent.png",
+            "deluxe_feature": false,
+            "feature": "Wide Profile Feet to Distribute Load",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_Feet.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_ckMHjg": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_Capacity.png",
+            "deluxe_feature": true,
+            "feature": "2, 3, 4-Bike Capacity",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_Capacity.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_ikB7EE": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_Main_5552ba07-f0d1-4d72-81c7-465df00b22c5.png",
+            "deluxe_feature": true,
+            "feature": "Fit Mosts Vehicles",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_bae8e252-febd-45c9-ac7b-3556a7ea1594.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_43YUYP": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_TieDownCradles.png",
+            "deluxe_feature": true,
+            "feature": "Individual Tie Down Cradles",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_Cradles_2558083e-e8e2-47b3-ad64-9758ecbefe8e.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_CaLPG7": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_Main_f7d3f6ba-3bfd-48fb-9d0f-d68f4a5fb76f.png",
+            "deluxe_feature": true,
+            "feature": "No Tools Required",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_bae8e252-febd-45c9-ac7b-3556a7ea1594.png",
+            "premium_feature": true
+          }
+        },
+        "deluxe_premium_product_npFf7P": {
+          "type": "deluxe_premium_product",
+          "settings": {
+            "deluxe_part_image": "shopify://shop_images/TrunkComparison-Deluxe_LateralStability.png",
+            "deluxe_feature": true,
+            "feature": "Lateral Stability",
+            "premium_part_image": "shopify://shop_images/TrunkComparison-Premier_LateralStability.png",
+            "premium_feature": true
+          }
+        }
+      },
+      "block_order": [
+        "comparison_type_cRnaan",
+        "comparison_type_HrMx8z",
+        "comparison_type_q3QFVY",
+        "deluxe_premium_product_QgVQVj",
+        "deluxe_premium_product_AbDbMi",
+        "deluxe_premium_product_Y88GKt",
+        "deluxe_premium_product_ckMHjg",
+        "deluxe_premium_product_ikB7EE",
+        "deluxe_premium_product_43YUYP",
+        "deluxe_premium_product_CaLPG7",
+        "deluxe_premium_product_npFf7P"
+      ],
+      "settings": {
+        "show_banner": true,
+        "show_search": false,
+        "right_bg_img": "shopify://shop_images/truck-rank.png",
+        "left_bg_img": "shopify://shop_images/hitch-truck.png",
+        "bg_color": "#f4f4f4",
+        "title": "FIND THE RIGHT RACK FOR YOU",
+        "subtitle": "<p>Deluxe? Premier? Locking? There is a lot to consider when buying a bike rack! We’ve made it easy for you. Check out the products below to see how the deluxe and premium models compare.</p>",
+        "text_position": "center",
+        "text_align": "center",
+        "deluxe_resource_heading": "Deluxe*",
+        "deluxe_default_image": "shopify://shop_images/TrunkComparison-Deluxe_Main.png",
+        "deluxe_button": "Shop Now",
+        "deluxe_button_link": "shopify://products/deluxe-trunk-rack",
+        "tag_position1_1": "7",
+        "tag_position2_1": "9.4",
+        "tag_title_1": "Play Video:",
+        "tag_subtitle_1": "Easy Set Up & Installation",
+        "popup_video_1": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/O8lzEqXO_Dc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_2": "8",
+        "tag_position2_2": "2.4",
+        "tag_title_2": "Play Video:",
+        "tag_subtitle_2": "Individual Tie-Down Cradles",
+        "popup_video_2": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/IBUvQlUwX7Q\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_3": "",
+        "tag_position2_3": "",
+        "tag_title_3": "Play Video:",
+        "tag_subtitle_3": "Play Video Subtitle",
+        "popup_video_3": "Popup Video",
+        "tag_position1_4": "",
+        "tag_position2_4": "",
+        "tag_title_4": "Play Video:",
+        "tag_subtitle_4": "Play Video Subtitle",
+        "popup_video_4": "Popup Video",
+        "tag_position1_5": "",
+        "tag_position2_5": "",
+        "tag_title_5": "Play Video:",
+        "tag_subtitle_5": "Play Video Subtitle",
+        "popup_video_5": "Popup Video",
+        "feature_resource_heading": "Features",
+        "features_text": "Mouse over the features below to see their location on the racks.",
+        "premium_resource_heading": "Premier*",
+        "premium_default_image": "shopify://shop_images/TrunkComparison-Premier.png",
+        "premium_button": "Shop Now",
+        "premium_button_link": "",
+        "tag_position1_6": "2.3",
+        "tag_position2_6": "9",
+        "tag_title_6": "Play Video:",
+        "tag_subtitle_6": "Easy Set-Up & Installation",
+        "popup_video_6": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/JXk87yAkuj0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_7": "6",
+        "tag_position2_7": "1",
+        "tag_title_7": "Play Video:",
+        "tag_subtitle_7": "Quick-Secure Cradle Straps",
+        "popup_video_7": "<iframe width=\"560\" height=\"450\" src=\"https://www.youtube.com/embed/jfX4qqYgJ0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+        "tag_position1_8": "",
+        "tag_position2_8": "",
+        "tag_title_8": "Play Video:",
+        "tag_subtitle_8": "Play Video Subtitle",
+        "popup_video_8": "Popup Video",
+        "tag_position1_9": "",
+        "tag_position2_9": "",
+        "tag_title_9": "Play Video:",
+        "tag_subtitle_9": "Play Video Subtitle",
+        "popup_video_9": "Popup Video",
+        "tag_position1_10": "",
+        "tag_position2_10": "",
+        "tag_title_10": "Play Video:",
+        "tag_subtitle_10": "Play Video Subtitle",
+        "popup_video_10": "Popup Video",
+        "bottom_feature_heading": "<p>*<em>Features shown may not be included with all Premier and Deluxe models.  Please verify specific item for included features</em>.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "home_rack_finder_app_kbjm6w",
+    "allen_comparison_trunk_rack_yaQn3P"
+  ]
+}

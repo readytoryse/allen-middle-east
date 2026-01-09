@@ -1,0 +1,117 @@
+{% comment %}
+** page - custom view **
+- Page template
+- Uses blocks
+{% endcomment %}
+
+<div class="allen_car_main swirl_bg">
+  <div class="allen_car_wrp page-width">
+    <div class="allen_car_inner">
+
+     <div class="thanku-msg center" style="display:block;">
+       <div class="containerr text-center">
+         <div class="thanks_titlebar">
+           <!-- <h2 class="thanks_title">Thank You</h2> -->
+           <div class="thanks_desc comn_heading">Thank you for registering with</div>
+         </div>
+         <div class="thanks_icons">
+           <div class="thanks_logo">
+             <a href="{{ shop.url }}">
+               <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/thanks_logo.png?v=1692603952" >
+             </a>
+           </div>
+           {% comment %}
+           <div class="thanks_desc_2">Explore all the ways you can share your adventures:</div>
+           <ul class="thanks_social_ic">
+             <li>
+               <a href="https://www.facebook.com/AllenSportsGlobal" target="_blank" >
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_facebook.png?v=1692604142" >
+               </a>
+             </li>
+             <li>
+               <a href="https://www.instagram.com/allen.global/" target="_blank" >
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_instagram.png?v=1692604142" >
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/allensportsusa" target="_blank">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_tiktok2.png?v=1692684960" >
+               </a>
+             </li>
+             <li>
+               <a href="https://www.tiktok.com/@allen.global" target="_blank">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/ic_social_tiktok.png?v=1692604142" >
+               </a>
+             </li>
+           </ul>
+           {% endcomment %}
+           <div class="thanks_icons_bottom">
+             <h2 class="thanks_title2">Want to Join The Allen Family?</h2>
+             <div class="thanks_desc_2">Become an Allen Ambassador Today!</div>
+             <div class="btn_wrap">
+               <a class="button btn_normal btn_black btn_hover_red" href="/pages/ambassadors-program">LEARN MORE</a>
+             </div>
+           </div>
+         </div>
+         
+       </div>
+       {% comment %}
+       <div class="thanks_insta_feed">
+         <div class="thanks_insta_feed_wrap">
+           <div class="thanks_insta_feed_inner">
+             <div class="thanks_insta_feed_slide">
+               <div class="image_wrap">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_1.png?v=1692608599" >
+               </div>
+             </div>
+             <div class="thanks_insta_feed_slide">
+               <div class="image_wrap">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_2.png?v=1692608599" >
+               </div>
+             </div>
+             <div class="thanks_insta_feed_slide">
+               <div class="image_wrap">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_3.png?v=1692608599" >
+               </div>
+             </div>
+             <div class="thanks_insta_feed_slide">
+               <div class="image_wrap">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_4.png?v=1692608599" >
+               </div>
+             </div>
+             <div class="thanks_insta_feed_slide">
+               <div class="image_wrap">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_5.png?v=1692608599" >
+               </div>
+             </div>
+             <div class="thanks_insta_feed_slide">
+               <div class="image_wrap">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_6.png?v=1692608599" >
+               </div>
+             </div>
+             <div class="thanks_insta_feed_slide">
+               <div class="image_wrap">
+                 <img src="https://cdn.shopify.com/s/files/1/0101/8078/8283/files/insta_feed_img_3.png?v=1692608599" >
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       {% endcomment %}
+    </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:labels.thank-you",
+    "settings": [],
+    "presets": [
+      {
+        "name": "t:labels.thank-you"
+      }
+    ]
+  }
+{% endschema %}

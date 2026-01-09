@@ -1,0 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.allen-care",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "home_rack_finder_app_kbjm6w": {
+      "type": "home-rack-finder-app",
+      "settings": {
+        "title": "Find the perfect rack",
+        "year_selector": "Select Year",
+        "make_selector": "Select Make",
+        "model_selector": "Select Model",
+        "type_selector": "Select Type",
+        "option_1": "Does your car have a hitch?",
+        "option_2": "Does your car have an external rear spare tire?",
+        "submit_text": "Submit",
+        "reset_text": "Reset",
+        "save_text": "Save Car",
+        "info_text": ""
+      }
+    },
+    "return_form_LXerT8": {
+      "type": "return-form",
+      "settings": {
+        "show_banner": true,
+        "show_search": false,
+        "bg_img": "shopify://shop_images/allen-grid_final.png",
+        "right_bg_img": "shopify://shop_images/trunkrack_34d19407-c218-4cb4-8b62-c396a10d7a58.png",
+        "left_bg_img": "shopify://shop_images/hitchrack_0db406bb-f2dc-403f-94f7-d47431761526.png",
+        "bg_color": "#ea1d2d",
+        "title": "Return Form",
+        "subtitle": "",
+        "text_position": "center",
+        "text_align": "center",
+        "form_heading": "RETURN FORM",
+        "contact_subtitle": "<p></p><p>Please fill out the return form below to send your return order details to our Customer Service team. We will email you a return packing slip within 1 buisness day which must be included in your return package.</p><p>*We only accept returns on products purchased directly through https://allen.bike.</p>",
+        "contact_btn_title": "Submit",
+        "thanku_msg": "<p><strong>Thank You</strong><br/>Your return has been received</p>",
+        "thanku_link_title": "Click here for new return",
+        "thanku_link": "shopify://pages/return-form"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "home_rack_finder_app_kbjm6w",
+    "return_form_LXerT8"
+  ]
+}

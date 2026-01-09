@@ -1,0 +1,162 @@
+{%- render 'section-featured-collections' -%}
+
+{% schema %}
+{
+  "name": "t:labels.collection_list",
+  "class": "index-section collection_list swirl_bg",
+  "max_blocks": 18,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "Popular categories"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:labels.heading_size",
+      "default": "t:labels.h2",
+      "options": [
+        {
+          "value": "t:labels.h3",
+          "label": "t:labels.sizes.small"
+        },
+        {
+          "value": "t:labels.h2",
+          "label": "t:labels.sizes.medium"
+        },
+        {
+          "value": "t:labels.h1",
+          "label": "t:labels.sizes.large"
+        },
+        {
+          "value": "t:labels.h0",
+          "label": "t:labels.sizes.extra_large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:labels.heading_position",
+      "default": "t:labels.left-value",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "t:labels.center-value",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "select",
+      "id": "sub_heading_position",
+      "label": "t:labels.sub_heading_position",
+      "default": "t:labels.left-value",
+      "options": [
+        {
+          "value": "t:labels.left-value",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "t:labels.center-value",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "t:labels.right-value",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:actions.show_section_divider",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:labels.collection",
+      "limit": 9,
+      "settings": [
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "t:labels.collection",
+          "info": "t:info.image_source_adjusted_theme_settings"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info":"Insert the link here if you need to use a different URL instead of the collection."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.title",
+          "info": "t:info.defaults_to_collection_title"
+        },
+        {
+          "type": "text",
+          "id": "sub_text",
+          "label": "t:labels.sub_text"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "t:labels.btn_text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.collection_list",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}
