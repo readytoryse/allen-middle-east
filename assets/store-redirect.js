@@ -17,9 +17,9 @@ async function get_country_code() {
         var user_country_region = data.detected_values.country.handle;
         // console.log('user_country_region',user_country_region.toLowerCase())
          if ($.inArray(user_country_region.toLowerCase(), countries) === -1) {
-             user_country_region = 'US';
+             user_country_region = 'AE';
            
-      Cookies.set("prod_country", 'US', {
+      Cookies.set("prod_country", 'AE', {
           expires: 30,
           domain: ".allen.bike",
       });
