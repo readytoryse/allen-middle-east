@@ -201,6 +201,7 @@ if(cc != null){
 
 async function CountrySelector(data) {
     var Country = await get_country_code();
+    console.log('country',Country)
     var CountryEle = $(`.country_list_ul div[data-co='${Country}']`).eq(0).clone();
     $(`.country_list_ul div[data-co='${Country}'] a`).addClass('se-co_under');
     CountryEle.find('.selected-country.default_select').removeClass('hide');
