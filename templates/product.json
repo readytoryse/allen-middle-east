@@ -159,28 +159,22 @@
         "simple_list_MEJdGi": {
           "type": "simple_list",
           "settings": {
-            "icon_1": "shopify://shop_images/installation.svg",
             "text_1": "easy installation",
             "installation_pdf": "{{product.metafields.custom.easy_installation_pdf | file_url}}",
             "custom_class_1": "",
             "target_class_1": "",
-            "icon_2": "shopify://shop_images/need_part.svg",
             "text_2": "need a part?",
             "custom_class_2": "",
             "target_class_2": "compatible-parts",
-            "icon_3": "shopify://shop_images/save_car.svg",
             "text_3": "save your car search",
             "custom_class_3": "",
             "target_class_3": "",
-            "icon_4": "shopify://shop_images/add_vehicle.svg",
             "text_4": "add another vehicle",
             "custom_class_4": "AddVehicle",
             "target_class_4": "home-rack-finder-app",
-            "icon_5": "shopify://shop_images/Asset_10.png",
             "text_5": "Does it fit my car ?",
             "custom_class_5": "",
             "target_class_5": "pdp_rack_finder",
-            "icon_6": "shopify://shop_images/need_part.svg",
             "text_6": "Clear Your vehicle",
             "custom_class_6": "resetButton",
             "target_class_6": ""
@@ -212,13 +206,9 @@
         "mobile_layout": "partial",
         "enable_video_looping": false,
         "product_video_style": "muted",
-        "walmart_img": "shopify://shop_images/wallmart_304cfc09-93ea-407f-b67d-781871f74de3.png",
         "walmart_title": "Walmart",
-        "amazon_img": "shopify://shop_images/amazon_430x_467ff627-93ab-433e-8fdb-2586424e1541.svg",
         "amazon_title": "Amazon",
-        "homedepot_img": "shopify://shop_images/home-depot.png",
         "homedepot_title": "Homedepot",
-        "academy_img": "shopify://shop_images/academy.png",
         "academy_title": "Academy"
       }
     },
@@ -252,7 +242,6 @@
         "logo_image_acWbgQ": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify://shop_images/Asset_11_46b5c0fc-7400-4c1d-b242-af59e5f5c113.png",
             "link": "#",
             "text": "Latest Innovations!"
           }
@@ -260,7 +249,6 @@
         "logo_image_H8hACX": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify://shop_images/Asset_6_7cfcfd2f-d679-47a4-b4d0-afaacd44a5b4.png",
             "link": "shopify://collections/parts",
             "text": "missing a parts?"
           }
@@ -268,7 +256,6 @@
         "logo_image_EHzG6N": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify://shop_images/questions.png",
             "link": "shopify://pages/allencare",
             "text": "have questions?"
           }
@@ -276,7 +263,6 @@
         "logo_image_RGXPXm": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify://shop_images/Asset_10_8421e01f-618f-4b1f-ab47-dce4675421da.png",
             "link": "shopify://pages/product-manuals",
             "text": "installation help?"
           }
@@ -319,6 +305,7 @@
         "heading_position": "left",
         "btn_text": "",
         "home_featured_products": "",
+        "product_list": [],
         "count": 10,
         "products_per_row": 5,
         "enable_slider": true,
@@ -358,6 +345,7 @@
         "heading_position": "left",
         "btn_text": "",
         "home_featured_products": "",
+        "product_list": [],
         "count": 5,
         "products_per_row": 5,
         "products_per_row_mobile": 2,
