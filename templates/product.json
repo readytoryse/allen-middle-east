@@ -89,15 +89,6 @@
             "sku_enable": true
           }
         },
-        "stamped_reviews_star_rating_badge_dUnFJA": {
-          "type": "shopify://apps/stamped-reviews/blocks/star-rating-badge/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "use_metafields": false,
-            "sku_tagtype": "sku",
-            "is_featured_product": false,
-            "featured_product_handle": ""
-          }
-        },
         "price_wpCKFr": {
           "type": "price",
           "settings": {}
@@ -198,7 +189,6 @@
       },
       "block_order": [
         "title_KCR4at",
-        "stamped_reviews_star_rating_badge_dUnFJA",
         "price_wpCKFr",
         "description_M6df7i",
         "variant_picker",
@@ -329,7 +319,6 @@
         "heading_position": "left",
         "btn_text": "",
         "home_featured_products": "",
-        "product_list": "{{ product.metafields.custom.compatible_parts.value }}",
         "count": 10,
         "products_per_row": 5,
         "enable_slider": true,
@@ -369,7 +358,6 @@
         "heading_position": "left",
         "btn_text": "",
         "home_featured_products": "",
-        "product_list": "{{ product.metafields.custom.compatible_parts.value }}",
         "count": 5,
         "products_per_row": 5,
         "products_per_row_mobile": 2,
