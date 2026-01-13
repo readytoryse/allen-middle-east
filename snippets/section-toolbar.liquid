@@ -49,12 +49,12 @@
               </div>
             {%- endif -%}
   
-            {%- if show_selectors -%}
-              <div class="language-selector toolbar__item small--hide">
-                {% render 'custom-country-selector' %}
+            <div class="language-selector toolbar__item small--hide">
+              {% render 'custom-country-selector' %}
+              {%- if show_selectors -%}
                 {%- render 'multi-selectors', context: 'toolbar' -%}
-              </div>
-            {%- endif -%}
+              {%- endif -%}
+            </div>
             {%- render 'announcement-bar' -%}
           </div>
           {% if section.settings.show_shop_icons %}
