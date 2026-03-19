@@ -6,7 +6,9 @@
           window.location.replace(toPath);
         }
       })();
-
+const domain = window.location.hostname.includes('.')
+      ? '; domain=.' + window.location.hostname.replace(/^www\./, '')
+      : '';
 async function get_country_code() {
   var countries = ['pl', 'nl', 'fr', 'it', 'mt', 'be', 'de', 'se', 'es', 'gb', 'us', 'cl', 'kw', 'bh', 'om', 'qa', 'sa', 'sg', 'cr', 'mx', 'ca', 'co', 'au', 'ae'];
   var user_country_region = Cookies.get("user_country_region");
@@ -262,16 +264,17 @@ $('body').on('click','.country_list_ul div',function(e){
       $this.find('a').addClass('se-country');
       parent.find('.deafult-country').empty().append(cloned);
       $('#Co_confirm').attr('data-href',link)
+      console.log('country',country)
       Cookies.set("user_country_region", country, {
           expires: 30,
-          domain: ".allen.bike",
+          domain: domain,
         });
       }
     else{
       var country = $this.attr('data-co');
       Cookies.set("user_country_region", country, {
           expires: 30,
-          domain: ".allen.bike",
+          domain:domain,
         });
       if(link.includes('uk.') || link.includes('eu.') || link.includes('jp.')){
         $('.country-redirect-description strong').text(prev_country_name)
