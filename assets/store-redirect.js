@@ -277,8 +277,7 @@ $('body').on('click','.country_list_ul div',function(e){
           domain:domain,
         });
         console.log('link',link)
-        return
-      if(link.includes('uk.') || link.includes('eu.') || link.includes('jp.')){
+      if(!link.includes('allen-uae')){
         $('.country-redirect-description strong').text(prev_country_name)
             $.fancybox.open({
               src  : '#country_redirect', // The modal content to display
