@@ -48,7 +48,7 @@ let cc = searchParams.get('cc');
 let goto_cc = searchParams.get('rt');
 let noreturn = searchParams.get('noreturn');
 var eu_countries = [
-  "at", "be", "bg", "hr", "cy", "cz", "dk", "ee", "fi", 
+  "ae","at", "be", "bg", "hr", "cy", "cz", "dk", "ee", "fi", 
   "fr", "de", "gr", "hu", "ie", "it", "lv", "lt", "lu", 
   "mt", "nl", "pl", "pt", "ro", "sk", "si", "es", "se"
 ];
