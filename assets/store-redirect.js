@@ -264,7 +264,6 @@ $('body').on('click','.country_list_ul div',function(e){
       $this.find('a').addClass('se-country');
       parent.find('.deafult-country').empty().append(cloned);
       $('#Co_confirm').attr('data-href',link)
-      console.log('country',country)
       Cookies.set("user_country_region", country, {
           expires: 30,
           domain: domain,
