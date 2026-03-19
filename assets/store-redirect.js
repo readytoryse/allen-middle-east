@@ -276,7 +276,6 @@ $('body').on('click','.country_list_ul div',function(e){
           expires: 30,
           domain:domain,
         });
-        console.log('link',link)
       if(!link.includes('allen-uae')){
         $('.country-redirect-description strong').text(prev_country_name)
             $.fancybox.open({
@@ -348,10 +347,15 @@ $('body').on('click','#Co_confirm',function(){
     var link = $(this).data('href');
     modal.classList.remove('show');
     $("body").css("overflow", "auto");
+    var country = $('.pop-deafult-country').find('.default_select').text()
     Cookies.set("country_popup",true, {
         expires: 30,
         domain: domain,
     })
+    Cookies.set("user_country_region", country, {
+          expires: 30,
+          domain: domain,
+      });
     if($(this).data('href').includes('uk.') || $(this).data('href').includes('eu.') || $(this).data('href').includes('jp.')){
       window.location.href = link;
     }else{
