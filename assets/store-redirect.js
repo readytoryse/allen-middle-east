@@ -56,84 +56,25 @@ var default_country = Cookies.get('user_country_region');
 var prod_country = Cookies.get('prod_country');
 
 //back to original store based on existing coutrny code/cookie
-if(prod_country != undefined && $.inArray(prod_country.toLowerCase(), eu_countries) > -1 && noreturn == undefined){
-  console.log('go for EU')
-  window.location.href = 'https://eu.allen.bike';
+if(prod_country != undefined && $.inArray(prod_country.toLowerCase(), eu_countries) === -1 && noreturn == undefined){
+  // console.log('go for USA')
+  window.location.href = 'https://allen.bike';
 }
 else if(prod_country != undefined && prod_country.toLowerCase() =='gb' && noreturn == undefined){
-  console.log('go for UK')
+  // console.log('go for UK')
   window.location.href = 'https://uk.allen.bike';
+}
+else if(prod_country != undefined && prod_country.toLowerCase() =='jp' && noreturn == undefined){
+  // console.log('go for JP')
+  window.location.href = 'https://jp.allen.bike';
 }
 if(goto_cc != null){
   $('.header-flag-wrapper').hide()
 }
 
 var goto_region_back = Cookies.get("goto_region_back");
-//start condition if customer come from EU store/ UK store
-if (goto_cc != null && $.inArray(goto_cc, eu_countries) === -1 && goto_cc != 'GB' && goto_cc != 'uk' && goto_cc != 'JP') {
-  cc = 'US';
-  Cookies.set("goto_region_back",'eu');
-  param(goto_cc)
-}else if(goto_cc != null &&  goto_region_back == '' && goto_cc == 'GB' || goto_cc == 'uk'){
-  cc = 'US';
-  Cookies.set("goto_region_back",'uk');
-  param('uk')
-}
-else if(goto_cc == 'jp' || goto_cc == 'JP'){
-  cc = 'US';
-  Cookies.set("goto_region_back",'jp');
-  param(goto_cc)
-}
-else if(goto_region_back == 'eu'){
-  cc = 'US';
-  Cookies.set("goto_region_back",'eu');
-  param(goto_cc)
-}
-else if(goto_region_back == 'uk'){
-  cc = 'US';
-  Cookies.set("goto_region_back",'uk');
-  param(goto_cc)
-}
-else{
-  Cookies.set("goto_region_back",'')
-}
-console.log('goto_cc',goto_cc,'eu-country',$.inArray(goto_cc, eu_countries),'goto_region_back',Cookies.get("goto_region_back"))
-if(goto_region_back == 'eu' || goto_region_back == 'uk'){
-    change_url(goto_region_back)    
-}
-else if(Cookies.get("goto_region_back") == 'jp'){
-  change_url(Cookies.get("goto_region_back"))
-}
-//end condition if customer come from EU store/ UK store
 
 
-// Add parameter if customer come from other store
-function param(par) {
-  var exclude_urls = [
-    '/pages/allencare',
-    '/pages/rack-finder',
-    '/blogs/stories',
-    '/pages/product-manuals',
-    '/pages/video-library',
-    '/pages/faqs',
-    '/pages/register-your-product',
-    '/pages/make-a-return',
-    '/pages/find-a-seller',
-    '/pages/comparison-locking-hitch-racks-deluxe-vs-premium',
-    '/pages/contact-us',
-    '/pages/terms-of-use'
-  ];
-  $('a').not('.ctm_popup_btn').each(function() {
-    var link = $(this);
-    var href = link.attr('href');
-    
-    if (href) {
-      var separator = href.includes('?') ? '&' : '?';
-    var newHref = href + separator + 'rt=' + goto_cc + '&noreturn=true';
-      link.attr('href', newHref);
-    }
-  });
-}
 // change url if customer come from other store(Update all header and footer links)
 function change_url(goto_region_back) {
   console.log('goto_region_back',goto_region_back)
@@ -193,6 +134,39 @@ function change_url(goto_region_back) {
         }
     });
 }
+
+//Start To set the parameter for US store links
+get_country_code().then((data) => {
+  var country = data;
+$('a').not('.js-country-popup-inner , .ctm_popup_btn').each(function() {
+  var theme_id = window.us_theme_id;
+  var link = $(this);
+  var href = link.attr('href');
+  var previewLink = (theme_id)?'&preview_theme_id=' + theme_id:'';
+  // console.log('previewLink',theme_id)
+  if (href) {
+    if (country == 'RW') {
+      country = 'AT';
+    }
+    var separator = href.includes('?') ? '&' : '?';
+    
+    // Check if the href contains any of the include_urls
+    var contains_include_url = include_urls.some(url => href.includes(url));
+    
+    if (contains_include_url) {
+      if (href.includes('https://allen.bike')) {
+        // If href already contains 'https://allen.bike', append rt and theme_id
+        link.attr('href', href + separator + 'rt=' + country + '&noreturn=true');
+      } else {
+        // If href doesn't contain 'https://allen.bike', prepend it and append rt and theme_id
+        link.attr('href', 'https://allen.bike' + href + separator + 'rt=' + country + '&noreturn=true'+previewLink);
+      }
+    }
+  }
+});
+  
+})
+//End To set the parameter for US store links
 
 if(cc != null){
   Cookies.set("user_country_region", cc, {
