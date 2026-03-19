@@ -135,6 +135,20 @@ function change_url(goto_region_back) {
     });
 }
 
+var include_urls = [
+  '/collections/parts',
+  '/pages/rack-finder',
+  '/blogs/stories',
+  '/pages/allencare',
+  '/pages/faqs',
+  '/pages/product-manuals',
+  '/pages/contact-us',
+  '/pages/video-library',
+  '/pages/make-a-return',
+  '/pages/terms-of-use',
+  '/pages/privacy-policy'
+];
+
 //Start To set the parameter for US store links
 get_country_code().then((data) => {
   var country = data;
