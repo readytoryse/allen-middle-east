@@ -349,7 +349,12 @@ $('body').on('click','#Co_confirm',function(){
     $("body").css("overflow", "auto");
     var country = $('.pop-deafult-country').find('.default_select').text()
     Cookies.remove('user_country_region')
+    Cookies.remove('prod_country')
     Cookies.set("country_popup",true, {
+        expires: 30,
+        domain: domain,
+    })
+    Cookies.set("prod_country",country, {
         expires: 30,
         domain: domain,
     })
