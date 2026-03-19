@@ -152,7 +152,6 @@ var include_urls = [
 //Start To set the parameter for US store links
 get_country_code().then((data) => {
   var country = data;
-  console.log('country',country)
 $('a').not('.js-country-popup-inner , .ctm_popup_btn').each(function() {
   var theme_id = window.us_theme_id;
   var link = $(this);
