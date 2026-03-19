@@ -251,6 +251,7 @@ $('body').on('click','.country_list_ul div',function(e){
         expires: 90,
         domain: domain,
     });
+    console.log('Parent has',parent.hasClass('pop-flag-wrapper'))
    var prev_country_code = Cookies.get("user_country_region"),
     prev_country_name = $(`.country_list_ul div[data-co="${prev_country_code}"]`).find('span.js_select').eq(0).text();
     if(parent.hasClass('pop-flag-wrapper')){
