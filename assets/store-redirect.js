@@ -348,6 +348,7 @@ $('body').on('click','#Co_confirm',function(){
     modal.classList.remove('show');
     $("body").css("overflow", "auto");
     var country = $('.pop-deafult-country').find('.default_select').text()
+    Cookies.remove('user_country_region')
     Cookies.set("country_popup",true, {
         expires: 30,
         domain: domain,
