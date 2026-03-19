@@ -197,7 +197,7 @@ function change_url(goto_region_back) {
 if(cc != null){
   Cookies.set("user_country_region", cc, {
     expires: 7,
-    domain: ".allen.bike",
+    domain: domain,
   });
 }
 
@@ -249,7 +249,7 @@ $('body').on('click','.country_list_ul div',function(e){
     var country = $this.attr('data-co');
     Cookies.set("prod_country", country, {
         expires: 90,
-        domain: ".allen.bike",
+        domain: domain,
     });
    var prev_country_code = Cookies.get("user_country_region"),
     prev_country_name = $(`.country_list_ul div[data-co="${prev_country_code}"]`).find('span.js_select').eq(0).text();
@@ -335,7 +335,7 @@ if(span){
   span.onclick = function () {
       Cookies.set("country_popup",true, {
           expires: 30,
-          domain: ".allen.bike",
+          domain: domain,
       })
      modal.classList.remove('show');
      $("body").css("overflow", "auto");
@@ -348,7 +348,7 @@ $('body').on('click','#Co_confirm',function(){
     $("body").css("overflow", "auto");
     Cookies.set("country_popup",true, {
         expires: 30,
-        domain: ".allen.bike",
+        domain: domain,
     })
     if($(this).data('href').includes('uk.') || $(this).data('href').includes('eu.') || $(this).data('href').includes('jp.')){
       window.location.href = link;
@@ -372,16 +372,16 @@ var country_popup = {
       let country_code = ele.attr("data-co");
       Cookies.set("user_country_region", country_code, {
           expires: 30,
-          domain: ".allen.bike",
+          domain: domain,
       });
       //prod cookie
       Cookies.set("prod_country", country_code, {
           expires: 30,
-          domain: ".allen.bike",
+          domain: domain,
       });
     Cookies.set("country_popup",true, {
         expires: 30,
-        domain: ".allen.bike",
+        domain: domain,
     })
       // window.location.href = link.href;
     })
