@@ -13,10 +13,10 @@
 {% endif %}
 {% if site_name == 'cyclesouq' %}
   {% if settings.cyclesouq != blank %}
-    <img src="{{ settings.cyclesouq  | img_url: 'master' }}" width="100px" height="100px">
+    <img src="{{ settings.cyclesouq  | img_url: 'master' }}" width="50px" height="50px">
   {% endif %}
   {% if settings.text_cyclesouq == blank %}
-    {% comment %} Buy on {{ site_name }} {% endcomment %}
+    Buy on {{ site_name }}
   {% else %}
     {{ settings.text_cyclesouq }}
   {% endif %}
