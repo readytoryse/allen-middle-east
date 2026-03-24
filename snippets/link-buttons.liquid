@@ -31,6 +31,9 @@
       {% assign url_parts = url | split: '.' %}
       {% assign current_url = url %}
       {% assign site_name = url_parts[1] %}
+      {% if url_parts contains 'cyclesouqcom' %}
+        {% assign site_name = "cyclesouq" %}
+      {% endif %}  
       url_parts={{ url_parts }}<br>
       site_name={{ site_name }}<br>
       <div
