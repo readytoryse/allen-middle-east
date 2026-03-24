@@ -32,11 +32,8 @@
       {% assign current_url = url %}
       {% assign site_name = url_parts[1] %}
       {% if url_parts[0] contains 'cyclesouq' %}
-        {{ 'true here' }}
         {% assign site_name = 'cyclesouq' %}
       {% endif %}  
-      url_parts={{ url_parts }}<br>
-      site_name={{ site_name }}<br>
       <div
         class="get_Co-but hide custom"
         data-variant="{{ variant.id }}"
