@@ -184,6 +184,22 @@
         "label": "t:labels.button-color",
         "default": "#000000"
       },
+       {
+        "type": "text",
+        "id": "text_cyclesouq",
+        "label": "t:labels.button_text"
+      },
+      {
+        "type": "image_picker",
+        "id": "cyclesouq",
+        "label": "cyclesouq"
+      },
+      {
+        "type": "color",
+        "id": "cart_cyclesouq",
+        "label": "t:labels.button-color",
+        "default": "#000000"
+      },
       {
         "type": "text",
         "id": "text_londonbikes",
