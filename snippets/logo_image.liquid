@@ -16,7 +16,7 @@
     <img src="{{ settings.cyclesouq  | img_url: 'master' }}" width="100px" height="100px">
   {% endif %}
   {% if settings.text_cyclesouq == blank %}
-    Buy on {{ site_name }}
+    {% comment %} Buy on {{ site_name }} {% endcomment %}
   {% else %}
     {{ settings.text_cyclesouq }}
   {% endif %}
