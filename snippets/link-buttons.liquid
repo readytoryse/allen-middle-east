@@ -28,6 +28,7 @@
 {% endfor %}  
 {% for regional_store in shop.metaobjects.regional_stores.values %}
     {% for url in regional_store.store_urls.value %}
+      url={{ url }}<br>
       {% assign url_parts = url | split: '.' %}
       {% assign current_url = url %}
       {% assign site_name = url_parts[1] %}
