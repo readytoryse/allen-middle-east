@@ -34,6 +34,8 @@
       {% if site_name == 'https://cyclesouqcom' %}
         {{ 'true here' }}
         {% assign site_name = 'cyclesouq' %}
+      {% else %}  
+        {{ 'else here' }}
       {% endif %}  
       url_parts={{ url_parts }}<br>
       site_name={{ site_name }}<br>
