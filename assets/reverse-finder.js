@@ -1,6 +1,6 @@
 const $ = jQuery;
 // const appURL = "https://9cba-103-250-166-217.ngrok-free.app/api/rack/";
-const appURL = "https://rack-finder.allen.bike/api/rack/";
+const appURL = "https://uae-rack-finder.allen.bike/api/rack/";
 const ending_year = new Date().getFullYear() + 1;
 const starting_year = 1975;
 const requestOptions = {
