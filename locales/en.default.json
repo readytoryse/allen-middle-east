@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "select_make": "SELECT MAKE",
     "select_model": "SELECT MODEL",
     "select_year": "SELECT YEAR",
     "rev_rack_finder": "Reverse Rack Finder",
