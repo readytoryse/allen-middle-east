@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "select_region": "SELECT REGION",
     "search_placeholder": "Search..",
     "slideshow_pause": "Pause slideshow",
     "slideshow_play": "Play slideshow",
