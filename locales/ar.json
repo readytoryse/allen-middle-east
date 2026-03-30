@@ -2528,6 +2528,7 @@
     }
   },
   "actions": {
+    "select_region": "حدد المنطقة",
     "search_placeholder": "يبحث..",
     "slideshow_pause": "إيقاف عرض الشرائح مؤقتًا",
     "slideshow_play": "تشغيل عرض الشرائح",
