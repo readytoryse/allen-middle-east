@@ -2537,6 +2537,7 @@
     },
   },
   "actions": {
+    "created-ascending": "التاريخ، من القديم إلى الجديد",
     "price-descending": "السعر، من الأعلى إلى الأدنى",
     "price-ascending": "السعر، من الأقل إلى الأعلى",
     "best-selling": "الأكثر مبيعا",
