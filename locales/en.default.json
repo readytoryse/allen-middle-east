@@ -16,6 +16,8 @@
     "select_model": "SELECT MODEL",
     "select_year": "SELECT YEAR",
     "rev_rack_finder": "Reverse Rack Finder",
+    "warning_success": "YES, this rack will fit your car!",
+    "warning_error": "SORRY, this rack will NOT FIT your car.",
     "yes": "Yes",
     "no": "No",
     "created-descending": "Date, new to old",
