@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "price-descending": "Price, high to low",
     "price-ascending": "Price, low to high",
     "a-z": "Alphabetically: A-Z",
     "z-a": "Alphabetically: Z-A",
