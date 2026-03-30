@@ -81,7 +81,7 @@ function change_url(goto_region_back) {
   var exclude_urls = [
     '/pages/allencare',
     '/collections/parts',
-    '/pages/rack-finder',
+    // '/pages/rack-finder',
     '/blogs/stories',
     '/pages/product-manuals',
     '/pages/video-library',
