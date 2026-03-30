@@ -2528,6 +2528,7 @@
     }
   },
   "actions": {
+    "search": "يبحث",
     "shop_now": "تسوق الآن",
     "hero_contents": "تسوق أحدث ابتكاراتنا اليوم.",
     "save_cour_car_search": "حفظ البحث عن سيارتك",
