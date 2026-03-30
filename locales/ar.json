@@ -2537,6 +2537,7 @@
     },
   },
   "actions": {
+    "select_make": "اختر الصانع",
      "select_model": "اختر الموديل",
     "select_year": "اختر السنة",
     "rev_rack_finder": "أداة البحث العكسي عن الرفوف",
