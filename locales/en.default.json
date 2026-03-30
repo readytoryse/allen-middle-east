@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "rev_rack_finder": "Reverse Rack Finder",
     "yes": "Yes",
     "no": "No",
     "created-descending": "Date, new to old",
