@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "save_cour_car_search": "save_cour_car_search",
     "select_region": "SELECT REGION",
     "search_placeholder": "Search..",
     "slideshow_pause": "Pause slideshow",
