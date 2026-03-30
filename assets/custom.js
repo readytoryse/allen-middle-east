@@ -893,7 +893,7 @@ if($(window).width() < 769){
           redirect: "follow"
         };
         
-        fetch("https://rack-finder.allen.bike/utility/updateCustomerMeta", requestOptions)
+        fetch("https://uae-rack-finder.allen.bike/utility/updateCustomerMeta", requestOptions)
           .then((response) => response.json())
           .then((result) => {
             // console.log('success data saved')
