@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "complete_message": "Please complete year/make/model/body type before hitting 'SUBMIT'",
     "has_hitch": "My Car Has a Hitch.",
     "body_type": "BODY TYPE",
     "select_make": "SELECT MAKE",
