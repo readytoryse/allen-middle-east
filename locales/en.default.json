@@ -10,6 +10,7 @@
 {
   "actions": {
     "yes": "Yes",
+    "no": "No",
     "created-descending": "Date, new to old",
     "created-ascending": "Date, old to new",
     "price-descending": "Price, high to low",
