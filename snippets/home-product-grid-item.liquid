@@ -370,14 +370,14 @@
           </div>
           <div class="grid-item_addbtn">
              {% if template contains 'page.resource-pdp' %}
-               <a class="text-link btn_normal btn_black btn_hover_red" href="{{ shop.url }}/cart/{{ product.selected_or_first_available_variant.id }}:1">{{ 'actions.add_to_cart' | t }}</a>
+               <a class="text-link btn_normal btn_black btn_hover_red" href="{{ shop.url }}/cart/{{ product.selected_or_first_available_variant.id }}:1">Shop Now</a>
              {% else %}
              <button
                     type="button" class="text-link btn_normal btn_black btn_hover_red"
                     title="{{ 'actions.add_to_cart' | t }}"
                   >
                   <span class="">
-                      <span class="icon__fallback-text">{{ 'actions.add_to_cart' | t }}</span>
+                      <span class="icon__fallback-text">Shop Now</span>
                   </span>
             </button>
             {% endif %}   
