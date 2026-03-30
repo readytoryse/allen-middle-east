@@ -2530,7 +2530,11 @@
   "info": {
    "cart_empty": "سلة التسوق الخاصة بك فارغة حاليا.",
    "allen_plp_atc_label": "أضف إلى السلة",
-   "allen_plp_more_info_button": "مزيد من المعلومات"
+   "allen_plp_more_info_button": "مزيد من المعلومات",
+    "product_count": {
+      "one": "{{ start_prod }} - {{ end_prod }} من {{ count }} منتج",
+      "other": "{{ start_prod }} - {{ end_prod }} من {{ count }} منتج"
+    },
   },
   "actions": {
     "search": "يبحث",
