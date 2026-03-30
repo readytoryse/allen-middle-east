@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "has_hitch": "My Car Has a Hitch.",
     "body_type": "BODY TYPE",
     "select_make": "SELECT MAKE",
     "select_model": "SELECT MODEL",
