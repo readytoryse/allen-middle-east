@@ -10,6 +10,7 @@
 {
   "actions": {
     "a-z": "Alphabetically: A-Z",
+    "z-a": "Alphabetically: Z-A",
     "featured": "Featured",
     "search": "Search",
     "shop_now": "Shop Now",
