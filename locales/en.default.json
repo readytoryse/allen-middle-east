@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "reset": "RESET",
     "save_cour_car_search": "Save Your Car search",
     "select_region": "SELECT REGION",
     "search_placeholder": "Search..",

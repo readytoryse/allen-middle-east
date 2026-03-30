@@ -2530,6 +2530,7 @@
   "actions": {
     "save_cour_car_search": "حفظ البحث عن سيارتك",
     "select_region": "حدد المنطقة",
+    "reset": "إعادة ضبط",
     "search_placeholder": "يبحث..",
     "slideshow_pause": "إيقاف عرض الشرائح مؤقتًا",
     "slideshow_play": "تشغيل عرض الشرائح",
