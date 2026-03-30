@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "hero_contents": "Shop our latest innovations today.",
     "reset": "RESET",
     "save_cour_car_search": "Save Your Car search",
     "select_region": "SELECT REGION",
