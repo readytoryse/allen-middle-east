@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "body_type": "BODY TYPE",
     "select_make": "SELECT MAKE",
     "select_model": "SELECT MODEL",
     "select_year": "SELECT YEAR",

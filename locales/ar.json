@@ -2537,6 +2537,7 @@
     },
   },
   "actions": {
+    "body_type": "نوع الجسم",
     "select_make": "اختر الصانع",
      "select_model": "اختر الموديل",
     "select_year": "اختر السنة",
