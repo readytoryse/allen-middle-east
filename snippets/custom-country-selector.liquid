@@ -5,7 +5,7 @@
                   <span class="selected-country">US</span><span class="right icon-down-arrow"></span>
                 </a>
               </div>
-              <span class="shop">حدد المنطقة</span>
+              <span class="shop">{{ 'actions.select_region' | t  }}</span>
               <div class="country_div country_div_de">
                 {% assign sorted_stores = shop.metaobjects.regional_stores.values %}
                 {% assign sorted_keys = '' %}
