@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "created-descending": "Date, new to old",
     "created-ascending": "Date, old to new",
     "price-descending": "Price, high to low",
     "price-ascending": "Price, low to high",
