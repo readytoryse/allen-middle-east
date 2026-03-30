@@ -9,6 +9,7 @@
 */
 {
   "actions": {
+    "featured": "Featured",
     "search": "Search",
     "shop_now": "Shop Now",
     "hero_contents": "Shop our latest innovations today.",
