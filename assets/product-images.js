@@ -246,8 +246,7 @@ class ProductImages extends HTMLElement {
   }
 
   updateVariantImage(evt) {
-    const variant = evt?.detail?.variant   
-    console.log('variant=',variant)
+    const variant = evt?.detail?.variant 
     if (!variant || !variant.featured_media) return
     if (!config.bpSmall && this.settings.mediaGalleryLayout === 'stacked') {
       const slide = this.cache.mainSlider.querySelector(
