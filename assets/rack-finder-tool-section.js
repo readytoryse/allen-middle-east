@@ -253,7 +253,7 @@ function manageSearchBtn() {
   var bodytype_val = $("#bodytype_select option:selected").text();
   // if (bodytype_val != 'body type') {
   //   $("#clearButton").addClass("green-btn");
-  //   $("#clearButton span.text").text("Re-Submit");
+  //   $("#clearButton span.text").text("rإعادة تقديم");
   // } else {
   //   $("#clearButton").removeClass("green-btn");
   //   $("#clearButton span.text").text("Submit");
@@ -585,7 +585,7 @@ function setBodytypesDropdown() {
         $(document).trigger("CustomEventFormSubmit");
       } else if ($("body").hasClass("show-data") && body_count <= 3) {
         // console.log('inner else')
-        $("#clearButton span").text("re-submit");
+        $("#clearButton span").text("rإعادة تقديم");
       }
     } else if (
       body_type == false &&
@@ -593,7 +593,7 @@ function setBodytypesDropdown() {
       $("body").hasClass("rack-finder-page")
     ) {
       // console.log('outer else')
-      $("#clearButton span").text("re-submit");
+      $("#clearButton span").text("rإعادة تقديم");
     }
   });
 }
