@@ -22,7 +22,7 @@
     "installation_text": "Installation",
     "lifestyle_image": "shopify://shop_images/Allen-Tray-Racks.jpg",
     "lifestyle_text": "Lifestyle",
-    "enable_redirection": true,
+    "enable_redirection": false,
     "enable_theme_id": false,
     "us_theme_id": "161627340823",
     "eu_theme_id": "174346797381",
