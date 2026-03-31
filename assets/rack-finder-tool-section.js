@@ -171,7 +171,7 @@ const product_html = `<div class="product-wrapper  {{filter_class}} ">
                </div>
                <div class="atc-link ">
                <button class="atc-link-btn btn btn_normal btn_gray " data-variant={{data_variant}} style="">أضف إلى السلة</button>
-               <a class="btn js-moreinfo btn--secondary btn_normal btn_transparent_black btn_hover_black" href="{{product_url}}">More Info</a></div>
+               <a class="btn js-moreinfo btn--secondary btn_normal btn_transparent_black btn_hover_black" href="{{product_url}}">مزيد من المعلومات</a></div>
             </div>
          </div>
       </div>
