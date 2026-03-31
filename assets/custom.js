@@ -203,7 +203,7 @@ if($('.product-description-container').length){
   // Function to toggle between "Read More" and "Read Less" text
   function toggleReadMore() {
     if (descriptionContainer.hasClass('expanded')) {
-      readMoreBtn.text('...Read More');
+      readMoreBtn.text('...اقرأ المزيد');
     } else {
       readMoreBtn.text('Read Less');
     }
