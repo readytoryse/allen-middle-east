@@ -10,7 +10,7 @@ const domain = window.location.hostname.includes('.')
       ? '; domain=.' + window.location.hostname.replace(/^www\./, '')
       : '';
 async function get_country_code() {
-  var countries = ['pl', 'nl', 'fr', 'it', 'mt', 'be', 'de', 'se', 'es', 'gb', 'us', 'cl', 'kw', 'bh', 'om', 'qa', 'sa', 'sg', 'cr', 'mx', 'ca', 'co', 'au', 'ae'];
+  var countries = ['pl', 'nl', 'fr', 'it', 'mt', 'be', 'de', 'se', 'es', 'gb', 'us', 'cl', 'kw', 'bh', 'om', 'qa', 'sa', 'sg', 'cr', 'mx', 'ca', 'co', 'au'];
   var user_country_region = Cookies.get("user_country_region");
   if (user_country_region == undefined) {
     return await fetch("/browsing_context_suggestions.json")
