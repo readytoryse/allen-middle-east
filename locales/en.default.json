@@ -202,6 +202,8 @@
   },
   "labels": {
     "class":"CLASS",
+    "class1":"Class I",
+    "class2":"Class II",
     "size": "Size",
     "save_car": "SAVE CAR",
     "your_vehicle": "Your vehicle",
