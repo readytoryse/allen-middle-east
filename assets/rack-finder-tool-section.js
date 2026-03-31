@@ -256,7 +256,7 @@ function manageSearchBtn() {
   //   $("#clearButton span.text").text("rإعادة تقديم");
   // } else {
   //   $("#clearButton").removeClass("green-btn");
-  //   $("#clearButton span.text").text("Submit");
+  //   $("#clearButton span.text").text("يُقدِّم");
   // }
 }
 function updateURL(param, newVal) {
@@ -1663,7 +1663,7 @@ $(document).ready(function () {
       $(".form-error").addClass("hidden");
       vehicleData();
     } else if ($("body").hasClass("rack-finder-page")) {
-      $("#clearButton .text").text("submit");
+      $("#clearButton .text").text("يُقدِّم");
       $(".form-error").removeClass("hidden");
       return true;
     }
@@ -1716,7 +1716,7 @@ $(document).ready(function () {
         .getData(API_URL + "getProducts" + params + `&locale=${locale}`)
         .then(function (res) {
           search_hit_count++;
-          $("#clearButton .text").text("Submit");
+          $("#clearButton .text").text("يُقدِّم");
           $("#clearButton").removeClass("loading");
           $("a#resetButton").css({ display: "flex" });
           // console.log(res)
