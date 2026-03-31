@@ -58,7 +58,7 @@ var prod_country = Cookies.get('prod_country');
 //back to original store based on existing coutrny code/cookie
 if(prod_country != undefined && $.inArray(prod_country.toLowerCase(), eu_countries) === -1 && noreturn == undefined){
   // console.log('go for USA')
-  window.location.href = 'https://allen.bike';
+  // window.location.href = 'https://allen.bike';
 }
 else if(prod_country != undefined && prod_country.toLowerCase() =='gb' && noreturn == undefined){
   // console.log('go for UK')
@@ -351,7 +351,7 @@ $('body').on('click','#Co_confirm',function(){
           domain: domain,
       });
     if($(this).data('href').includes('uk.') || $(this).data('href').includes('eu.') || $(this).data('href').includes('jp.')){
-      window.location.href = link;
+      // window.location.href = link;
     }else{
       window.location.reload();
     }
