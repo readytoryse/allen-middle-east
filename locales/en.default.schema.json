@@ -192,6 +192,7 @@
     "video_with_sound_not_autoplay": "Video with sound will not autoplay"
   },
   "labels": {
+    "mount_installation": "Hitch Mount Installation",
     "four_icon_heading": "Allen Four icons",
     "four_icon_block_type": "Allen icon",
     "four_icon_img": "Allen icon Image",
