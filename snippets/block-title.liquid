@@ -48,9 +48,9 @@
   
   <h1 class="h2 product-single__title">
     {{- title -}}<br>
-    {% for variant in product.variants %}
+    {% comment %} {% for variant in product.variants %}
       {{ variant.title }}<br>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
   </h1>
 
 </div>
