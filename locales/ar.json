@@ -158,6 +158,9 @@
             "value_required": "حقل \"القيمة\" مفقود.",
             "line_splits_not_supported": "يجب تقسيم حقل \"خطوط البضائع\" بحيث يحتوي كل منها على عنصر خط واحد في عرض البائع."
           },
+          "labels": {
+            "contact-us": "اتصل بنا"
+          },
           "payment": {
             "manual_payments_not_allowed_for_b2b": "لا يُسمح بالدفع اليدوي في متاجر B2B.",
             "positive_amount_expected": "يجب أن يكون المبلغ المستحق أكبر من صفر.",
