@@ -201,6 +201,7 @@
     "allen_plp_more_info_button": "More Info"
   },
   "labels": {
+    "class":"CLASS",
     "size": "Size",
     "save_car": "SAVE CAR",
     "your_vehicle": "Your vehicle",
