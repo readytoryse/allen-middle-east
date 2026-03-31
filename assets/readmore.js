@@ -31,7 +31,7 @@
             collapsedHeight: 200,
             heightMargin: 16,
             moreLink: '<a href="#">اقرأ المزيد</a>',
-            lessLink: '<a href="#">Close</a>',
+            lessLink: '<a href="#">يغلق</a>',
             embedCSS: true,
             blockCSS: 'display: block; width: 100%;',
             startOpen: false,
