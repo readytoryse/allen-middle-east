@@ -3,7 +3,7 @@ var Shopify = Shopify || {};
 // ---------------------------------------------------------------------------
 // Money format handler
 // ---------------------------------------------------------------------------
-Shopify.money_format = "${{amount}}";
+Shopify.money_format = "Dhs.{{amount}}";
 Shopify.formatMoneyCustom = function (cents, format) {
   if (typeof cents == "string") {
     cents = cents.replace(".", "");
@@ -1139,22 +1139,22 @@ $(document).ready(function () {
           <span class="grid-product__price--current">
             <span aria-hidden="true">${Shopify.formatMoneyCustom(
               product.variants[0].price,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
             <span class="visually-hidden">${Shopify.formatMoneyCustom(
               product.variants[0].price,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
           </span>
           <span class="visually-hidden">Regular price</span>
           <span class="grid-product__price--original">
             <span aria-hidden="true">${Shopify.formatMoneyCustom(
               product.variants[0].compare_at_price,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
             <span class="visually-hidden">${Shopify.formatMoneyCustom(
               product.variants[0].compare_at_price,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
           </span>
           </div>`;
@@ -1162,11 +1162,11 @@ $(document).ready(function () {
         price_html += `<span class="grid-product__price--current">
         <span aria-hidden="true" class="grid-product__price--from">${Shopify.formatMoneyCustom(
           product.variants[0].price,
-          "${{amount}}"
+          "Dhs.{{amount}}"
         )}</span>
         <span class="visually-hidden"><span>from</span>${Shopify.formatMoneyCustom(
           product.variants[0].price,
-          "${{amount}}"
+          "Dhs.{{amount}}"
         )}</span>
         </span>`;
       }
@@ -1178,22 +1178,22 @@ $(document).ready(function () {
           <span class="grid-product__price--current">
             <span aria-hidden="true">${Shopify.formatMoneyCustom(
               varPrice * 100,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
             <span class="visually-hidden">${Shopify.formatMoneyCustom(
               varPrice * 100,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
           </span>
           <span class="visually-hidden">Regular price</span>
           <span class="grid-product__price--original">
             <span aria-hidden="true">${Shopify.formatMoneyCustom(
               product.variants[0].price,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
             <span class="visually-hidden">${Shopify.formatMoneyCustom(
               product.variants[0].price,
-              "${{amount}}"
+              "Dhs.{{amount}}"
             )}</span>
           </span>
           <span class="product__price-savings on-sale">Save ${discount_per}</span>
@@ -1226,7 +1226,7 @@ $(document).ready(function () {
         .replaceAll("{{ product_price_wrapp}}", price_html)
         .replaceAll(
           "{{product_price}}",
-          Shopify.formatMoneyCustom(product.variants[0].price, "${{amount}}")
+          Shopify.formatMoneyCustom(product.variants[0].price, "Dhs.{{amount}}")
         )
         .replaceAll("{{product_title}}", getTitle)
         .replaceAll("{{variants_json}}", JSON.stringify(product.variants))
@@ -2186,22 +2186,22 @@ $(document).ready(function () {
             <span class="grid-product__price--current">
               <span aria-hidden="true">${Shopify.formatMoneyCustom(
                 selcted_var[0].price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
               <span class="visually-hidden">${Shopify.formatMoneyCustom(
                 selcted_var[0].price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
             </span>
             <span class="visually-hidden">Regular price</span>
             <span class="grid-product__price--original">
               <span aria-hidden="true">${Shopify.formatMoneyCustom(
                 selcted_var[0].compare_at_price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
               <span class="visually-hidden">${Shopify.formatMoneyCustom(
                 selcted_var[0].compare_at_price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
             </span>
             </div>`;
@@ -2209,11 +2209,11 @@ $(document).ready(function () {
           price_html += `<span class="grid-product__price--current">
           <span aria-hidden="true" class="grid-product__price--from">${Shopify.formatMoneyCustom(
             selcted_var[0].price,
-            "${{amount}}"
+            "Dhs.{{amount}}"
           )}</span>
           <span class="visually-hidden"><span>from</span>${Shopify.formatMoneyCustom(
             selcted_var[0].price,
-            "${{amount}}"
+            "Dhs.{{amount}}"
           )}</span>
           </span>`;
         }
@@ -2227,22 +2227,22 @@ $(document).ready(function () {
             <span class="grid-product__price--current">
               <span aria-hidden="true">${Shopify.formatMoneyCustom(
                 price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
               <span class="visually-hidden">${Shopify.formatMoneyCustom(
                 price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
             </span>
             <span class="visually-hidden">Regular price</span>
             <span class="grid-product__price--original">
               <span aria-hidden="true">${Shopify.formatMoneyCustom(
                 compare_price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
               <span class="visually-hidden">${Shopify.formatMoneyCustom(
                 compare_price,
-                "${{amount}}"
+                "Dhs.{{amount}}"
               )}</span>
             </span>
             <span class="product__price-savings on-sale">Save 25%</span>
