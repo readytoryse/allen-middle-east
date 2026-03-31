@@ -163,7 +163,7 @@ const product_html = `<div class="product-wrapper  {{filter_class}} ">
                      <select name="cars" id="cars" class="variant-dropdown" data-variants='{{variants_json}}' data-variants_images_json='{{variants_images_json}}'>
                         {{product_variants}}
                      </select>
-                     <span class="item-fit-on active">Item Fits Your Car</span>
+                     <span class="item-fit-on active">القطعة تناسب سيارتك</span>
                   </div>
                   <div class="product-imp-text">
                        <p>{{hitch_status}}</p>
