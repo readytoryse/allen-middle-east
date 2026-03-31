@@ -120,7 +120,7 @@
               value="hitch_on_vehicle"
             >
             <label for="{{ parent }}hitch_on_vehicle"
-              >{{'actions.yes' | t}}
+              >YES
               <div class="hitch_count_lbl"></div>
             </label>
           </div>
@@ -207,7 +207,7 @@
     </div>
     <div class="list-items">
       <div class="inner-title inner-title-wrapper">
-        <h3>هل تحتوي سيارتك على إطار احتياطي خلفي خارجي؟</h3>
+        <h3>Does your car have an external rear spare tire?</h3>
         <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <defs>
@@ -249,7 +249,7 @@
                       name="{{ parent }}filter_has_rear_spare_tire_"
                       value="filter_has_rear_spare_tire_-true"
                     >
-                    <label for="{{ parent }}has_spare_tire_yes">{{'actions.yes' | t}}</label>
+                    <label for="{{ parent }}has_spare_tire_yes">yes</label>
                   </div>
                 </li>
                 <li>
@@ -262,7 +262,7 @@
                       name="{{ parent }}filter_has_rear_spare_tire_"
                       value="filter_has_rear_spare_tire_-na"
                     >
-                    <label for="{{ parent }}has_spare_tire_no">{{"actions.no" | t}}</label>
+                    <label for="{{ parent }}has_spare_tire_no">no</label>
                   </div>
                 </li>
               </ul>
@@ -273,7 +273,7 @@
     </div>
     <div class="list-items">
       <div class="inner-title inner-title-wrapper">
-        <h3>عدد الدراجات</h3>
+        <h3>NUMBER OF BIKES</h3>
         <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <defs>
@@ -383,7 +383,7 @@
     </div>
     <div class="list-items">
       <div class="inner-title inner-title-wrapper">
-        <h3>نوع التثبيت</h3>
+        <h3>Mounting type</h3>
         <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <defs>
@@ -425,7 +425,7 @@
                       name="mounting_type_list[]"
                       value="Hitch"
                     >
-                    <label for="{{ parent }}ContactFormchkbx11">عقبة</label>
+                    <label for="{{ parent }}ContactFormchkbx11">Hitch</label>
                   </div>
                 </li>
                 <li>
@@ -438,7 +438,7 @@
                       name="mounting_type_list[]"
                       value="Trunk/Strap"
                     >
-                    <label for="{{ parent }}ContactFormchkbx12">الجذع / الحزام</label>
+                    <label for="{{ parent }}ContactFormchkbx12">Trunk/Strap</label>
                   </div>
                 </li>
                 <li>
@@ -451,7 +451,7 @@
                       name="mounting_type_list[]"
                       value="Tire"
                     >
-                    <label for="{{ parent }}ContactFormchkbx13">إطار</label>
+                    <label for="{{ parent }}ContactFormchkbx13">Tire</label>
                   </div>
                 </li>
               </ul>
@@ -462,7 +462,7 @@
     </div>
     <div class="list-items">
       <div class="inner-title inner-title-wrapper">
-        <h3>سمات</h3>
+        <h3>features</h3>
         <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <defs>
@@ -508,7 +508,7 @@
                     data-control-name="allen-easy-btn"
                     data-path=".allen-easy"
                   >
-                    Allen سهل
+                    Allen Easy
                   </button>
                   {% assign tooltip_text = 'Easy to install with quick release levers and straps.' %}
                   {% render 'tooltip-icon', tooltip_text: tooltip_text %}
@@ -528,7 +528,7 @@
                     data-control-name="compact-btn"
                     data-path=".compact"
                   >
-                    مدمج
+                    Compact
                   </button>
                   {% assign tooltip_text = 'Lightweight and folds up for easy storage.' %}
                   {% render 'tooltip-icon', tooltip_text: tooltip_text %}
@@ -570,7 +570,7 @@
                     data-control-name="electric-btn"
                     data-path=".electric-bike-max-70-lbs"
                   >
-                    دراجة كهربائية (بحد أقصى 70 رطلاً)
+                    Electric Bike (max 70 lbs.)
                   </button>
                   {% assign tooltip_text = 'Specifically designed for electric/heavy bikes.' %}
                   {% render 'tooltip-icon', tooltip_text: tooltip_text %}
@@ -590,7 +590,7 @@
                     data-control-name="light-weight-btn"
                     data-path=".light-weight"
                   >
-                    خفيف الوزن
+                    Light Weight
                   </button>
                   {% assign tooltip_text = 'Super light and easy to install.' %}
                   {% render 'tooltip-icon', tooltip_text: tooltip_text %}
@@ -610,7 +610,7 @@
                     data-control-name="secure-locking-btn"
                     data-path=".secure-locking"
                   >
-                    القفل على المركبة
+                    Lock to Vehicle
                   </button>
                   {% assign tooltip_text = 'Key locking system to prevent theft.' %}
                   {% render 'tooltip-icon', tooltip_text: tooltip_text %}
