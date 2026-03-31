@@ -47,7 +47,10 @@
   {%- endif -%}
   
   <h1 class="h2 product-single__title">
-    {{- title -}} 
+    {{- title -}}<br>
+    {% for variant in product.variants %}
+      {{ variant.title }}<br>
+    {% endfor %}
   </h1>
 
 </div>
