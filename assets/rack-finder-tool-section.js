@@ -74,7 +74,7 @@ $.urlParam = function (name) {
 };
 const starting_year = 1983;
 const result_msg =
-  " Options that fit your vehicle. Please use the drop down to select capacity.";
+  " الخيارات الملائمة لمركبتك. يرجى استخدام القائمة المنسدلة لاختيار السعة.";
 const ending_year = new Date().getFullYear() + 1;
 var tmp = [];
 function getDistinct(t) {
