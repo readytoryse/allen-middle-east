@@ -20,7 +20,7 @@ async function get_country_code() {
         // console.log('user_country_region',user_country_region.toLowerCase())
          if ($.inArray(user_country_region.toLowerCase(), countries) === -1) {
              user_country_region = 'AE';
-           
+           Cookies.remove("prod_country");
       Cookies.set("prod_country", 'AE', {
           expires: 30,
           path: "/",
@@ -235,6 +235,7 @@ $('body').on('click','.country_list_ul div',function(e){
     parent = $this.parents('.flag-wrapper'),
     link = $this.find('a').attr('href');
     var country = $this.attr('data-co');
+    Cookies.remove("prod_country");
     Cookies.set("prod_country", country, {
         expires: 90,
         domain: domain,
@@ -369,6 +370,7 @@ var country_popup = {
       });
     $('body').on('click','.country-redirect-description a',function(e){
       // e.preventDefault()
+      Cookies.remove("prod_country");
       let country_code = ele.attr("data-co");
       Cookies.set("user_country_region", country_code, {
           expires: 30,
