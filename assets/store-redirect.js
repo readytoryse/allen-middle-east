@@ -23,7 +23,7 @@ async function get_country_code() {
            Cookies.remove("prod_country");
       Cookies.set("prod_country", 'AE', {
           expires: 30,
-          path: domain,
+          path: "/",
       });
           } 
         // console.log('usert',user_country_region)
