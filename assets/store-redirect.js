@@ -9,6 +9,7 @@
 const domain = window.location.hostname.includes('.')
       ? '; domain=.' + window.location.hostname.replace(/^www\./, '')
       : '';
+      coonsole.log('domain',domain)
 async function get_country_code() {
   var countries = ['pl', 'nl', 'fr', 'it', 'mt', 'be', 'de', 'se', 'es', 'gb', 'us', 'cl', 'kw', 'bh', 'om', 'qa', 'sa', 'sg', 'cr', 'mx', 'ca', 'co', 'au'];
   var user_country_region = Cookies.get("user_country_region");
@@ -23,13 +24,13 @@ async function get_country_code() {
            
       Cookies.set("prod_country", 'AE', {
           expires: 30,
-          path: "/",
+          path: domain,
       });
           } 
         // console.log('usert',user_country_region)
         Cookies.set("user_country_region", user_country_region, {
           expires: 30,
-          path: "/",
+          path: domain,
         });
         $('.region-wrapper .region').text(user_country_region);
         
