@@ -135,9 +135,9 @@
             {{- button_text -}}
           </span>
         </button>
-        {% if settings.free_ship_img != blank %}
+        {% comment %} {% if settings.free_ship_img != blank %}
         <div class="free-ship-img"><img src="{{ settings.free_ship_img | img_url : 'master' }}"></div>
-        {% endif %}
+        {% endif %} {% endcomment %}
          {% render "link-buttons" %}
         {% comment %}
         {% assign show_icon = false %}
