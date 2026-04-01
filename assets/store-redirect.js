@@ -200,7 +200,7 @@ async function CountrySelector(data) {
   
     // Hide ATC button
     if(Country != "US"){
-      $('.add-to-cart').remove()
+      // $('.add-to-cart').remove()
     }else{
       $('.btn_pay_with').remove()
     }
