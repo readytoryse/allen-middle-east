@@ -371,17 +371,17 @@ var country_popup = {
       });
     $('body').on('click','.country-redirect-description a',function(e){
       // e.preventDefault()
-      Cookies.remove("prod_country");
+      // Cookies.remove("prod_country");
       let country_code = ele.attr("data-co");
       Cookies.set("user_country_region", country_code, {
           expires: 30,
           domain: domain,
       });
       //prod cookie
-      Cookies.set("prod_country", country_code, {
-          expires: 30,
-          domain: domain,
-      });
+      // Cookies.set("prod_country", country_code, {
+      //     expires: 30,
+      //     domain: domain,
+      // });
     Cookies.set("country_popup",true, {
         expires: 30,
         domain: domain,
