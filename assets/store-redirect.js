@@ -378,10 +378,10 @@ var country_popup = {
           domain: domain,
       });
       //prod cookie
-      // Cookies.set("prod_country", country_code, {
-      //     expires: 30,
-      //     domain: domain,
-      // });
+      Cookies.set("prod_country", country_code, {
+          expires: 30,
+          domain: domain,
+      });
     Cookies.set("country_popup",true, {
         expires: 30,
         domain: domain,
