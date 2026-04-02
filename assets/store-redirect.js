@@ -71,9 +71,6 @@ else if(prod_country != undefined && prod_country.toLowerCase() =='jp' && noretu
   // console.log('go for JP')
   window.location.href = 'https://jp.allen.bike';
 }
-else{
-  console.log('stay here')
-}
 
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
