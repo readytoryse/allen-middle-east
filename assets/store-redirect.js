@@ -15,9 +15,9 @@ async function get_country_code() {
       .then((data) => {
         var user_country_region = data.detected_values.country.handle;
          if ($.inArray(user_country_region, countries) === -1) {
-             user_country_region = 'AT';
+             user_country_region = 'AE';
            
-            Cookies.set("prod_country", 'AT', {
+            Cookies.set("prod_country", 'AE', {
                 expires: 30,
                 domain: ".allen.bike",
             });
@@ -62,10 +62,6 @@ if(prod_country != undefined && $.inArray(prod_country.toLowerCase(), eu_countri
 else if(prod_country != undefined && prod_country.toLowerCase() =='gb' && noreturn == undefined){
   // console.log('go for UK')
   window.location.href = 'https://uk.allen.bike';
-}
-else if(prod_country != undefined && prod_country.toLowerCase() =='ae' && noreturn == undefined){
-  console.log('go for UAE')
-  window.location.href = 'https://uae.allen.bike';
 }
 else if(prod_country != undefined && prod_country.toLowerCase() =='jp' && noreturn == undefined){
   // console.log('go for JP')
