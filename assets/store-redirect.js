@@ -215,7 +215,7 @@ $('body').on('click','.country_list_ul div',function(e){
           expires: 30,
           domain: ".allen.bike",
         });
-      if(!link.includes('eu.')){
+      if(!link.includes('uae.')){
         $('.country-redirect-description strong').text(prev_country_name)
             $.fancybox.open({
               src  : '#country_redirect', // The modal content to display
