@@ -62,7 +62,7 @@ if(prod_country != undefined && $.inArray(prod_country.toLowerCase(), eu_countri
 else if((prod_country != undefined && $.inArray(prod_country.toLowerCase(), eu_countries) === -1 && noreturn == undefined)){
   console.log('go for USA')
   // window.location.href = 'https://allen.bike';
-})
+}
 else if(prod_country != undefined && prod_country.toLowerCase() =='gb' && noreturn == undefined){
   // console.log('go for UK')
   window.location.href = 'https://uk.allen.bike';
