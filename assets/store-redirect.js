@@ -93,7 +93,7 @@ var span = document.getElementsByClassName("close")[0];
 
 var include_urls = [
   '/collections/parts',
-  '/pages/rack-finder',
+  // '/pages/rack-finder',
   '/blogs/stories',
   '/pages/allencare',
   '/pages/faqs',
