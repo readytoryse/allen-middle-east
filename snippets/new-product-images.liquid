@@ -290,14 +290,7 @@
                       {%- endif -%}
 
                       {%- assign loading = 'eager' -%}
-                      {%-
-                        render 'image-element',
-                        img: media.preview_image,
-                        alt: media.alt | escape | split: '#' | first,
-                        widths: '360, 540, 720',
-                        sizeVariable: '80px',
-                        loading: loading,
-                      -%}
+                      {%- render 'image-element', img: media.preview_image, alt: media.alt, split: '#', widths: '360, 540, 720', sizeVariable: '80px', loading: loading -%}
                     </div>
                     {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
                       <div class="ic_title">
@@ -390,3 +383,22 @@
     </div>
   </div>
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                            render 'image-element',
+                            img: media.preview_image,
+                            alt: media.alt | escape | split: '#' | first,
+                            widths: '360, 540, 720',
+                            sizeVariable: '80px',
+                            loading: loading,
+                          -%}
+  to: "{%- render 'image-element', img: media.preview_image, alt: media.alt, split:
+    '#', widths: '360, 540, 720', sizeVariable: '80px', loading: loading -%}"
+  position: 16657..16806
+{% endcomment %}

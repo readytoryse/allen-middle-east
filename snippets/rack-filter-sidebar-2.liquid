@@ -303,7 +303,7 @@
                 {%- for filter_value in filter.values -%}
                 <li>
                   <div class="grid__item form_chkbx checkbox">
-                    <input type="checkbox" id="mobile-filter-ContactFormchkbx-{{ forloop.index }}" data-id="{{ forloop.index }}" data-path=".{{ filter_value.label | handle | replace:'-':'' }}" name="mounting_type_list[]" value="Hitch">
+                    <input type="checkbox" id="mobile-filter-ContactFormchkbx-{{ forloop.index }}" data-id="{{ forloop.index }}" data-path=".{{ filter_value.label | handle | replace: '-', '' }}" name="mounting_type_list[]" value="Hitch">
                     <label for="mobile-filter-ContactFormchkbx-{{ forloop.index }}"> {{ filter_value.label }}</label>
                   </div>
                 </li>
@@ -402,3 +402,13 @@
             </a>
     </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{ filter_value.label | handle | replace:'-':'' }}"
+  to: "{{ filter_value.label | handle | replace: '-', '' }}"
+  position: 12298..12350
+{% endcomment %}
